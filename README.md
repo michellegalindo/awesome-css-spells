@@ -1,4 +1,7 @@
-# Awesome CSS Spells
+# Awesome CSS
+
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
 
 A curated spellbook of awesome CSS magic 🪄✨🎨 Dedicated to the future CSS wizards and mages!
 
@@ -8,7 +11,7 @@ Maintained with care for the art of styling.
 
 # News: stay up to date!
 
-## 📌🆕 The State of CSS 2025: https://2025.stateofcss.com
+### 📌🆕 The State of CSS 2025: https://2025.stateofcss.com
 
 <br/>
 
