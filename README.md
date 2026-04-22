@@ -1,19 +1,34 @@
-# Awesome CSS
+# 🏆 Awesome CSS
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
 
-A curated spellbook of awesome CSS magic 🪄✨🎨 Dedicated to the future CSS wizards and mages!
-
-Maintained with care for the art of styling.
+### 📌🆕 The State of CSS 2025: https://2025.stateofcss.com
 
 ---
 
-# News: stay up to date!
+## Contents
 
-### 📌🆕 The State of CSS 2025: https://2025.stateofcss.com
+<details>
+<summary>Expand contents</summary>
 
-<br/>
+- [Resources](#news-stay-up-to-sate)
+  - [News: Stay Up To Date](#news-stay-up-to-sate)
+  - [Learning: TOP Picks](#Learning-TOP-Picks)
+    - [Awesome Free Contents](#Awesome-Free-Content)
+    - [Awesome Paid Contents](#Awesome-Paid-Content)
+- [Tools: Best Utilities](#Learn-TOP-Picks) wip
+- [Frameworks](#Frameworks) wip
+- [Boilerplates](#Boilerplates) wip
+- [Snippets](#Snippets) wip
+- [Inspirations](#Inspirations) wip
+<details/>
+
+---
+
+# Resources
+
+# News: Stay Up To Date
 
 #### Top picks for CSS new:
 
@@ -24,11 +39,13 @@ Maintained with care for the art of styling.
 
 <br/>
 
+**[⬆ back to top](#contents)**
+
 ---
 
-# Learn: TOP picks
+# Learning: TOP picks
 
-## 🏆 Awesome Free Content
+## Awesome Free Content
 
 | Name | Source |
 | --- | --- |
@@ -44,9 +61,11 @@ Maintained with care for the art of styling.
 
 <br/>
 
+**[⬆ back to top](#contents)**
+
 ---
 
-# Useful Tools
+# Tools: Best Utilities
 
 | Name | Source | JS |
 | --- | --- | --- |
@@ -65,10 +84,7 @@ Maintained with care for the art of styling.
 
 | Name | Source | JS |
 | --- | --- | --- |
-| HTML5 Boilerplate | [html5boilerplate.com](https://html5boilerplate.com/) | false |
-| Bootstrap Starter | [getbootstrap.com](https://getbootstrap.com/docs/5.0/getting-started/introduction/) | false |
 | Tailwind CSS Starter Projects | [tailwindcss.com](https://tailwindcss.com/docs/installation) | false |
-| Frontend Mentor Challenges | [frontendmentor.io](https://www.frontendmentor.io/challenges) | false |
 | Modern CSS Reset | [Andy Bell](https://andy-bell.co/a-modern-css-reset/) | false |
 | Normalize.css | [necolas](https://necolas.github.io/normalize.css/) | false |
 | Pure CSS Boilerplate Starter | [Pure CSS](https://github.com/pure-css/pure) | false |
