@@ -1,7 +1,14 @@
 # 🎨 Awesome CSS
 
+<img align="right" width="160" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
+
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
+
+<br/>
+
+CSS is more powerful than you think. This list proves it. <br/>
+A curated list of tools, articles, and inspiration for developers who care about great UI.
 
 ### 📌 The State of CSS 2025: https://2025.stateofcss.com
 
@@ -11,22 +18,25 @@
 
 <details>
 <summary>View Summary</summary>
-
+  
+- [Tools](#Tools)
+- [Frameworks](#Frameworks)
+- [Boilerplates](#Boilerplates)
+- [Snippets](#Snippets)
+- [Websites](#Websites)
 - [Resources](#Resources)
   - [News](#News)
   - [Learning](#Learning)
     - [Content](#Content)
     - [Courses](#Courses)
-    - [Books](#Books) wip
-- [Tools](#Tools) wip
-- [Frameworks](#Frameworks) wip
-- [Boilerplates](#Boilerplates) wip
-- [Snippets](#Snippets) wip
-- [Websites](#Websites) wip
+    - [Books](#Books)
+- [Articles](#Articles)
+  - [Design System](#Design-System)
+  - [Animation](#Animation)
+      
 </details>
 
 <br/>
-
 
 # Resources
 
