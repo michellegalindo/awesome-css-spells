@@ -5,30 +5,31 @@
 
 ### 📌 The State of CSS 2025: https://2025.stateofcss.com
 
----
+<br/>
 
-## Contents
+## Summary
 
-<details>
-<summary>Expand contents</summary>
+<details open>
+<summary>Open/close summary</summary>
 
-- [Resources](#news-stay-up-to-sate)
-  - [News: Stay Up To Date](#news-stay-up-to-sate)
-  - [Learning: TOP Picks](#Learning-TOP-Picks)
-    - [Awesome Free Contents](#Awesome-Free-Content)
-    - [Awesome Paid Contents](#Awesome-Paid-Content)
-- [Tools: Best Utilities](#Learn-TOP-Picks) wip
+- [Resources](#Resources)
+  - [News](#News)
+  - [Learning](#Learning)
+    - [Content](#Content)
+    - [Courses](#Courses)
+    - [Books](#Books) wip
+- [Tools](#Tools) wip
 - [Frameworks](#Frameworks) wip
 - [Boilerplates](#Boilerplates) wip
 - [Snippets](#Snippets) wip
-- [Inspirations](#Inspirations) wip
+- [Websites](#Websites) wip
 </details>
 
 ---
 
 # Resources
 
-# News: Stay Up To Date
+## News
 
 #### Top picks for CSS new:
 
@@ -43,7 +44,7 @@
 
 ---
 
-# Learning: TOP picks
+## Learning
 
 ## Awesome Free Content
 
@@ -80,7 +81,7 @@
 | Can I Use | [caniuse.com](https://caniuse.com/) | true |
 | Specificity Calculator | [specificity.keegan.st](https://specificity.keegan.st/) | true |
 
-## Boilerplates
+# Boilerplates
 
 | Name | Source | JS |
 | --- | --- | --- |
@@ -89,7 +90,7 @@
 | Normalize.css | [necolas](https://necolas.github.io/normalize.css/) | false |
 | Pure CSS Boilerplate Starter | [Pure CSS](https://github.com/pure-css/pure) | false |
 
-## Snippets
+# Snippets
 
 | Name | Source | JS |
 | --- | --- | --- |
