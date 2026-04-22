@@ -39,20 +39,20 @@
 
 <br/>
 
-**[⬆ back to top](#contents)**
+**[⬆ back to top](#summary)**
 
 <br/>
 
 ## Learning
 
-## Content
+### Content
 
 | Name | Source |
 | --- | --- |
 | Web.Dev Learn CSS | https://web.dev/learn/css |
 | CSS-Tricks Almanac | https://css-tricks.com/almanac |
 
-## Courses
+### Courses
 
 | Name | Source |
 | --- | --- |
@@ -61,7 +61,7 @@
 
 <br/>
 
-**[⬆ back to top](#contents)**
+**[⬆ back to top](#summary)**
 
 <br/>
 
@@ -82,7 +82,7 @@
 
 <br/>
 
-**[⬆ back to top](#contents)**
+**[⬆ back to top](#summary)**
 
 <br/>
 
@@ -97,7 +97,7 @@
 
 <br/>
 
-**[⬆ back to top](#contents)**
+**[⬆ back to top](#summary)**
 
 <br/>
 
@@ -115,5 +115,4 @@
 
 <br/>
 
-**[⬆ back to top](#contents)**
-
+**[⬆ back to top](#summary)**
