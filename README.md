@@ -7,10 +7,10 @@
 
 <br/>
 
-## Summary
+# Summary
 
-<details open>
-<summary>Open/close summary</summary>
+<details>
+<summary>View Summary</summary>
 
 - [Resources](#Resources)
   - [News](#News)
@@ -25,13 +25,12 @@
 - [Websites](#Websites) wip
 </details>
 
----
+<br/>
+
 
 # Resources
 
 ## News
-
-#### Top picks for CSS new:
 
 | Name | Source |
 | --- | --- |
@@ -42,31 +41,31 @@
 
 **[⬆ back to top](#contents)**
 
----
+<br/>
 
 ## Learning
 
-## Awesome Free Content
+## Content
 
 | Name | Source |
 | --- | --- |
 | Web.Dev Learn CSS | https://web.dev/learn/css |
 | CSS-Tricks Almanac | https://css-tricks.com/almanac |
 
-## Awesome Paid Content
+## Courses
 
 | Name | Source |
 | --- | --- |
-| Atomic Design Course | https://atomicdesigncourse.com |
+| Atomic Design | https://atomicdesigncourse.com |
 | The Layout Maestro | https://thelayoutmaestro.com |
 
 <br/>
 
 **[⬆ back to top](#contents)**
 
----
+<br/>
 
-# Tools: Best Utilities
+# Tools
 
 | Name | Source | JS |
 | --- | --- | --- |
@@ -81,6 +80,12 @@
 | Can I Use | [caniuse.com](https://caniuse.com/) | true |
 | Specificity Calculator | [specificity.keegan.st](https://specificity.keegan.st/) | true |
 
+<br/>
+
+**[⬆ back to top](#contents)**
+
+<br/>
+
 # Boilerplates
 
 | Name | Source | JS |
@@ -89,6 +94,12 @@
 | Modern CSS Reset | [Andy Bell](https://andy-bell.co/a-modern-css-reset/) | false |
 | Normalize.css | [necolas](https://necolas.github.io/normalize.css/) | false |
 | Pure CSS Boilerplate Starter | [Pure CSS](https://github.com/pure-css/pure) | false |
+
+<br/>
+
+**[⬆ back to top](#contents)**
+
+<br/>
 
 # Snippets
 
@@ -101,3 +112,8 @@
 | UI Components | [CodeMyUI](https://codemyui.com/) | false |
 | CSS Components | [CSS Scan](https://getcssscan.com/css-box-shadows-examples) | false |
 | 30 Seconds of CSS | [30 Seconds of Code](https://www.30secondsofcode.org/css/p/1/) | false |
+
+<br/>
+
+**[⬆ back to top](#contents)**
+
