@@ -4,20 +4,44 @@ A curated spellbook of awesome CSS magic 🪄✨🎨 Dedicated to the future CSS
 
 Maintained with care for the art of styling.
 
-# Learn: TOP picks
-
-| Name | Source |
-| --- | --- |
-| Web.dev Learn CSS | https://web.dev/learn/css |
-| CSS-Tricks Almanac | https://css-tricks.com/almanac |
-| Atomic Design Course | https://atomicdesigncourse.com |
+---
 
 # News: stay up to date!
 
+## 📌🆕 The State of CSS 2025: https://2025.stateofcss.com
+
+<br/>
+
+#### Top picks for CSS new:
+
 | Name | Source |
 | --- | --- |
-| Smashing Magazine | https://www.smashingmagazine.com/category/css |
-| Free Code Camp | https://www.freecodecamp.org/news/search?query=css |
+| Smashing Magazine - CSS | https://www.smashingmagazine.com/category/css |
+| Free Code Camp - CSS | https://www.freecodecamp.org/news/search?query=css |
+
+<br/>
+
+---
+
+# Learn: TOP picks
+
+## 🏆 Awesome Free Content
+
+| Name | Source |
+| --- | --- |
+| Web.Dev Learn CSS | https://web.dev/learn/css |
+| CSS-Tricks Almanac | https://css-tricks.com/almanac |
+
+## Awesome Paid Content
+
+| Name | Source |
+| --- | --- |
+| Atomic Design Course | https://atomicdesigncourse.com |
+| The Layout Maestro | https://thelayoutmaestro.com |
+
+<br/>
+
+---
 
 # Useful Tools
 
