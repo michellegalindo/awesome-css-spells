@@ -1,25 +1,71 @@
-# Awesome CSS Spells
+# 🎨 Awesome CSS
 
-A curated spellbook of awesome CSS magic 🪄✨🎨 Dedicated to the future CSS wizards and mages!
+[![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+[![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
 
-Maintained with care for the art of styling.
+### 📌 The State of CSS 2025: https://2025.stateofcss.com
 
-# Learn: TOP picks
+<br/>
+
+# Summary
+
+<details>
+<summary>View Summary</summary>
+
+- [Resources](#Resources)
+  - [News](#News)
+  - [Learning](#Learning)
+    - [Content](#Content)
+    - [Courses](#Courses)
+    - [Books](#Books) wip
+- [Tools](#Tools) wip
+- [Frameworks](#Frameworks) wip
+- [Boilerplates](#Boilerplates) wip
+- [Snippets](#Snippets) wip
+- [Websites](#Websites) wip
+</details>
+
+<br/>
+
+
+# Resources
+
+## News
 
 | Name | Source |
 | --- | --- |
-| Web.dev Learn CSS | https://web.dev/learn/css |
+| Smashing Magazine - CSS | https://www.smashingmagazine.com/category/css |
+| Free Code Camp - CSS | https://www.freecodecamp.org/news/search?query=css |
+
+<br/>
+
+**[⬆ back to top](#summary)**
+
+<br/>
+
+## Learning
+
+### Content
+
+| Name | Source |
+| --- | --- |
+| Web.Dev Learn CSS | https://web.dev/learn/css |
 | CSS-Tricks Almanac | https://css-tricks.com/almanac |
-| Atomic Design Course | https://atomicdesigncourse.com |
 
-# News: stay up to date!
+### Courses
 
 | Name | Source |
 | --- | --- |
-| Smashing Magazine | https://www.smashingmagazine.com/category/css |
-| Free Code Camp | https://www.freecodecamp.org/news/search?query=css |
+| Atomic Design | https://atomicdesigncourse.com |
+| The Layout Maestro | https://thelayoutmaestro.com |
 
-# Useful Tools
+<br/>
+
+**[⬆ back to top](#summary)**
+
+<br/>
+
+# Tools
 
 | Name | Source | JS |
 | --- | --- | --- |
@@ -34,19 +80,28 @@ Maintained with care for the art of styling.
 | Can I Use | [caniuse.com](https://caniuse.com/) | true |
 | Specificity Calculator | [specificity.keegan.st](https://specificity.keegan.st/) | true |
 
-## Boilerplates
+<br/>
+
+**[⬆ back to top](#summary)**
+
+<br/>
+
+# Boilerplates
 
 | Name | Source | JS |
 | --- | --- | --- |
-| HTML5 Boilerplate | [html5boilerplate.com](https://html5boilerplate.com/) | false |
-| Bootstrap Starter | [getbootstrap.com](https://getbootstrap.com/docs/5.0/getting-started/introduction/) | false |
 | Tailwind CSS Starter Projects | [tailwindcss.com](https://tailwindcss.com/docs/installation) | false |
-| Frontend Mentor Challenges | [frontendmentor.io](https://www.frontendmentor.io/challenges) | false |
 | Modern CSS Reset | [Andy Bell](https://andy-bell.co/a-modern-css-reset/) | false |
 | Normalize.css | [necolas](https://necolas.github.io/normalize.css/) | false |
 | Pure CSS Boilerplate Starter | [Pure CSS](https://github.com/pure-css/pure) | false |
 
-## Snippets
+<br/>
+
+**[⬆ back to top](#summary)**
+
+<br/>
+
+# Snippets
 
 | Name | Source | JS |
 | --- | --- | --- |
@@ -57,3 +112,7 @@ Maintained with care for the art of styling.
 | UI Components | [CodeMyUI](https://codemyui.com/) | false |
 | CSS Components | [CSS Scan](https://getcssscan.com/css-box-shadows-examples) | false |
 | 30 Seconds of CSS | [30 Seconds of Code](https://www.30secondsofcode.org/css/p/1/) | false |
+
+<br/>
+
+**[⬆ back to top](#summary)**
