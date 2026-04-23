@@ -59,34 +59,34 @@
 ## Allowed Type Tags
 
 ### English (`README.md`)
-- `(tool)`
-- `(library)`
+- `(generator)`
 - `(framework)`
 - `(course)`
 - `(video)`
-- `(article)`
+- `(podcast)`
+- `(preprocessor)`
+- `(playground)`
+- `(tool)`
+- `(methodology)`
+- `(library)`
 - `(guide)`
 - `(reference)`
-- `(generator)`
-- `(methodology)`
-- `(podcast)`
-- `(playground)`
-- `(preprocessor)`
+- `(article)`
 
 ### Portuguese (`README.pt-BR.md`)
-- `(ferramenta)`
-- `(biblioteca)`
+- `(gerador)`
 - `(framework)`
 - `(curso)`
 - `(vídeo)`
-- `(artigo)`
+- `(podcast)`
+- `(pré-processador)`
+- `(playground)`
+- `(ferramenta)`
+- `(metodologia)`
+- `(biblioteca)`
 - `(guia)`
 - `(referência)`
-- `(gerador)`
-- `(metodologia)`
-- `(podcast)`
-- `(playground)`
-- `(pré-processador)`
+- `(artigo)`
 
 ## Naming and Consistency
 - Use consistent section and subsection names with the taxonomy above.

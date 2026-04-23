@@ -8,10 +8,10 @@
 
 <br/>
 
-[🌎 English](README.md) · 🇧🇷 Português
+[🌎 English](https://github.com/michellegalindo/awesome-css#awesome-css-) · 🇧🇷 Português
 
 Recursos de CSS focados em resolver problemas reais de UI. <br/>
-Lista especialmente dedicada a materiais publicados em português.
+Lista exclusivamente dedicada a materiais publicados em português.
 
 #### 📌 State of CSS 2025: [https://2025.stateofcss.com/pt-BR](https://2025.stateofcss.com/pt-BR)
 

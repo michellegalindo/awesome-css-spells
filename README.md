@@ -66,6 +66,7 @@ Explore links by intent and ship better interfaces faster.
 - [Transition Cubic-Bezier Generator](https://cubic-bezier.com) - Craft and preview custom timing curves for smooth CSS transitions *(tool)*
 - [Scroll-driven Animations](https://scroll-driven-animations.style/) - Visualize and create declarative scroll-driven animations with interactive demos and tools *(tool)*
 - [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Master scroll-driven animations and performance patterns for modern web pages *(video)*
+- [Spinner & Loading Animation Generator | FastTool ](https://fasttool.app/tools/css-loader-generator) - Create copy-ready CSS loader animations and presets to style fast-loading indicators quickly. *(tool)*
 
 <br/>
 
@@ -75,14 +76,15 @@ Explore links by intent and ship better interfaces faster.
 <br/>
 
 # Forms & UX Patterns
-- [CSS Forms Styling: Modern Patterns and Real-World Pitfalls](https://thelinuxcode.com/css-forms-styling-modern-patterns-practical-examples-and-realworld-pitfalls/) - Style inputs, checkboxes, and selects with reliable focus states, validation cues, and accessible layouts *(article)*
-- [Level Up Your Web Forms: A Modern CSS Styling Guide](https://codercrafter.in/blogs/level-up-your-web-forms-a-modern-css-styling-guide) - Build polished forms with focus rings, custom checkboxes, validation states, and Flexbox/Grid layout *(guide)*
+
+Empty. Add your contribution 💜
 
 <br/>
 
 # Responsive Design
-- [Responsive Web Design: A Complete Guide 2026](https://scrimba.com/articles/responsive-web-design-a-complete-guide-2026-2/) - Compare modern responsive techniques including container queries, clamp(), CSS Grid, and mobile-first strategy *(guide)*
+
 - [Complete Guide to Responsive Website Design in 2026](https://webcraftdev.com/en/blog/complete-guide-responsive-website-2026) - Apply auto-fit grids, fluid typography, container queries, and Core Web Vitals to real-world projects *(article)*
+- [Responsive web design basics | Web.dev](https://web.dev/articles/responsive-web-design-basics?hl=en) - Create sites that respond to the needs and capabilities of the device. *(guide)*
 
 <br/>
 
@@ -94,6 +96,7 @@ Explore links by intent and ship better interfaces faster.
 
 ## Naming & Methodologies
 - [Understanding CSS Naming Conventions: BEM, OOCSS, SMACSS and SUIT CSS](https://www.frontendmentor.io/articles/understanding-css-naming-conventions-bem-oocss-smacss-and-suit-css-V6ZZUYs1xz) - Compare to choose the right naming strategy *(methodology)*
+- [CUBE CSS | CUBE CSS](https://cube.fyi/) - A CSS methodology oriented towards simplicity and consistency with a heavy dosage of pragmatism. *(methodology)*
 
 ## Design Systems
 - [Atomic Design by Brad Frost](https://atomicdesigncourse.com) - Design systems from atoms to templates using a composable component methodology *(course)*
@@ -115,7 +118,6 @@ Explore links by intent and ship better interfaces faster.
 - [Cascade Layers Complete Guide | CSS-Tricks](https://css-tricks.com/css-cascade-layers) - Master cascade layers with full syntax reference, layer ordering, !important behavior, and real-world use cases *(guide)*
 
 ## Nesting
-- [CSS Nesting: Complete Guide with Examples](https://devtoolbox.dedyn.io/blog/css-nesting-complete-guide) - Master native CSS nesting with the & selector, nested at-rules, specificity implications, and migration from Sass *(guide)*
 - [Nesting | web.dev Learn CSS](https://web.dev/learn/css/nesting) - Learn native CSS nesting from Google's structured curriculum covering selectors, combinators, and nested at-rules *(guide)*
 
 ## New Specs / Experimental
@@ -149,28 +151,30 @@ Explore links by intent and ship better interfaces faster.
 - [CSS Generators: Your CSS code with less effort](https://css-generators.com) - A wide range of CSS Generators (as frames and shapes) to build the future of the web. *(generator)*
 
 ## Debugging
-- [Can I Use - Browser Support](https://caniuse.com) - Check CSS and HTML feature support across every browser before shipping *(debugging)*
-- [Specificity Calculator](https://design.dev/tools/specificity-calculator) - Compare CSS selectors by specificity score to debug cascade conflicts *(debugging)*
+- [Can I Use - Browser Support](https://caniuse.com) - Check CSS and HTML feature support across every browser before shipping *(tool)*
+- [Specificity Calculator](https://design.dev/tools/specificity-calculator) - Compare CSS selectors by specificity score to debug cascade conflicts *(tool)*
 
 ## Utilities
-- [Normalize.css](https://necolas.github.io/normalize.css/) - Make browsers render all elements consistently with a modern, HTML5-ready alternative to CSS resets *(tool)*
-- [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(generator)*
+- [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(tool)*
 
 <br/>
 
 # Performance & Optimization
+
 - [CSS Performance Optimization | MDN](https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS) - Reduce render-blocking with critical CSS, minification, efficient selectors, and GPU-friendly animations *(guide)*
 - [CSS Optimization Guide 2025 | DEV Community](https://dev.to/satyam_gupta_0d1ff2152dcc/css-optimization-guide-2025-speed-up-your-website-best-practices-code-examples-31ib) - Apply content-visibility, PurgeCSS, contain-intrinsic-size, and critical CSS to speed up rendering *(article)*
 
 <br/>
 
 # Accessibility (a11y)
+
 - [WebAIM: Accessible CSS](https://webaim.org/techniques/css/) - Apply CSS accessibly with :focus-visible, reading order alignment, and proper content/presentation separation *(guide)*
 - [Web Accessibility Complete Guide 2025: WCAG 2.2, ARIA, Keyboard Navigation](https://www.youngju.dev/blog/culture/2026-03-24-web-accessibility-a11y-wcag-developer-guide-2025.en) - Implement focus indicators, contrast ratios, keyboard navigation, and accessible forms following WCAG 2.2 *(guide)*
 
 <br/>
 
 # Learning & References
+
 - [Web.dev Learn CSS](https://web.dev/learn/css) - Work through structured CSS lessons from Google covering modern layout and cascade *(guide)*
 - [CSS-Tricks Almanac](https://css-tricks.com/almanac) - Look up any CSS property or selector with practical usage examples *(reference)*
 - [Smashing Magazine - CSS category](https://www.smashingmagazine.com/category/css) - Read in-depth CSS articles from practitioners covering modern patterns and techniques *(reference)*
@@ -183,8 +187,9 @@ Explore links by intent and ship better interfaces faster.
 <br/>
 
 # Inspiration
-- [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
+
 - [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(reference)*
+- [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
 
 <br/>
 

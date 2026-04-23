@@ -165,22 +165,13 @@ async function main() {
   const fetchFromInternet = values['description-from-internet'] === 'true';
   let lang = rawLang as SupportedLanguage | undefined;
 
-  const needsFetch =
-    fetchFromInternet &&
-    (!title || !lang || !description || isDescriptionPoor(description, title));
+  const needsFetch = fetchFromInternet && (!lang || !description || isDescriptionPoor(description, title));
 
   if (needsFetch) {
     try {
       console.log(`Fetching metadata from ${link}...`);
       const response = await fetch(link);
       const html = await response.text();
-
-      if (!title) {
-        const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-        if (titleMatch) {
-          title = titleMatch[1].trim().replace(/\n/g, ' ');
-        }
-      }
 
       const fetchedDescription = extractMetaDescription(html);
       if (!description) {
@@ -217,9 +208,13 @@ async function main() {
     process.exit(1);
   }
 
+  if (!title) {
+    console.error('Error: --title is required. Copying the page <title> is no longer supported; provide a curated title manually.');
+    process.exit(1);
+  }
+
   const readmeFile = README_BY_LANG[lang];
 
-  title = title || 'Unknown Title';
   description = description || 'No description provided.';
   validateDescriptionLength(description);
   const rawType = (values.type as string | undefined) || 'guide';

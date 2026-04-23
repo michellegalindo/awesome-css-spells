@@ -12,8 +12,8 @@ Insert a new resource into the correct README (`README.md` for English, `README.
 ## Inputs
 
 - Required: `--link`
+- Required: `--title` (use a curated title, not copy-paste from the page `<title>`)
 - Optional: `--description`
-- Optional: `--title`
 - Optional: `--type` (default `guide`)
 - Optional: `--category` (override classification; use the English category name — it is mapped automatically for pt-BR)
 - Optional: `--lang` (`en` or `pt-BR`; if omitted, the script detects the language from the target URL)
