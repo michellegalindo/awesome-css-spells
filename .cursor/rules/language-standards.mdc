@@ -1,0 +1,18 @@
+---
+description: Language standards for documentation files
+globs: "**/*.md"
+alwaysApply: true
+---
+
+# Language Standards
+
+All documentation files in this repository, especially those in the root directory and the `docs/` folder, MUST be written in **English**.
+
+## Rules
+- **README.md**: Must be in English.
+- **CONTRIBUTING.md**: Must be in English.
+- **docs/*.md**: All files in the `docs/` directory must be in English.
+- **Commit Messages**: Should be in English.
+- **Code Comments**: If any, must be in English.
+
+This ensures the project is accessible to the global open-source community.

@@ -158,9 +158,13 @@ Explore links by intent and ship better interfaces faster.
 - [CSS Performance Optimization | MDN](https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS) - Reduce render-blocking with critical CSS, minification, efficient selectors, and GPU-friendly animations *(guide)*
 - [CSS Optimization Guide 2025 | DEV Community](https://dev.to/satyam_gupta_0d1ff2152dcc/css-optimization-guide-2025-speed-up-your-website-best-practices-code-examples-31ib) - Apply content-visibility, PurgeCSS, contain-intrinsic-size, and critical CSS to speed up rendering *(article)*
 
+<br/>
+
 # Accessibility (a11y)
 - [WebAIM: Accessible CSS](https://webaim.org/techniques/css/) - Apply CSS accessibly with :focus-visible, reading order alignment, and proper content/presentation separation *(guide)*
 - [Web Accessibility Complete Guide 2025: WCAG 2.2, ARIA, Keyboard Navigation](https://www.youngju.dev/blog/culture/2026-03-24-web-accessibility-a11y-wcag-developer-guide-2025.en) - Implement focus indicators, contrast ratios, keyboard navigation, and accessible forms following WCAG 2.2 *(guide)*
+
+<br/>
 
 # Learning & References
 - [Web.dev Learn CSS](https://web.dev/learn/css) - Work through structured CSS lessons from Google covering modern layout and cascade *(guide)*
@@ -171,8 +175,12 @@ Explore links by intent and ship better interfaces faster.
 - [CSS Podcast by Una Kravets and Adam Argyle](https://thecsspodcast.libsyn.com) - Deep-dive into CSS properties and features through conversational episodic breakdowns *(podcast)*
 - [Syntax by Wes Bos and Scott Tolinski](https://syntax.fm) - Stay current on frontend trends through a high-energy developer podcast *(podcast)*
 
+<br/>
+
 # Inspiration
 - [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
 - [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(reference)*
+
+<br/>
 
 **[⬆ back to summary](#summary)**
