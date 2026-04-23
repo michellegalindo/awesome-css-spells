@@ -1,521 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awesome List Viewer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@600&display=swap">
-<style>
-  :root {
-    --bg: #0d0d0d;
-    --surface: #151515;
-    --border: #242424;
-    --accent: #c8f135;
-    --accent2: #f1c035;
-    --text: #e8e8e0;
-    --muted: #666;
-    --toc-w: 260px;
-    --font-mono: ui-monospace, 'Cascadia Code', 'Fira Code', Menlo, Consolas, monospace;
-    --font-sans: 'Helvetica Neue', Arial, sans-serif;
-    --font-display: 'BioRhyme', Georgia, serif;
-  }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome List Viewer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap">
+    <link rel="stylesheet" href="app/assets/css/style.css">
+    <style>
+      :root { --font-display: 'Play', Georgia, serif; }
+    </style>
+  </head>
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+  <body>
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-mono);
-    font-size: 14px;
-    line-height: 1.7;
-    display: flex;
-    min-height: 100vh;
-  }
-
-  /* ── Sidebar ── */
-  #sidebar {
-    width: var(--toc-w);
-    min-width: var(--toc-w);
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  #sidebar-header {
-    padding: 24px 20px 16px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  #sidebar-header .label {
-    font-family: var(--font-sans);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-
-  #sidebar-header h1 {
-    font-family: var(--font-display);
-    font-family: var(--font-sans);
-    font-size: 15px;
-    font-weight: 800;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  #toc {
-    overflow-y: auto;
-    flex: 1;
-    padding: 12px 0;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-
-  .toc-item {
-    display: block;
-    padding: 6px 20px;
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 12px;
-    border-left: 2px solid transparent;
-    transition: all 0.15s;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .toc-item:hover { color: var(--text); border-left-color: var(--border); }
-  .toc-item.active { color: var(--accent); border-left-color: var(--accent); background: rgba(200,241,53,0.05); }
-
-  #stats {
-    padding: 12px 20px;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: var(--muted);
-  }
-
-  #stats span { color: var(--accent2); }
-
-  /* ── Main ── */
-  #main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  #topbar {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  #search-wrap {
-    flex: 1;
-    position: relative;
-  }
-
-  #search-wrap::before {
-    content: '⌕';
-    position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--muted);
-    font-size: 18px;
-    pointer-events: none;
-  }
-
-  #search {
-    width: 100%;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--font-mono);
-    font-size: 13px;
-    padding: 10px 16px 10px 40px;
-    border-radius: 4px;
-    outline: none;
-    transition: border-color 0.2s;
-  }
-
-  #search:focus { border-color: var(--accent); }
-  #search::placeholder { color: var(--muted); }
-
-  #search-count {
-    font-size: 12px;
-    color: var(--muted);
-    white-space: nowrap;
-    min-width: 80px;
-    text-align: right;
-  }
-
-  #search-count .num { color: var(--accent2); }
-
-  /* ── Content ── */
-  #content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 40px 48px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border) transparent;
-  }
-
-  /* normal rendered markdown */
-  #rendered h1 { font-family: var(--font-display); font-size: 28px; font-weight: 600; margin-bottom: 8px; }
-  #rendered h2 {
-    font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--accent);
-    margin: 40px 0 16px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
-    scroll-margin-top: 80px;
-  }
-  #rendered h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
-  #rendered h3 { font-family: var(--font-sans); font-size: 14px; font-weight: 700; color: var(--accent2); margin: 24px 0 10px; }
-  #rendered p { color: #aaa; margin-bottom: 12px; }
-  #rendered a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border); transition: color 0.15s, text-decoration-color 0.15s; }
-  #rendered a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-  #rendered ul { list-style: none; padding: 0; }
-  #rendered ul li { padding: 5px 0 5px 20px; border-bottom: 1px solid #1a1a1a; position: relative; }
-  #rendered ul li::before { content: '→'; position: absolute; left: 0; color: var(--border); }
-  #rendered ul li:hover::before { color: var(--accent); }
-  #rendered code { background: #1e1e1e; padding: 1px 6px; border-radius: 3px; font-size: 12px; color: var(--accent2); }
-  #rendered strong { color: var(--text); }
-
-  /* search results mode */
-  #results { display: none; }
-  #results.active { display: block; }
-  #rendered.hidden { display: none; }
-
-  .result-item {
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-    animation: fadeIn 0.2s ease;
-  }
-
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-
-  .result-section {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 4px;
-  }
-
-  .result-title a {
-    color: var(--text);
-    font-size: 14px;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  .result-title a:hover { color: var(--accent); }
-
-  .result-desc { color: var(--muted); font-size: 12px; margin-top: 3px; }
-
-  mark {
-    background: rgba(200,241,53,0.2);
-    color: var(--accent);
-    border-radius: 2px;
-    padding: 0 2px;
-  }
-
-  .no-results {
-    text-align: center;
-    color: var(--muted);
-    padding: 60px 0;
-    font-size: 13px;
-  }
-
-  .no-results .big { font-family: var(--font-sans); font-size: 48px; display: block; margin-bottom: 12px; }
-
-  /* upload zone */
-  #dropzone {
-    border: 2px dashed var(--border);
-    border-radius: 8px;
-    padding: 60px 40px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    margin: 40px auto;
-    max-width: 500px;
-  }
-
-  #dropzone:hover, #dropzone.dragover {
-    border-color: var(--accent);
-    background: rgba(200,241,53,0.03);
-  }
-
-  #dropzone .icon { font-size: 48px; display: block; margin-bottom: 16px; }
-  #dropzone h2 { font-family: var(--font-sans); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
-  #dropzone p { color: var(--muted); font-size: 12px; margin-bottom: 20px; }
-
-  #loading {
-    text-align: center;
-    color: var(--muted);
-    padding: 80px 0;
-    font-size: 13px;
-  }
-
-  #error {
-    text-align: center;
-    color: #ff6b6b;
-    padding: 80px 40px;
-    font-size: 13px;
-    display: none;
-  }
-  #error .big { font-family: var(--font-sans); font-size: 40px; display: block; margin-bottom: 12px; }
-
-  @media (max-width: 700px) {
-    #sidebar { display: none; }
-    #content { padding: 24px 20px; }
-    #topbar { padding: 12px 16px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- Sidebar -->
-<nav id="sidebar">
-  <div id="sidebar-header">
-    <div class="label">awesome</div>
-    <h1 id="list-title">— no list loaded —</h1>
-  </div>
-  <div id="toc"></div>
-  <div id="stats">
-    <span id="stat-links">0</span> links · <span id="stat-sections">0</span> sections
-  </div>
-</nav>
-
-<!-- Main -->
-<div id="main">
-  <div id="topbar">
-    <div id="search-wrap">
-      <input id="search" type="text" placeholder="Search links, descriptions…" autocomplete="off" disabled>
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <div id="sidebar-header">
+      <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome logo">
+      <img src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" alt="CSS logo">
+      <h1 id="list-title">— no list loaded —</h1>
     </div>
-    <div id="search-count"></div>
-  </div>
+    <div id="toc"></div>
+    <div id="stats">
+      <span id="stat-links">0</span> links · <span id="stat-sections">0</span> sections
+    </div>
+  </nav>
 
-  <div id="content">
-    <div id="loading">loading README.md…</div>
-    <div id="error"><span class="big">⚠</span>Could not load <code>README.md</code>.<br>Make sure the file is in the same folder as this HTML.</div>
-
-    <!-- Rendered markdown (hidden until loaded) -->
-    <div id="rendered" class="hidden"></div>
-
-    <!-- Search results (hidden until searching) -->
-    <div id="results"></div>
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
-<script>
-// ── State ──
-let allItems = [];
-let fuse = null;
-
-// ── Load README.md from same folder ──
-async function init() {
-  try {
-    const res = await fetch('README.md');
-    if (!res.ok) throw new Error('not found');
-    const md = await res.text();
-    processMarkdown(md);
-  } catch {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('error').style.display = 'block';
-  }
-}
-
-init();
-
-// ── Process markdown ──
-function processMarkdown(md) {
-  // Hide loading, show content
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('rendered').classList.remove('hidden');
-
-  // Set title
-  const titleMatch = md.match(/^#\s+(.+)/m);
-  const title = titleMatch ? titleMatch[1] : 'README';
-  document.getElementById('list-title').textContent = title;
-  document.title = title;
-
-  // Render markdown
-  document.getElementById('rendered').innerHTML = marked.parse(md);
-
-  // Add IDs to h2 headings for anchor links
-  document.querySelectorAll('#rendered h2').forEach(h => {
-    const id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
-    h.id = id;
-  });
-
-  // Build TOC
-  buildTOC();
-
-  // Extract items for search
-  allItems = extractItems(md);
-  buildFuse();
-
-  // Stats
-  document.getElementById('stat-links').textContent = allItems.length;
-  document.getElementById('stat-sections').textContent =
-    document.querySelectorAll('#rendered h2').length;
-
-  // Enable search
-  document.getElementById('search').disabled = false;
-  document.getElementById('search').focus();
-}
-
-// ── TOC ──
-function buildTOC() {
-  const toc = document.getElementById('toc');
-  toc.innerHTML = '';
-  document.querySelectorAll('#rendered h2').forEach(h => {
-    const a = document.createElement('a');
-    a.className = 'toc-item';
-    a.href = '#' + h.id;
-    a.textContent = h.textContent;
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      clearSearch();
-      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-    toc.appendChild(a);
-  });
-
-  // Intersection observer for active TOC item
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        document.querySelectorAll('.toc-item').forEach(a => a.classList.remove('active'));
-        const active = toc.querySelector(`a[href="#${entry.target.id}"]`);
-        if (active) { active.classList.add('active'); active.scrollIntoView({ block:'nearest' }); }
-      }
-    });
-  }, { rootMargin: '-60px 0px -70% 0px' });
-
-  document.querySelectorAll('#rendered h2').forEach(h => observer.observe(h));
-}
-
-// ── Extract items from markdown ──
-function extractItems(md) {
-  const items = [];
-  let currentSection = '';
-  const lines = md.split('\n');
-  for (const line of lines) {
-    const h2 = line.match(/^##\s+(.+)/);
-    if (h2) { currentSection = h2[1].trim(); continue; }
-
-    // Match list items with links: - [Title](url) - description
-    const m = line.match(/^[-*]\s+\[([^\]]+)\]\(([^)]+)\)(.*)/);
-    if (m) {
-      const desc = m[3].replace(/^\s*[-–—]\s*/, '').trim();
-      items.push({ title: m[1], url: m[2], desc, section: currentSection });
-    }
-  }
-  return items;
-}
-
-// ── Fuse search ──
-function buildFuse() {
-  fuse = new Fuse(allItems, {
-    keys: [
-      { name: 'title', weight: 0.5 },
-      { name: 'desc', weight: 0.35 },
-      { name: 'section', weight: 0.15 }
-    ],
-    includeMatches: true,
-    threshold: 0.35,
-    minMatchCharLength: 2,
-  });
-}
-
-function highlight(text, matches, key) {
-  if (!matches || !text) return escapeHtml(text || '');
-  const m = matches.find(m => m.key === key);
-  if (!m) return escapeHtml(text);
-  let result = '';
-  let lastIdx = 0;
-  for (const [start, end] of m.indices) {
-    result += escapeHtml(text.slice(lastIdx, start));
-    result += '<mark>' + escapeHtml(text.slice(start, end + 1)) + '</mark>';
-    lastIdx = end + 1;
-  }
-  result += escapeHtml(text.slice(lastIdx));
-  return result;
-}
-
-function escapeHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// ── Search ──
-const searchInput = document.getElementById('search');
-const resultsEl = document.getElementById('results');
-const renderedEl = document.getElementById('rendered');
-const countEl = document.getElementById('search-count');
-
-searchInput.addEventListener('input', () => {
-  const q = searchInput.value.trim();
-  if (!q) { clearSearch(); return; }
-
-  const hits = fuse.search(q);
-  renderedEl.classList.add('hidden');
-  resultsEl.classList.add('active');
-
-  countEl.innerHTML = `<span class="num">${hits.length}</span> results`;
-
-  if (hits.length === 0) {
-    resultsEl.innerHTML = `<div class="no-results"><span class="big">¯\\_(ツ)_/¯</span>No results for "<strong>${escapeHtml(q)}</strong>"</div>`;
-    return;
-  }
-
-  resultsEl.innerHTML = hits.map(({ item, matches }) => `
-    <div class="result-item">
-      <div class="result-section">${escapeHtml(item.section)}</div>
-      <div class="result-title">
-        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-          ${highlight(item.title, matches, 'title')}
-        </a>
+  <!-- Main -->
+  <div id="main">
+    <div id="topbar">
+      <div id="search-wrap">
+        <input id="search" type="text" placeholder="Search links, descriptions…" autocomplete="off" disabled>
       </div>
-      ${item.desc ? `<div class="result-desc">${highlight(item.desc, matches, 'desc')}</div>` : ''}
+      <div id="search-count"></div>
     </div>
-  `).join('');
-});
 
-function clearSearch() {
-  searchInput.value = '';
-  resultsEl.classList.remove('active');
-  resultsEl.innerHTML = '';
-  renderedEl.classList.remove('hidden');
-  countEl.innerHTML = '';
-}
+    <div id="content">
+      <div id="loading">loading README.md</div>
+      <div id="error"><span class="big">⚠</span>Could not load <code>README.md</code>.<br>Make sure the file is in the same folder as this HTML.</div>
 
-// ESC clears search
-document.addEventListener('keydown', e => { if (e.key === 'Escape') clearSearch(); });
-</script>
-</body>
+      <!-- Rendered markdown (hidden until loaded) -->
+      <div id="rendered" class="hidden"></div>
+
+      <!-- Search results (hidden until searching) -->
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+  <script src="app/assets/js/test-mock.js"></script>
+  <script src="app/assets/js/app.js"></script>
+
+  </body>
 </html>
