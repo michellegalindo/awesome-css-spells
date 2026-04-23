@@ -51,115 +51,128 @@ Explore links by intent and ship better interfaces faster.
 <br/>
 
 # Layout & Positioning
-- [CSS Grid Playground](https://mozilladevelopers.github.io/playground/css-grid) - Prototype complex layouts quickly with live, browser-native grid behavior *(playground)*
-- [What The Flexbox?! with Wes Bos](https://flexbox.io) - Learn and apply flex patterns for robust horizontal and vertical layout composition *(course)*
-- [Learn CSS Grid with Wes Bos](https://cssgrid.io) - Pick up practical grid workflows that prevent alignment debt in production *(course)*
-- [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com) - Understand layout patterns that reduce fragile UI structure *(course)*
+- [CSS Grid Playground](https://mozilladevelopers.github.io/playground/css-grid) - Learn CSS Grid step by step with interactive browser-native demos and DevTools *(playground)*
+- [What The Flexbox?! with Wes Bos](https://flexbox.io) - Master Flexbox layout through free video lessons with real browser exercises *(course)*
+- [Learn CSS Grid with Wes Bos](https://cssgrid.io) - Master CSS Grid through free video lessons and hands-on layout projects *(course)*
+- [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com) - Develop a mental model for layout decisions with 70+ interactive written lessons *(course)*
 
 <br/>
 
 # Animation & Visual Effects
-- [Animista: On-Demand Animation Library](https://animista.net) - Drop in well-tested motion patterns instead of hand-coding every keyframe *(library)*
-- [Transition Cubic-Bezier Generator](https://cubic-bezier.com) - Shape natural transitions with mathematically smooth timing curves *(tool)*
-- [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Learn high-performance scroll storytelling patterns for long-form pages *(video)*
+- [Animista: On-Demand Animation Library](https://animista.net) - Pick, customize, and copy CSS animations without writing keyframes manually *(library)*
+- [Transition Cubic-Bezier Generator](https://cubic-bezier.com) - Craft and preview custom timing curves for smooth CSS transitions *(tool)*
+- [Scroll-driven Animations](https://scroll-driven-animations.style/) - Visualize and create declarative scroll-driven animations with interactive demos and tools *(tool)*
+- [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Master scroll-driven animations and performance patterns for modern web pages *(video)*
 
 <br/>
 
 # UI & Components
-- [Charts.css - Data visualization framework](https://chartscss.org) - Build accessible chart UIs with semantic CSS classes and no JS dependency *(library)*
+- [Charts.css - Data visualization framework](https://chartscss.org) - Render data charts with pure CSS classes applied to semantic HTML tables *(library)*
 
 <br/>
 
 # Forms & UX Patterns
-- No links yet in this section.
+- [CSS Forms Styling: Modern Patterns and Real-World Pitfalls](https://thelinuxcode.com/css-forms-styling-modern-patterns-practical-examples-and-realworld-pitfalls/) - Style inputs, checkboxes, and selects with reliable focus states, validation cues, and accessible layouts *(article)*
+- [Level Up Your Web Forms: A Modern CSS Styling Guide](https://codercrafter.in/blogs/level-up-your-web-forms-a-modern-css-styling-guide) - Build polished forms with focus rings, custom checkboxes, validation states, and Flexbox/Grid layout *(guide)*
 
 <br/>
 
 # Responsive Design
-- No links yet in this section.
+- [Responsive Web Design: A Complete Guide 2026](https://scrimba.com/articles/responsive-web-design-a-complete-guide-2026-2/) - Compare modern responsive techniques including container queries, clamp(), CSS Grid, and mobile-first strategy *(guide)*
+- [Complete Guide to Responsive Website Design in 2026](https://webcraftdev.com/en/blog/complete-guide-responsive-website-2026) - Apply auto-fit grids, fluid typography, container queries, and Core Web Vitals to real-world projects *(article)*
 
 <br/>
 
 # Architecture
 
 ## CSS Architecture
-- [Sass](https://sass-lang.com) - Standardize large stylesheets with maintainable variables, mixins, and partials *(preprocessor)*
-- [PostCSS](https://postcss.org) - Extend and transform CSS workflows using a precise plugin pipeline *(tool)*
+- [Sass](https://sass-lang.com) - Structure large stylesheets with variables, mixins, nesting, and file partials *(preprocessor)*
+- [PostCSS](https://postcss.org) - Transform and extend CSS using a composable plugin pipeline at build time *(tool)*
 
 ## Naming & Methodologies
-- [Understanding CSS Naming Conventions: BEM, OOCSS, SMACSS and SUIT CSS](https://www.frontendmentor.io/articles/understanding-css-naming-conventions-bem-oocss-smacss-and-suit-css-V6ZZUYs1xz) - Pick a naming strategy that keeps team CSS coherent at scale *(methodology)*
+- [Understanding CSS Naming Conventions: BEM, OOCSS, SMACSS and SUIT CSS](https://www.frontendmentor.io/articles/understanding-css-naming-conventions-bem-oocss-smacss-and-suit-css-V6ZZUYs1xz) - Compare to choose the right naming strategy *(methodology)*
 
 ## Design Systems
-- [Atomic Design by Brad Frost](https://atomicdesigncourse.com) - Build repeatable UI systems that scale from atoms to pages *(course)*
+- [Atomic Design by Brad Frost](https://atomicdesigncourse.com) - Design systems from atoms to templates using a composable component methodology *(course)*
 
 ## Large-scale CSS
-- No links yet in this section.
+- [CSS Architecture for Large Projects](https://codably.dev/frontend/css-architecture-for-large-projects) - Apply ITCSS, BEM, and component scoping to keep stylesheets maintainable and specificity-free as projects grow *(article)*
+- [The Art of CSS Architecture: Scalable Stylesheets for Enterprise](https://laur.design/blog/css-architecture-scalable-stylesheets/) - Implement CUBE CSS, design tokens, namespaced components, and living style guides in large applications *(article)*
 
 <br/>
 
 # Modern CSS
 
 ## Container Queries
-- No links yet in this section.
+- [CSS Container Queries Guide | design.dev](https://design.dev/guides/css-container-queries/) - Complete reference for building modular components that adapt to their container size with syntax, units, and patterns *(guide)*
+- [CSS container queries | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) - Official introduction to container size queries with naming contexts, container units, and progressive enhancement fallbacks *(reference)*
 
 ## Cascade Layers
-- No links yet in this section.
+- [Hello, CSS Cascade Layers by Ahmad Shadeed](https://ishadeed.com/article/cascade-layers/) - Learn how @layer controls cascade priority with use cases for theming, specificity control, and utility CSS *(article)*
+- [Cascade Layers Complete Guide | CSS-Tricks](https://css-tricks.com/css-cascade-layers) - Master cascade layers with full syntax reference, layer ordering, !important behavior, and real-world use cases *(guide)*
 
 ## Nesting
-- No links yet in this section.
+- [CSS Nesting: Complete Guide with Examples](https://devtoolbox.dedyn.io/blog/css-nesting-complete-guide) - Master native CSS nesting with the & selector, nested at-rules, specificity implications, and migration from Sass *(guide)*
+- [Nesting | web.dev Learn CSS](https://web.dev/learn/css/nesting) - Learn native CSS nesting from Google's structured curriculum covering selectors, combinators, and nested at-rules *(guide)*
 
 ## New Specs / Experimental
-- No links yet in this section.
+- [CSS Wrapped 2025 by Chrome Developers](https://chrome.dev/css-wrapped-2025/) - Recap the 22 CSS and UI improvements shipped in 2025 with live interactive examples *(reference)*
+- [CSS in 2025–2026: It's Getting Too Powerful](https://dev.to/pixelperfect_pro/css-in-2025-2026-its-getting-too-powerful-and-im-scared-2ej8) - Survey emerging features like if(), native masonry, anchor positioning, scroll-driven animations, and CSS mixins *(article)*
 
 <br/>
 
 # Frameworks
 
 ## CSS Frameworks
-- [Tailwind](https://tailwindcss.com) - Speed up production with composable utility classes *(framework)*
-- [Bulma](https://bulma.io) - Keep styling changes predictable using a clean, component-first model *(framework)*
-- [Milligram](https://milligram.io) - Reduce design overhead with minimal defaults that stay out of your way *(framework)*
-- [Pure.css](https://pure-css.github.io) - Deliver responsive UI modules with a deliberately tiny footprint *(framework)*
+- [Tailwind](https://tailwindcss.com) - Build UIs faster with utility classes without leaving your HTML *(framework)*
+- [Bulma](https://bulma.io) - Style modern interfaces with Flexbox-based components and zero JavaScript dependencies *(framework)*
+- [Milligram](https://milligram.io) - Ship clean layouts with minimal CSS defaults that never override your work *(framework)*
+- [Pure.css](https://pure-css.github.io) - Add responsive UI modules to any project with a tiny CSS payload *(framework)*
 
 ## CSS-in-JS
-- [Vanilla Extract](https://vanilla-extract.style) - Generate typed, scoped CSS from TypeScript with safe composition *(css-in-js)*
+- [Vanilla Extract](https://vanilla-extract.style) - Write type-safe, zero-runtime CSS in TypeScript with build-time scoped output *(library)*
 
 <br/>
 
 # Tooling
 
 ## Generators
-- [Gradient Generator](https://cssgradient.io) - Design gradient tokens fast with a clear visual editor *(generator)*
-- [Gradients Collection for UI](https://uigradients.com) - Explore vetted gradient styles for landing pages and dashboards *(inspiration)*
-- [GradientArt: Advanced Gradient Editor](https://gra.dient.art) - Fine-tune multi-stop gradients with precision controls *(generator)*
-- [Box Shadow Generator](https://box-shadow.dev) - Iterate on shadows with immediate, consistent previews *(generator)*
-- [Neumorphism Generator](https://neumorphism.io) - Experiment with soft surfaces and depth with one click *(generator)*
-- [Glassmorphism Generator](https://ui.glass/generator) - Prototype blurred glass motifs without guesswork *(generator)*
+- [Gradient Generator](https://cssgradient.io) - Create and copy custom CSS gradients with a live visual editor *(generator)*
+- [Gradients Collection for UI](https://uigradients.com) - Browse and copy curated gradient combinations ready for UI backgrounds *(generator)*
+- [GradientArt: Advanced Gradient Editor](https://gra.dient.art) - Build complex multi-stop CSS gradients with precise layer and blending controls *(generator)*
+- [Box Shadow Generator](https://box-shadow.dev) - Build and export box shadows visually with real-time layer previews *(generator)*
+- [Neumorphism Generator](https://neumorphism.io) - Generate soft-UI shadows for neumorphic CSS effects with live preview *(generator)*
+- [Glassmorphism Generator](https://ui.glass/generator) - Generate blur, transparency, and border CSS for glass-effect UI elements *(generator)*
 
 ## Debugging
-- [Can I Use - Browser Support](https://caniuse.com) - Validate CSS feature support before introducing risky dependencies *(debugging)*
-- [Specificity Calculator](https://design.dev/tools/specificity-calculator) - Resolve selector conflicts quickly and prevent override bugs *(debugging)*
+- [Can I Use - Browser Support](https://caniuse.com) - Check CSS and HTML feature support across every browser before shipping *(debugging)*
+- [Specificity Calculator](https://design.dev/tools/specificity-calculator) - Compare CSS selectors by specificity score to debug cascade conflicts *(debugging)*
 
 ## Utilities
-- No links yet in this section.
+- [Normalize.css](https://necolas.github.io/normalize.css/) - Make browsers render all elements consistently with a modern, HTML5-ready alternative to CSS resets *(tool)*
+- [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(generator)*
 
 <br/>
 
 # Performance & Optimization
-- No links yet in this section.
+- [CSS Performance Optimization | MDN](https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS) - Reduce render-blocking with critical CSS, minification, efficient selectors, and GPU-friendly animations *(guide)*
+- [CSS Optimization Guide 2025 | DEV Community](https://dev.to/satyam_gupta_0d1ff2152dcc/css-optimization-guide-2025-speed-up-your-website-best-practices-code-examples-31ib) - Apply content-visibility, PurgeCSS, contain-intrinsic-size, and critical CSS to speed up rendering *(article)*
 
 # Accessibility (a11y)
-- No links yet in this section.
+- [WebAIM: Accessible CSS](https://webaim.org/techniques/css/) - Apply CSS accessibly with :focus-visible, reading order alignment, and proper content/presentation separation *(guide)*
+- [Web Accessibility Complete Guide 2025: WCAG 2.2, ARIA, Keyboard Navigation](https://www.youngju.dev/blog/culture/2026-03-24-web-accessibility-a11y-wcag-developer-guide-2025.en) - Implement focus indicators, contrast ratios, keyboard navigation, and accessible forms following WCAG 2.2 *(guide)*
 
 # Learning & References
-- [Web.dev Learn CSS](https://web.dev/learn/css) - Follow a practical path from basics to modern CSS mastery *(guide)*
-- [CSS-Tricks Almanac](https://css-tricks.com/almanac) - Quick-reference deep dives for properties, units, and layout behaviors *(reference)*
-- [Smashing Magazine - CSS category](https://www.smashingmagazine.com/category/css) - Track current CSS thinking with high-quality practitioner writing *(news)*
-- [freeCodeCamp - CSS filter](https://www.freecodecamp.org/news/search?query=css) - Mine a broad CSS article feed for practical examples and tutorials *(news)*
-- [CSS Podcast by Una Kravets and Adam Argyle](https://thecsspodcast.libsyn.com) - Learn CSS tradeoffs through long-form engineering conversations *(podcast)*
-- [Syntax by Wes Bos and Scott Tolinski](https://syntax.fm) - Stay aligned with frontend tooling patterns that impact CSS workflows *(podcast)*
+- [Web.dev Learn CSS](https://web.dev/learn/css) - Work through structured CSS lessons from Google covering modern layout and cascade *(guide)*
+- [CSS-Tricks Almanac](https://css-tricks.com/almanac) - Look up any CSS property or selector with practical usage examples *(reference)*
+- [Smashing Magazine - CSS category](https://www.smashingmagazine.com/category/css) - Read in-depth CSS articles from practitioners covering modern patterns and techniques *(reference)*
+- [freeCodeCamp - CSS filter](https://www.freecodecamp.org/news/search?query=css) - Find practical CSS tutorials and step-by-step guides for all skill levels *(reference)*
+- [Bram.us](https://www.bram.us/) - Read deep-dive articles and experiments on modern CSS features like view transitions and scroll-driven animations by Bramus Van Damme *(reference)*
+- [CSS Podcast by Una Kravets and Adam Argyle](https://thecsspodcast.libsyn.com) - Deep-dive into CSS properties and features through conversational episodic breakdowns *(podcast)*
+- [Syntax by Wes Bos and Scott Tolinski](https://syntax.fm) - Stay current on frontend trends through a high-energy developer podcast *(podcast)*
 
 # Inspiration
-- No links yet in this section.
+- [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
+- [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(reference)*
 
 **[⬆ back to summary](#summary)**

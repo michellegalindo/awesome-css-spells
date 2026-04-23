@@ -1,0 +1,19 @@
+{
+  "name": "awesome-css",
+  "version": "0.1.0",
+  "description": "A curated list of awesome CSS resources",
+  "scripts": {
+    "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michellegalindo/awesome-css.git"
+  },
+  "author": "Michelle Galindo",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}

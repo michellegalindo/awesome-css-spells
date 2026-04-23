@@ -1,0 +1,17 @@
+---
+description: Validate Awesome CSS curation format and structure
+globs: "README.md"
+alwaysApply: false
+---
+
+# Validation Rules for README Curation
+
+Use this rule before editing `README.md`:
+- Use `.cursor/rules/curation.mdc` as the canonical curation policy.
+- Ensure all constraints, taxonomy, and formatting exactly match the rules defined in `.cursor/rules/curation.mdc`.
+- Do not duplicate rules here; always refer to the canonical policy.
+
+## Content Quality Validation
+- **High Quality Only:** Verify that the content is genuinely useful, accurate, and relevant to CSS.
+- **No Spam or Ads:** Reject links that are spam, low-effort content, or free blogs overwhelmed with advertisements.
+- **Safe Content:** Strictly refuse any malicious, suspicious, or unsafe links.

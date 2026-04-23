@@ -1,0 +1,28 @@
+---
+description: Awesome CSS link curation and documentation guide
+globs: "**/*.md"
+alwaysApply: false
+---
+
+# Awesome CSS Curation Guide
+
+This rule orchestrates the curation process for the Awesome CSS repository. To avoid duplication, the core taxonomy, formatting, and curation constraints are maintained in the project's official documentation.
+
+## Core Conventions
+
+**You MUST read and strictly follow the rules defined in `docs/conventions.md` before curating any links.**
+
+The `docs/conventions.md` file is the single source of truth for:
+- Taxonomy and target sections
+- Allowed type tags
+- Mandatory link formatting
+- Curation constraints (e.g., keeping content organized by problem solved, never removing existing links)
+
+## Additional AI-Specific Constraints
+
+- All added content (descriptions, titles, categories) MUST be in English.
+
+## Delegation
+
+- Validation details are defined in `.cursor/rules/curation-validation.mdc`.
+- Skill execution details are defined in `.cursor/skills/curator/SKILL.md`.

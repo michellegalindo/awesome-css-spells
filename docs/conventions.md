@@ -66,6 +66,7 @@
 - `(methodology)`
 - `(podcast)`
 - `(playground)`
+- `(preprocessor)`
 
 ## Naming and Consistency
 - Use consistent section and subsection names with the taxonomy above.
