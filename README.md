@@ -1,4 +1,4 @@
-# 🎨 Awesome CSS
+# Awesome CSS 🎨
 
 <img align="right" width="160" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
 
@@ -90,6 +90,8 @@ Add a snippet by opening a PR ❤️
 - [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE)
 
 ## Articles
+
+Add an article by opening a PR ❤️
 
 <br/>
 <br/>
