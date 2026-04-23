@@ -48,7 +48,7 @@
 - **Single Assignment**: If a link spans multiple categories, choose the single most practical option.
 - **Cleanup**: Remove empty, redundant, and duplicated sections.
 - **Formatting**: Keep markdown clean and readable, using bullets only.
-- **Descriptions**: Keep descriptions concise, practical, and opinionated.
+- **Descriptions**: Keep descriptions concise, practical, and opinionated. Maximum 110 characters — if longer, rewrite to fit rather than truncate.
 - **Type Tags**: Always include an inline type tag in italics at the end of each link.
 
 ## Link Format (Mandatory)
@@ -57,6 +57,8 @@
 - Example: `- [Flexbox Froggy](https://flexboxfroggy.com) - Learn Flexbox alignment through an interactive game *(playground)*`
 
 ## Allowed Type Tags
+
+### English (`README.md`)
 - `(tool)`
 - `(library)`
 - `(framework)`
@@ -70,6 +72,21 @@
 - `(podcast)`
 - `(playground)`
 - `(preprocessor)`
+
+### Portuguese (`README.pt-BR.md`)
+- `(ferramenta)`
+- `(biblioteca)`
+- `(framework)`
+- `(curso)`
+- `(vídeo)`
+- `(artigo)`
+- `(guia)`
+- `(referência)`
+- `(gerador)`
+- `(metodologia)`
+- `(podcast)`
+- `(playground)`
+- `(pré-processador)`
 
 ## Naming and Consistency
 - Use consistent section and subsection names with the taxonomy above.

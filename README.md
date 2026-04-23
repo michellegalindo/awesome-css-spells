@@ -1,13 +1,16 @@
 # Awesome CSS 🎨
 
-<img align="right" width="160" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
+<img align="right" width="204" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/michellegalindo/awesome-css)](#)
 
 <br/>
 
-A curated collection of CSS resources focused on solving real UI problems.  
+🌎 English · [🇧🇷 Português](README.pt-BR.md)
+
+CSS resources focused on solving real UI problems. <br/>
 Explore links by intent and ship better interfaces faster.
 
 #### 📌 State of CSS 2025: [https://2025.stateofcss.com](https://2025.stateofcss.com)
@@ -143,6 +146,7 @@ Explore links by intent and ship better interfaces faster.
 - [Box Shadow Generator](https://box-shadow.dev) - Build and export box shadows visually with real-time layer previews *(generator)*
 - [Neumorphism Generator](https://neumorphism.io) - Generate soft-UI shadows for neumorphic CSS effects with live preview *(generator)*
 - [Glassmorphism Generator](https://ui.glass/generator) - Generate blur, transparency, and border CSS for glass-effect UI elements *(generator)*
+- [CSS Generators: Your CSS code with less effort](https://css-generators.com) - A wide range of CSS Generators (as frames and shapes) to build the future of the web. *(generator)*
 
 ## Debugging
 - [Can I Use - Browser Support](https://caniuse.com) - Check CSS and HTML feature support across every browser before shipping *(debugging)*
@@ -174,6 +178,7 @@ Explore links by intent and ship better interfaces faster.
 - [Bram.us](https://www.bram.us/) - Read deep-dive articles and experiments on modern CSS features like view transitions and scroll-driven animations by Bramus Van Damme *(reference)*
 - [CSS Podcast by Una Kravets and Adam Argyle](https://thecsspodcast.libsyn.com) - Deep-dive into CSS properties and features through conversational episodic breakdowns *(podcast)*
 - [Syntax by Wes Bos and Scott Tolinski](https://syntax.fm) - Stay current on frontend trends through a high-energy developer podcast *(podcast)*
+- [Frontend Masters - CSS Courses](https://frontendmasters.com/courses/?c=courses&tg=css&dg=1) - Find Frontend Masters CSS courses from fundamentals to advanced UI layouts and animations *(course)*
 
 <br/>
 
