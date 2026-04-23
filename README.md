@@ -10,119 +10,95 @@
 CSS is more powerful than you think. This list proves it. <br/>
 A curated list of tools, articles, and inspiration for developers who care about great UI.
 
-### 📌 The State of CSS 2025: https://2025.stateofcss.com
+#### 📌 State of CSS 2025: [https://2025.stateofcss.com](https://2025.stateofcss.com)
 
 <br/>
 
 # Summary
 
-<details>
+<details open>
 <summary>View Summary</summary>
-  
-- [Tools](#Tools)
-- [Frameworks](#Frameworks)
-- [Boilerplates](#Boilerplates)
-- [Snippets](#Snippets)
-- [Websites](#Websites)
-- [Resources](#Resources)
-  - [News](#News)
-  - [Learning](#Learning)
-    - [Content](#Content)
-    - [Courses](#Courses)
-    - [Books](#Books)
-- [Articles](#Articles)
-  - [Design System](#Design-System)
-  - [Animation](#Animation)
-      
+
+- [Tools](#tools)
+  - [Visual Effects](#visual-effects)
+  - [Utilities](#utilities)
+- [Snippets](#snippets)
+- [Learning](#learning)
+  - [Guides & Docs](#guides--docs)
+  - [Courses](#courses)
+  - [Videos](#videos)
+  - [Articles](#articles)
+- [News](#news)
+- [Inspirations](#inspirations)
+
 </details>
-
-<br/>
-
-# Resources
-
-## News
-
-| Name | Source |
-| --- | --- |
-| Smashing Magazine - CSS | https://www.smashingmagazine.com/category/css |
-| Free Code Camp - CSS | https://www.freecodecamp.org/news/search?query=css |
-
-<br/>
-
-**[⬆ back to top](#summary)**
-
-<br/>
-
-## Learning
-
-### Content
-
-| Name | Source |
-| --- | --- |
-| Web.Dev Learn CSS | https://web.dev/learn/css |
-| CSS-Tricks Almanac | https://css-tricks.com/almanac |
-
-### Courses
-
-| Name | Source |
-| --- | --- |
-| Atomic Design | https://atomicdesigncourse.com |
-| The Layout Maestro | https://thelayoutmaestro.com |
-
-<br/>
-
-**[⬆ back to top](#summary)**
 
 <br/>
 
 # Tools
 
-| Name | Source | JS |
-| --- | --- | --- |
-| CSS Gradient Generator | [cssgradient.io](https://cssgradient.io/) | true |
-| UI Gradients | [uigradients.com](https://uigradients.com/) | true |
-| Khroma Gradient Generator | [Khroma](https://www.khroma.co/gradient) | true |
-| CSS3 Generator | [css3generator.com](https://css3generator.com/) | true |
-| Box Shadow Generator | [box-shadow.dev](https://box-shadow.dev/) | true |
-| Neumorphism | [neumorphism.io](https://neumorphism.io/) | true |
-| Animista | [animista.net](https://animista.net/) | true |
-| Cubic-Bezier | [cubic-bezier.com](https://cubic-bezier.com/) | true |
-| Can I Use | [caniuse.com](https://caniuse.com/) | true |
-| Specificity Calculator | [specificity.keegan.st](https://specificity.keegan.st/) | true |
+## Visual Effects
+- [Gradient Generator](https://cssgradient.io/)
+- [Gradients Collection for UI](https://uigradients.com/)
+- [Box Shadow Generator](https://box-shadow.dev/)
+- [Neumorphism Generator](https://neumorphism.io/)
+- [Animista: On-Demand Animation Library](https://animista.net/)
+- [Transition Cubic-Bezier Generator](https://cubic-bezier.com/)
+
+## Utilities
+- [Can I Use - Browser Support](https://caniuse.com)
+- [Specificity Calculator](https://design.dev/tools/specificity-calculator)
 
 <br/>
-
-**[⬆ back to top](#summary)**
-
-<br/>
-
-# Boilerplates
-
-| Name | Source | JS |
-| --- | --- | --- |
-| Tailwind CSS Starter Projects | [tailwindcss.com](https://tailwindcss.com/docs/installation) | false |
-| Modern CSS Reset | [Andy Bell](https://andy-bell.co/a-modern-css-reset/) | false |
-| Normalize.css | [necolas](https://necolas.github.io/normalize.css/) | false |
-| Pure CSS Boilerplate Starter | [Pure CSS](https://github.com/pure-css/pure) | false |
-
-<br/>
-
-**[⬆ back to top](#summary)**
-
 <br/>
 
 # Snippets
 
-| Name | Source | JS |
-| --- | --- | --- |
-| CSS Pen Collection | [CodePen](https://codepen.io/collection/everything/?type=css) | true |
-| CSS Tricks | [CodePen](https://codepen.io/trending?tag=css) | true |
-| CSS Templates | [CodeSandbox](https://codesandbox.io/search?query=css%20template&page=1&configure%5BhitsPerPage%5D=12) | true |
-| CSS Inspiration | [Codrops](https://tympanus.net/codrops/category/playground/) | true |
-| UI Components | [CodeMyUI](https://codemyui.com/) | false |
-| CSS Components | [CSS Scan](https://getcssscan.com/css-box-shadows-examples) | false |
-| 30 Seconds of CSS | [30 Seconds of Code](https://www.30secondsofcode.org/css/p/1/) | false |
+## CSS Only
+
+Add a snippet by opening a PR ❤️
+
+## With JS
+
+Add a snippet by opening a PR ❤️
 
 <br/>
+<br/>
 
-**[⬆ back to top](#summary)**
+# News
+
+- [Smashing Magazine - CSS category](https://www.smashingmagazine.com/category/css)
+- [freeCodeCamp - CSS filter](https://www.freecodecamp.org/news/search?query=css)
+
+<br/>
+<br/>
+
+# Learning
+
+## Guides & Docs
+
+- [Web.dev Learn CSS](https://web.dev/learn/css)
+- [CSS-Tricks Almanac](https://css-tricks.com/almanac)
+
+## Courses
+
+- [Atomic Design by Brad Frost](https://atomicdesigncourse.com)
+- [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com)
+
+## Videos
+
+- [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE)
+
+## Articles
+
+<br/>
+<br/>
+
+# Inspirations
+
+Add an inspiration by opening a PR ❤️
+
+<br/>
+<br/>
+
+**[⬆ back to summary](#summary)**
