@@ -17,15 +17,24 @@ init();
 function processMarkdown(md) {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('rendered').classList.remove('hidden');
-
-  const titleMatch = md.match(/^#\s+(.+)/m);
-  const title = titleMatch ? titleMatch[1] : 'README';
-  document.getElementById('list-title').textContent = title;
-  document.title = title;
-
   document.getElementById('rendered').innerHTML = marked.parse(md);
 
-  document.querySelectorAll('#rendered h2').forEach(h => {
+  const allHeadings = [...document.querySelectorAll('#rendered h1, #rendered h2')];
+  let firstH1 = true;
+  allHeadings.forEach(h => {
+    if (h.tagName === 'H1') {
+      if (firstH1) { firstH1 = false; return; }
+      const h2 = document.createElement('h2');
+      h2.innerHTML = h.innerHTML;
+      h.replaceWith(h2);
+    } else {
+      const h3 = document.createElement('h3');
+      h3.innerHTML = h.innerHTML;
+      h.replaceWith(h3);
+    }
+  });
+
+  document.querySelectorAll('#rendered h2, #rendered h3').forEach(h => {
     const id = h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-');
     h.id = id;
   });
@@ -37,7 +46,7 @@ function processMarkdown(md) {
 
   document.getElementById('stat-links').textContent = allItems.length;
   document.getElementById('stat-sections').textContent =
-    document.querySelectorAll('#rendered h2').length;
+    [...document.querySelectorAll('#rendered h2')].filter(h => h.textContent.trim() !== 'Summary').length;
 
   document.getElementById('search').disabled = false;
   document.getElementById('search').focus();
@@ -46,9 +55,12 @@ function processMarkdown(md) {
 function buildTOC() {
   const toc = document.getElementById('toc');
   toc.innerHTML = '';
-  document.querySelectorAll('#rendered h2').forEach(h => {
+  const sections = [...document.querySelectorAll('#rendered h2, #rendered h3')]
+    .filter(h => h.textContent.trim() !== 'Summary');
+
+  sections.forEach(h => {
     const a = document.createElement('a');
-    a.className = 'toc-item';
+    a.className = h.tagName === 'H3' ? 'toc-item toc-sub' : 'toc-item';
     a.href = '#' + h.id;
     a.textContent = h.textContent;
     a.addEventListener('click', e => {
@@ -69,14 +81,23 @@ function buildTOC() {
     });
   }, { rootMargin: '-60px 0px -70% 0px' });
 
-  document.querySelectorAll('#rendered h2').forEach(h => observer.observe(h));
+  sections.forEach(h => observer.observe(h));
 }
 
 function extractItems(md) {
   const items = [];
   let currentSection = '';
+  let firstH1Seen = false;
   const lines = md.split('\n');
   for (const line of lines) {
+    const h1 = line.match(/^#\s+(.+)/);
+    if (h1) {
+      if (!firstH1Seen) { firstH1Seen = true; continue; }
+      const name = h1[1].trim();
+      if (name !== 'Summary') currentSection = name;
+      continue;
+    }
+
     const h2 = line.match(/^##\s+(.+)/);
     if (h2) { currentSection = h2[1].trim(); continue; }
 
