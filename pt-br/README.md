@@ -8,7 +8,7 @@
 
 <br/>
 
-[🌎 English](https://github.com/michellegalindo/awesome-css#awesome-css-) · 🇧🇷 Português
+[🌎 English](https://github.com/michellegalindo/awesome-css#readme) · 🇧🇷 Português
 
 Recursos de CSS focados em resolver problemas reais de UI. <br/>
 Lista exclusivamente dedicada a materiais publicados em português.

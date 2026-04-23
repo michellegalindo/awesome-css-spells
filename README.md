@@ -8,7 +8,7 @@
 
 <br/>
 
-🌎 English · [🇧🇷 Português](README.pt-BR.md)
+🌎 English · [🇧🇷 Português](/pt-br/README.md)
 
 CSS resources focused on solving real UI problems. <br/>
 Explore links by intent and ship better interfaces faster.
