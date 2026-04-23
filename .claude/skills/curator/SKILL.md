@@ -35,12 +35,5 @@ npx tsx app/add_readme_resource.ts --link "https://..." [--description "Short pr
 
 ## Policy references
 
-- Curation policy: `.cursor/rules/curation.mdc`
-- Validation checklist: `.cursor/rules/curation-validation.mdc`
-- Claude Code instructions: `CLAUDE.md`
-
-## Validation behavior
-
-- Keep input requirements and allowed `--type` values aligned with `.cursor/rules/curation.mdc`.
-- Category inference and fallback behavior are implemented in `app/add_readme_resource.ts`.
-- Keep this file focused on execution; do not duplicate taxonomy or tag rules here.
+- Curation policy and taxonomy: `docs/conventions.md`
+- Full project instructions: `CLAUDE.md`
