@@ -56,7 +56,7 @@ blockquote {
 #logo {
   display: flex;
   justify-self: center;
-  width: 70%;
+  width: 120px;
   margin-bottom: 10px;
   rotate: -2deg;
 }
@@ -288,6 +288,7 @@ strong { color: var(--text); }
 #results { display: none; }
 #results.active { display: block; }
 #rendered.hidden { display: none; }
+#hero.hidden { display: none; }
 
 .result-item {
   padding: 16px 0;
@@ -372,7 +373,7 @@ mark {
   text-transform: uppercase;
   color: var(--text);
   line-height: 1.1;
-  font-size: 62px;
+  font-size: 58px;
   margin-bottom: 12px;
 }
 

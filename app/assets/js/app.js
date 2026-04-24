@@ -147,6 +147,7 @@ function escapeHtml(s) {
 const searchInput = document.getElementById('search');
 const resultsEl = document.getElementById('results');
 const renderedEl = document.getElementById('rendered');
+const heroEl = document.getElementById('hero');
 const countEl = document.getElementById('search-count');
 
 searchInput.addEventListener('input', () => {
@@ -155,6 +156,7 @@ searchInput.addEventListener('input', () => {
 
   const hits = fuse.search(q);
   renderedEl.classList.add('hidden');
+  heroEl.classList.add('hidden');
   resultsEl.classList.add('active');
 
   countEl.innerHTML = `<span class="num">${hits.length}</span> results`;
@@ -182,6 +184,7 @@ function clearSearch() {
   resultsEl.classList.remove('active');
   resultsEl.innerHTML = '';
   renderedEl.classList.remove('hidden');
+  heroEl.classList.remove('hidden');
   countEl.innerHTML = '';
 }
 
