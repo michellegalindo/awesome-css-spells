@@ -1,6 +1,6 @@
 const MOCK_MD = `# Awesome CSS 🎨
 
-<img align="right" width="204" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
+<img align="right" width="200" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
@@ -190,8 +190,4 @@ Empty. Add your contribution 💜
 
 - [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(reference)*
 - [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
-
-<br/>
-
-**[⬆ back to summary](#summary)**
 `;

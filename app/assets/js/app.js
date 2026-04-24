@@ -14,16 +14,21 @@ async function init() {
 
 init();
 
+function sliceContent(md) {
+  const lines = md.split('\n');
+  const skip = new Set(['Awesome CSS 🎨', 'Summary']);
+  const idx = lines.findIndex(l => /^#\s/.test(l) && !skip.has(l.replace(/^#\s+/, '').trim()));
+  return idx === -1 ? md : lines.slice(idx).join('\n');
+}
+
 function processMarkdown(md) {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('rendered').classList.remove('hidden');
-  document.getElementById('rendered').innerHTML = marked.parse(md);
+  document.getElementById('rendered').innerHTML = marked.parse(sliceContent(md));
 
   const allHeadings = [...document.querySelectorAll('#rendered h1, #rendered h2')];
-  let firstH1 = true;
   allHeadings.forEach(h => {
     if (h.tagName === 'H1') {
-      if (firstH1) { firstH1 = false; return; }
       const h2 = document.createElement('h2');
       h2.innerHTML = h.innerHTML;
       h.replaceWith(h2);
@@ -87,14 +92,11 @@ function buildTOC() {
 function extractItems(md) {
   const items = [];
   let currentSection = '';
-  let firstH1Seen = false;
-  const lines = md.split('\n');
+  const lines = sliceContent(md).split('\n');
   for (const line of lines) {
     const h1 = line.match(/^#\s+(.+)/);
     if (h1) {
-      if (!firstH1Seen) { firstH1Seen = true; continue; }
-      const name = h1[1].trim();
-      if (name !== 'Summary') currentSection = name;
+      currentSection = h1[1].trim();
       continue;
     }
 
@@ -184,3 +186,17 @@ function clearSearch() {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') clearSearch(); });
+
+const contentEl = document.getElementById('content');
+const topbarWrapEl = document.getElementById('topbar-wrap');
+let lastScrollY = 0;
+
+contentEl.addEventListener('scroll', () => {
+  const y = contentEl.scrollTop;
+  if (y > lastScrollY && y > 60) {
+    topbarWrapEl.classList.add('topbar--compact');
+  } else if (y < lastScrollY) {
+    topbarWrapEl.classList.remove('topbar--compact');
+  }
+  lastScrollY = y;
+});
