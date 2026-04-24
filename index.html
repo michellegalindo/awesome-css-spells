@@ -19,7 +19,10 @@
   <!-- Sidebar -->
   <nav id="sidebar">
     <div id="sidebar-header">
-      <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo">
+      <a class="logo-link" href="https://www.awesome-css.com/" alt="Home">
+        <img id="glasses" src="app/assets/images/awesome-glasses.png" alt="Awesome Glasses Symbol">
+        <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo">
+      </a>
       <!-- <h1 id="list-title">Awesome CSS</h1> -->
     </div>
     <div id="toc"></div>
@@ -30,20 +33,14 @@
 
   <!-- Main -->
   <div id="main">
-    <div id="contributors"></div>
     <div id="topbar-wrap">
       <div id="topbar">
         <div id="search-wrap">
-          <input id="search" type="text" placeholder="Search a reference…" autocomplete="off" disabled>
+          <input id="search" type="text" placeholder="Search…" autocomplete="off" disabled>
           <div id="search-count"></div>
         </div>
         <div id="topbar-links">
-          <a id="awesome-badge" href="https://github.com/sindresorhus/awesome">
-            <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome">
-          </a>
-          <a id="github-logo" href="https://github.com/michellegalindo/awesome-css">
-            <img alt="logo: GitHub" src="https://img.shields.io/badge/github-repo-blue?logo=github">
-          </a>
+          <p class="languages">🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
         </div>
       </div>
     </div>
@@ -54,29 +51,36 @@
       
       <!-- Hero -->
       <div id="hero">
-        <p class="tagline">REFERENCE LIBRARY FOR DEVS</p>
-        <h2>The Ultimate <br><span class="animated-text">CSS Resource</span><br> Collection.</h2>
+        <div class="hero-left">
+          <p class="tagline">REFERENCE LIBRARY FOR DEVELOPERS</p>
 
-        <blockquote>
-          <p>A curated list of awesome CSS frameworks, articles,<br> tools and much more. 
-            CSS resources focused on solving<br> real UI problems. 
-            Explore links by intent and ship better<br> interfaces faster.
-          </p>
-        </blockquote>
+          <h2>The Ultimate <span class="animated-text">CSS Resource</span> Collection.</h2>
 
-        <p class="badges">
-          <a href="https://github.com/sindresorhus/awesome">
-            <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome">
-          </a>
-          <a href="https://github.com/michellegalindo/awesome-css/commits/main">
-            <img src="https://img.shields.io/github/last-commit/michellegalindo/awesome-css" alt="Last Commit">
-          </a>
-          <a href="https://github.com/michellegalindo/awesome-css">
-            <img src="https://img.shields.io/badge/github-contribute-blue?logo=github" alt="GitHub Contribute Badge">
-          </a>
-        </p>
+          <blockquote>
+            <p>A curated list of awesome CSS frameworks, articles, tools and more.
+              Focused on solving real interfaces problems.
+              Find what you need faster and build better UI.
+            </p>
+          </blockquote>
 
-        <p>🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
+          <p class="languages">🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
+        </div>
+
+        <div class="hero-right">
+          <p class="contributors-label">Last Contributors</p>
+          <div id="contributors"></div>
+          <div class="badges">
+            <a href="https://github.com/sindresorhus/awesome">
+              <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome">
+            </a>
+            <a href="https://github.com/michellegalindo/awesome-css/commits/main">
+              <img src="https://img.shields.io/github/last-commit/michellegalindo/awesome-css" alt="Last Commit">
+            </a>
+            <a href="https://github.com/michellegalindo/awesome-css">
+              <img src="https://img.shields.io/badge/github-contribute-blue?logo=github" alt="GitHub Contribute Badge">
+            </a>
+          </div>
+        </div>
       </div>
 
       <!-- Rendered markdown (hidden until loaded) -->

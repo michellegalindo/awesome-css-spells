@@ -71,7 +71,8 @@ function buildTOC() {
     a.addEventListener('click', e => {
       e.preventDefault();
       clearSearch();
-      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const top = h.getBoundingClientRect().top - contentEl.getBoundingClientRect().top + contentEl.scrollTop - 80;
+      contentEl.scrollTo({ top, behavior: 'smooth' });
     });
     toc.appendChild(a);
   });
@@ -198,7 +199,7 @@ async function loadContributors() {
     const el = document.getElementById('contributors');
     el.innerHTML = contributors.map(c => `
       <a class="contributor-avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
-        <img src="${escapeHtml(c.avatar_url)}&s=56" alt="${escapeHtml(c.login)}" width="28" height="28">
+        <img src="${escapeHtml(c.avatar_url)}&s=96" alt="${escapeHtml(c.login)}" width="48" height="48">
       </a>
     `).join('');
   } catch (e) {
