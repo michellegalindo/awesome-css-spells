@@ -187,6 +187,24 @@ function clearSearch() {
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') clearSearch(); });
 
+async function loadContributors() {
+  try {
+    const res = await fetch('https://api.github.com/repos/michellegalindo/awesome-css/contributors?per_page=30&page=1');
+    if (!res.ok) return;
+    const contributors = await res.json();
+    const el = document.getElementById('contributors');
+    el.innerHTML = contributors.map(c => `
+      <a class="contributor-avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
+        <img src="${escapeHtml(c.avatar_url)}&s=56" alt="${escapeHtml(c.login)}" width="28" height="28">
+      </a>
+    `).join('');
+  } catch (e) {
+    console.error('[contributors]', e);
+  }
+}
+
+loadContributors();
+
 const contentEl = document.getElementById('content');
 const topbarWrapEl = document.getElementById('topbar-wrap');
 let lastScrollY = 0;
