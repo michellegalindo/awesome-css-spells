@@ -442,12 +442,18 @@ h2 {
   padding: 16px 0;
 }
 
-.languages {
+.languages, .languages-en {
   margin: 0;
   font-size: 13px;
 }
-.languages a {
+.languages a, .languages-en a {
   text-decoration: none;
+}
+.languages a:hover {
+  color: var(--accent3);
+}
+.languages-en a:hover {
+  color: var(--accent4);
 }
 
 #languages-mobile {
@@ -490,7 +496,7 @@ h2 {
 }
 
 .anchor-copy:hover {
-  color: var(--accent4);
+  color: var(--text);
 }
 
 .anchor-copy.copied {
@@ -784,6 +790,9 @@ mark {
   text-fill-color: transparent;
   background-size: 300% auto;
   animation: textShine 1.3s linear infinite alternate;
+}
+.animated-text-br {
+  filter: hue-rotate(160deg) brightness(1.3);
 }
 @keyframes textShine {
   0% {

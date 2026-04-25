@@ -1,4 +1,4 @@
-# Awesome CSS 🎨
+# Awesome CSS
 
 <img align="right" width="204" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
 
@@ -55,31 +55,31 @@ Lista exclusivamente dedicada a materiais publicados em português.
 
 # Layout e Posicionamento
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Animação e Efeitos Visuais
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # UI e Componentes
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Formulários e Padrões de UX
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Design Responsivo
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
@@ -87,19 +87,19 @@ Contribua para esta categoria 💜
 
 ## Arquitetura CSS
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Nomenclatura e Metodologias
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Design Systems
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## CSS em Larga Escala
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
@@ -107,19 +107,19 @@ Contribua para esta categoria 💜
 
 ## Container Queries
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Cascade Layers
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Nesting (Aninhamento)
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Novas Especificações / Experimental
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
@@ -127,11 +127,11 @@ Contribua para esta categoria 💜
 
 ## Frameworks CSS
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## CSS-in-JS
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
@@ -139,40 +139,36 @@ Contribua para esta categoria 💜
 
 ## Geradores
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Depuração (Debug)
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 ## Utilitários
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Performance e Otimização
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Acessibilidade (a11y)
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Aprendizado e Referências
 
-Contribua para esta categoria 💜
+Contribua para esta categoria 💚
 
 <br/>
 
 # Inspiração
 
-Contribua para esta categoria 💜
-
-<br/>
-
-**[⬆ voltar ao sumário](#sumário)**
+Contribua para esta categoria 💚

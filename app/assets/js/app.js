@@ -2,7 +2,8 @@ let allItems = [];
 let fuse = null;
 
 async function init() {
-  const res = await fetch("README.md");
+  const base = location.href.endsWith("/") ? location.href : location.href + "/";
+  const res = await fetch(new URL("README.md", base).href);
   if (!res.ok) return;
   const md = await res.text();
   processMarkdown(md);
@@ -12,7 +13,7 @@ init();
 
 function sliceContent(md) {
   const lines = md.split("\n");
-  const skip = new Set(["Awesome CSS", "Summary"]);
+  const skip = new Set(["Awesome CSS", "Summary", "Sumário"]);
   const idx = lines.findIndex((l) => /^#\s/.test(l) && !skip.has(l.replace(/^#\s+/, "").trim()));
   return idx === -1 ? md : lines.slice(idx).join("\n");
 }
@@ -79,6 +80,16 @@ function processMarkdown(md) {
     h.id = id;
   });
 
+  buildTOC();
+
+  allItems = extractItems(md);
+  buildFuse();
+
+  document.getElementById("stat-links").textContent = allItems.length;
+  document.getElementById("stat-sections").textContent = [
+    ...document.querySelectorAll("#rendered h2"),
+  ].filter((h) => h.textContent.trim() !== "Summary").length;
+
   document.querySelectorAll("#rendered h2").forEach((h) => {
     const btn = document.createElement("button");
     btn.className = "anchor-copy";
@@ -92,16 +103,6 @@ function processMarkdown(md) {
     });
     h.appendChild(btn);
   });
-
-  buildTOC();
-
-  allItems = extractItems(md);
-  buildFuse();
-
-  document.getElementById("stat-links").textContent = allItems.length;
-  document.getElementById("stat-sections").textContent = [
-    ...document.querySelectorAll("#rendered h2"),
-  ].filter((h) => h.textContent.trim() !== "Summary").length;
 
   document.getElementById("search").disabled = false;
   document.getElementById("search").focus();

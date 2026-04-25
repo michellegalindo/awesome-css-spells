@@ -9,26 +9,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,200..800;1,200..800&family=Oswald:wght@500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@500&display=swap"
     />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="app/assets/css/style.css" />
+    <link rel="icon" type="image/png" href="../favicon.png" />
+    <link rel="stylesheet" href="../app/assets/css/style.css" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
-    <script defer src="app/assets/js/app.js"></script>
+    <script defer src="../app/assets/js/app.js"></script>
   </head>
 
   <body>
     <div id="container">
       <nav id="sidebar">
         <div id="sidebar-header">
-          <a class="logo-link" href="https://www.awesome-css.com/" alt="Home">
+          <a class="logo-link" href="/pt-br" alt="Home">
             <img
               id="glasses"
-              src="app/assets/images/awesome-glasses.png"
+              src="../app/assets/images/awesome-glasses.png"
               alt="Awesome Glasses Symbol"
             />
-            <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo" />
+            <img
+              id="logo"
+              src="../app/assets/images/awesome-css-logo-md.png"
+              alt="Awesome CSS Logo"
+            />
           </a>
           <h1 class="sr-only">Awesome CSS — A Coleção Definitiva de Recursos CSS</h1>
         </div>
@@ -52,43 +56,40 @@
               ☰
             </button>
             <div id="search-wrap">
-              <input id="search" type="text" placeholder="Search…" autocomplete="off" disabled />
+              <input id="search" type="text" placeholder="Buscar…" autocomplete="off" disabled />
               <div id="search-count"></div>
             </div>
             <div id="topbar-links">
-              <p class="languages"><a href="/">🌎 English</a> | 🇧🇷 Português</p>
+              <p class="languages-en"><a href="/">🌎 English</a> | 🇧🇷 Português</p>
             </div>
           </div>
         </section>
 
         <div id="content">
-          <div id="loading">loading README.md</div>
-          <div id="error">
-            <span class="big">⚠</span>Não foi possível carregar
-            <code>README.md</code>.<br />Certifique-se de que o arquivo está na mesma pasta que este
-            HTML.
-          </div>
-
           <section id="hero">
             <div class="hero-left">
-              <p class="tagline">Coleção de Referências para Desenvolvedores</p>
+              <p class="tagline">Referências para Desenvolvedores</p>
 
-              <h2>The Ultimate <span class="animated-text">CSS Resource</span> Collection.</h2>
+              <h2>
+                A Lista BR Definitiva de
+                <span class="animated-text animated-text-br">Recursos CSS</span>.
+              </h2>
 
               <blockquote>
                 <p>
-                  A curated list of awesome CSS frameworks, articles, tools and more. Focused on
-                  solving real interfaces problems. Find what you need faster and build better UI.
+                  Uma curadoria de frameworks, ferramentas e referências em CSS — organizada para
+                  resolver problemas reais de interface. Encontre o que precisa e construa UIs
+                  melhores.
                 </p>
               </blockquote>
 
-              <p id="languages-mobile" class="languages">
-                🌎 English · <a href="/pt-br">🇧🇷 Português</a>
+              <p id="languages-mobile" class="languages-en">
+                <a href="/">🌎 English</a> · 🇧🇷 Português
               </p>
             </div>
 
             <div class="hero-right">
-              <p class="contributors-label">Last Contributors</p>
+              <p class="contributors-label">Últimos Contribuidores</p>
               <div id="contributors"></div>
               <div class="badges">
                 <a href="https://github.com/sindresorhus/awesome">
@@ -105,7 +106,7 @@
                 </a>
                 <a href="https://github.com/michellegalindo/awesome-css">
                   <img
-                    src="https://img.shields.io/badge/github-contribute-blue?logo=github"
+                    src="https://img.shields.io/badge/github-contribua-blue?logo=github"
                     alt="GitHub Contribute Badge"
                   />
                 </a>
@@ -113,6 +114,13 @@
               </div>
             </div>
           </section>
+
+          <div id="loading">carregando README.md</div>
+          <div id="error">
+            <span class="big">⚠</span>Não foi possível carregar
+            <code>README.md</code>.<br />Certifique-se de que o arquivo está na mesma pasta que este
+            HTML.
+          </div>
 
           <!-- Rendered markdown (hidden until loaded) -->
           <section id="rendered" class="hidden"></section>
@@ -122,7 +130,7 @@
 
           <footer id="footer">
             <p>
-              © 2026 <a href="https://github.com/michellegalindo">michellegalindo</a> — MIT License
+              © 2026 <a href="https://github.com/michellegalindo">@michellegalindo</a> — MIT License
             </p>
           </footer>
         </div>
