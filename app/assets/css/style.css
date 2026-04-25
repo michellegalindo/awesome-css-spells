@@ -3,9 +3,9 @@
   --surface: #161616;
   --border: #252525;
   --accent: #b59ef4;
-  --accent2: #d1afca;
-  --accent3: #a6c54a;
-  --accent4: #68bdf0;
+  --accent2: #d5aacd;
+  --accent3: #a6bf5b;
+  --accent4: #73bfef;
   --text: #fff;
   --muted: #999;
   --muted2: #454545;
@@ -30,6 +30,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background: var(--accent);
+  color: #0f0f0f;
 }
 
 html {
@@ -190,13 +195,13 @@ blockquote {
 
 .toc-item:hover {
   color: var(--text);
-  border-left-color: var(--border);
+  border-left-color: var(--muted2);
 }
 .toc-item.active {
-  color: var(--accent2);
+  color: var(--text);
   border-left-color: var(--accent4);
   background: #73cbff10;
-  font-weight: 400;
+  font-weight: 500;
 }
 .toc-item.toc-sub {
   font-size: 12px;
@@ -204,7 +209,7 @@ blockquote {
   text-transform: none;
 }
 .toc-item.toc-sub.active {
-  color: var(--accent3);
+  color: var(--text);
   border-left-color: var(--accent4);
 }
 
@@ -231,6 +236,31 @@ blockquote {
 
 #contributors:empty {
   display: none;
+}
+
+.confetti-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
+}
+
+.confetti-particle {
+  position: absolute;
+  pointer-events: none;
+  animation: confetti-burst ease-out forwards;
+}
+
+@keyframes confetti-burst {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(var(--rotate));
+    opacity: 0;
+  }
 }
 
 .contributors-label {
@@ -399,7 +429,6 @@ h2 {
   color: var(--accent2);
   margin: 40px 0 16px;
   padding-top: 40px;
-  border-top: 1px solid var(--border);
   scroll-margin-top: 60px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -408,7 +437,7 @@ h3 {
   font-family: var(--font-sans);
   font-size: 22px;
   font-weight: 700;
-  color: var(--accent3);
+  color: var(--muted3);
   margin: 24px 0 10px;
 }
 p {
@@ -427,7 +456,6 @@ a {
 }
 a:hover {
   color: var(--accent3);
-  text-decoration-color: var(--accent4);
 }
 ul {
   list-style: none;
@@ -439,44 +467,53 @@ ul li {
   justify-content: left;
   gap: 12px;
   color: #aaa;
-  margin-bottom: 8px;
-  padding: 8px 8px 8px 44px;
-  border-bottom: 0.5px solid var(--border);
   position: relative;
-  border-radius: 4px;
 }
 ul li:hover {
   background-color: var(--surface);
 }
 ul li::before {
-  content: "→";
+  content: "🔗";
   position: absolute;
   left: 8px;
-  top: calc(50% - 20px);
-  font-size: 22px;
+  top: calc(50% - 12px);
+  font-size: 16px;
   color: var(--muted2);
 }
-ul li:hover::before {
-  color: var(--accent);
-  left: 14px;
-  transition: left 0.2s ease-in-out;
+ul li > a {
+  display: block;
+  flex: 1;
+  text-decoration: none;
+  padding: 12px 8px 12px 44px;
+  border-bottom: 0.5px solid var(--border);
 }
-ul li a {
-  color: var(--text);
-  font-weight: 700;
+ul li > a .li-title {
+  font-weight: 800;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border);
+  transition:
+    color 0.15s,
+    text-decoration-color 0.15s;
+}
+ul li:hover > a .li-title {
+  color: var(--accent4);
+  text-decoration-color: var(--accent);
+}
+ul li > a .li-desc {
+  color: var(--muted3);
+  font-weight: 200;
 }
 .reference-tag {
-  flex-shrink: 0;
-  align-self: end;
+  display: inline-block;
   font-size: 11px;
   color: var(--accent);
-  border: 1px solid var(--accent);
+  border: 0.5px solid var(--accent);
   border-radius: 3px;
   padding: 0 5px;
   font-weight: 400;
   white-space: nowrap;
-  margin-bottom: 4px;
+  vertical-align: text-bottom;
 }
 code {
   background: #1e1e1e;
@@ -632,6 +669,25 @@ mark {
   padding: 16px 16px 20px 40px;
   border: 1px solid var(--border);
   border-radius: 4px;
+  position: relative;
+}
+
+#confetti-trigger {
+  align-self: end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  opacity: 0.8;
+  transition: opacity 0.15s, transform 0.15s;
+  line-height: 1;
+  margin-left: 4px;
+}
+
+#confetti-trigger:hover {
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 #hero h2 {
@@ -650,8 +706,8 @@ mark {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-  background-size: 250% auto;
-  animation: textShine 2s ease infinite alternate;
+  background-size: 300% auto;
+  animation: textShine 1.3s linear infinite alternate;
 }
 @keyframes textShine {
   0% {
@@ -670,13 +726,16 @@ mark {
 }
 
 .badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
   padding-top: 20px;
   margin-top: 20px;
   border-top: 1px solid var(--border);
-}
-.badges 8 {
   text-decoration: none;
 }
+
 .badges a:hover {
   text-decoration: none;
 }
@@ -695,9 +754,6 @@ mark {
 #footer a:hover {
   color: var(--accent);
   text-decoration: underline;
-  transition:
-    color 0.3s cubic-bezier(0.31, 0.06, 0.82, 0.34),
-    text-decoration-color 0.3s cubic-bezier(0.31, 0.06, 0.82, 0.34);
 }
 
 @media (max-width: 900px) {

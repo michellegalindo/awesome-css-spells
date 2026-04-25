@@ -23,23 +23,39 @@ function processMarkdown(md) {
   const raw = marked.parse(sliceContent(md));
   const processed = raw
     .replace(/<a href="(?!#)([^"]*)"/g, '<a href="$1" target="_blank" rel="noopener"')
-    .replace(/<\/a> - /g, " 🔗</a><br>")
+    .replace(/<\/a> - /g, "</a><br>")
     .replace(/<em>\(([^)]+)\)<\/em>/g, '<span class="reference-tag">$1</span>');
   document.getElementById("rendered").innerHTML = processed;
 
   document.querySelectorAll("#rendered li").forEach((li) => {
     const tag = li.querySelector(".reference-tag");
     if (!tag) return;
-    const body = document.createElement("div");
-    while (li.firstChild !== tag) body.appendChild(li.firstChild);
-    li.insertBefore(body, tag);
 
-    const a = li.querySelector("a[href]");
-    if (!a) return;
-    li.addEventListener("click", (e) => {
-      if (e.target.closest("a")) return;
-      window.open(a.href, "_blank", "noopener");
-    });
+    const innerA = li.querySelector("a[href]");
+    if (!innerA) return;
+
+    const outerA = document.createElement("a");
+    outerA.href = innerA.href;
+    outerA.target = innerA.target;
+    outerA.rel = innerA.rel;
+
+    const title = document.createElement("span");
+    title.className = "li-title";
+    while (innerA.firstChild) title.appendChild(innerA.firstChild);
+    outerA.appendChild(title);
+    innerA.remove();
+
+    if (li.firstChild !== tag && li.firstChild.nodeName === "BR") {
+      outerA.appendChild(li.firstChild);
+    }
+
+    const desc = document.createElement("span");
+    desc.className = "li-desc";
+    while (li.firstChild !== tag) desc.appendChild(li.firstChild);
+    if (desc.hasChildNodes()) outerA.appendChild(desc);
+
+    outerA.appendChild(tag);
+    li.appendChild(outerA);
   });
 
   const allHeadings = [...document.querySelectorAll("#rendered h1, #rendered h2")];
@@ -261,6 +277,101 @@ async function loadContributors() {
 }
 
 loadContributors();
+
+function initConfetti() {
+  const el = document.querySelector(".hero-right");
+  if (!el) return;
+
+  const colors = [
+    "#fc7972",
+    "#fd76a8",
+    "#f87be6",
+    "#cc8ff7",
+    "#74b9ff",
+    "#55efc4",
+    "#ffeaa7",
+    "#fd79a8",
+  ];
+  let firing = false;
+
+  function getOrCreateCanvas() {
+    let canvas = el.querySelector(".confetti-canvas");
+    if (!canvas) {
+      canvas = document.createElement("div");
+      canvas.className = "confetti-canvas";
+      el.appendChild(canvas);
+    }
+    return canvas;
+  }
+
+  function fireworks() {
+    const canvas = getOrCreateCanvas();
+    const cx = Math.random() * el.offsetWidth;
+    const cy = Math.random() * el.offsetHeight;
+    const count = 22;
+
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement("div");
+      particle.className = "confetti-particle";
+
+      const isCircle = Math.random() > 0.78;
+      const w = 5 + Math.random() * 8;
+      const h = isCircle ? w : 2 + Math.random() * 3;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.25;
+      const speed = 70 + Math.random() * 110;
+      const dx = Math.cos(angle) * speed;
+      const dy = Math.sin(angle) * speed;
+      const rotate = (Math.random() > 0.5 ? 1 : -1) * (120 + Math.random() * 360);
+      const duration = 0.45 + Math.random() * 0.35;
+
+      particle.style.cssText = `
+        left:${cx}px;top:${cy}px;
+        width:${w}px;height:${h}px;
+        background:${color};
+        border-radius:${isCircle ? "50%" : "2px"};
+        animation-duration:${duration}s;
+        --dx:${dx}px;--dy:${dy}px;--rotate:${rotate}deg;
+      `;
+
+      canvas.appendChild(particle);
+      particle.addEventListener("animationend", () => particle.remove(), { once: true });
+    }
+  }
+
+  function burst(remaining) {
+    if (remaining === 0) {
+      firing = false;
+      return;
+    }
+    fireworks();
+    setTimeout(() => burst(remaining - 1), 550);
+  }
+
+  const STORAGE_KEY = "confetti_seen";
+  const ONE_DAY_MS = 86_400_000;
+
+  function hasSeenRecently() {
+    const ts = localStorage.getItem(STORAGE_KEY);
+    return ts && Date.now() - Number(ts) < ONE_DAY_MS;
+  }
+
+  el.addEventListener("mouseenter", () => {
+    if (firing || hasSeenRecently()) return;
+    firing = true;
+    localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    burst(5);
+  });
+
+  document.getElementById("confetti-trigger").addEventListener("click", () => {
+    if (firing) return;
+    firing = true;
+    localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    burst(5);
+  });
+}
+
+initConfetti();
 
 const contentEl = document.getElementById("content");
 const topbarWrapEl = document.getElementById("topbar-wrap");
