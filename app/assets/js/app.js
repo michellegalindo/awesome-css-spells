@@ -381,14 +381,19 @@ initConfetti();
 const menuToggleEl = document.getElementById("menu-toggle");
 const sidebarEl = document.getElementById("sidebar");
 const backdropEl = document.getElementById("sidebar-backdrop");
+const glassesEl = document.getElementById("glasses");
+let glassesTimeout = null;
 
 function openMenu() {
   sidebarEl.classList.add("open");
   backdropEl.classList.add("visible");
   menuToggleEl.setAttribute("aria-expanded", "true");
+  glassesTimeout = setTimeout(() => glassesEl.classList.add("visible"), 320);
 }
 
 function closeMenu() {
+  clearTimeout(glassesTimeout);
+  glassesEl.classList.remove("visible");
   sidebarEl.classList.remove("open");
   backdropEl.classList.remove("visible");
   menuToggleEl.setAttribute("aria-expanded", "false");
