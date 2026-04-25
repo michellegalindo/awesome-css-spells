@@ -12,7 +12,7 @@ init();
 
 function sliceContent(md) {
   const lines = md.split('\n');
-  const skip = new Set(['Awesome CSS 🎨', 'Summary']);
+  const skip = new Set(['Awesome CSS', 'Summary']);
   const idx = lines.findIndex(l => /^#\s/.test(l) && !skip.has(l.replace(/^#\s+/, '').trim()));
   return idx === -1 ? md : lines.slice(idx).join('\n');
 }
@@ -22,7 +22,7 @@ function processMarkdown(md) {
   document.getElementById('rendered').classList.remove('hidden');
   const raw = marked.parse(sliceContent(md));
   const processed = raw
-    .replace(/<\/a> - /g, '</a><br>')
+    .replace(/<\/a> - /g, ' 🔗</a><br>')
     .replace(/<em>\(([^)]+)\)<\/em>/g, '<span class="reference-tag">$1</span>');
   document.getElementById('rendered').innerHTML = processed;
 
@@ -30,7 +30,6 @@ function processMarkdown(md) {
     const tag = li.querySelector('.reference-tag');
     if (!tag) return;
     const body = document.createElement('div');
-    body.className = 'li-body';
     while (li.firstChild !== tag) body.appendChild(li.firstChild);
     li.insertBefore(body, tag);
   });

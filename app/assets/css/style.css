@@ -336,16 +336,16 @@ ul li {
   gap: 12px;
   color: #aaa;
   margin-bottom: 8px;
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 44px;
   border-bottom: 0.5px solid var(--border);
   position: relative;
   border-radius: 4px;
 }
 ul li:hover { background-color: var(--surface) }
-ul li::before { content: '→'; position: absolute; left: 12px; top: 2px; font-size: 20px; color: var(--muted2); }
-ul li:hover::before { color: var(--accent); }
+ul li::before { content: '→'; position: absolute; left: 8px; top: calc(50% - 20px); font-size: 22px; color: var(--muted2); }
+ul li:hover::before { color: var(--accent); left: 14px; transition: left 0.2s ease-in-out; }
 ul li a{ color: var(--text); font-weight: 700; text-decoration: underline; }
-.reference-tag { flex-shrink: 0; align-self: center; font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0 5px; font-weight: 400; white-space: nowrap; }
+.reference-tag { flex-shrink: 0; align-self: end; font-size: 11px; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px; padding: 0 5px; font-weight: 400; white-space: nowrap; margin-bottom: 4px; }
 code { background: #1e1e1e; padding: 1px 6px; border-radius: 3px; font-size: 14px; color: var(--accent2); }
 strong { color: var(--text); }
 
