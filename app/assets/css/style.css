@@ -84,7 +84,9 @@ blockquote {
 #sidebar-header {
   padding: 24px 20px 24px;
   border-bottom: 1px solid var(--border);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #glasses {
@@ -116,8 +118,6 @@ blockquote {
 }
 
 #logo {
-  display: flex;
-  justify-self: center;
   width: 120px;
   margin-bottom: 10px;
   transform: rotate(-3deg);
@@ -225,6 +225,18 @@ blockquote {
 }
 #stats span#stat-sections {
   color: var(--accent4);
+}
+
+/* ── Sidebar backdrop (mobile overlay) ── */
+#sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 199;
+}
+#sidebar-backdrop.visible {
+  display: block;
 }
 
 /* ── Contributors ── */
@@ -375,6 +387,23 @@ blockquote {
   color: var(--muted);
 }
 
+#menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--muted);
+  padding: 0;
+  flex-shrink: 0;
+  transition: color 0.15s;
+  user-select: none;
+}
+#menu-toggle:hover {
+  color: var(--text);
+}
+
 #search-count {
   position: absolute;
   right: 24px;
@@ -432,6 +461,41 @@ h2 {
   scroll-margin-top: 60px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.anchor-copy {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--muted2);
+  padding: 0 2px;
+  opacity: 0;
+  transition:
+    opacity 0.15s,
+    color 0.15s;
+  line-height: 1;
+  flex-shrink: 0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+#rendered h2:hover .anchor-copy {
+  opacity: 1;
+}
+
+.anchor-copy:hover {
+  color: var(--accent4);
+}
+
+.anchor-copy.copied {
+  color: var(--accent3);
+  opacity: 1;
 }
 h3 {
   font-family: var(--font-sans);
@@ -484,10 +548,12 @@ ul li > a {
   display: block;
   flex: 1;
   text-decoration: none;
+  cursor: pointer;
   padding: 12px 8px 12px 44px;
   border-bottom: 0.5px solid var(--border);
 }
-ul li > a .li-title {
+ul li > a .li-title,
+.result-link .li-title {
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -500,7 +566,12 @@ ul li:hover > a .li-title {
   color: var(--accent4);
   text-decoration-color: var(--accent);
 }
-ul li > a .li-desc {
+.result-item:hover .result-link .li-title {
+  color: var(--text);
+  text-decoration-color: var(--accent);
+}
+ul li > a .li-desc,
+.result-link .li-desc {
   color: var(--muted3);
   font-weight: 200;
 }
@@ -540,9 +611,27 @@ strong {
 }
 
 .result-item {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
+  position: relative;
   animation: fadeIn 0.2s ease;
+}
+.result-item::before {
+  content: "🔗";
+  position: absolute;
+  left: 8px;
+  top: calc(50% - 12px);
+  font-size: 16px;
+  color: var(--muted2);
+  pointer-events: none;
+}
+.result-item:hover {
+  background-color: var(--surface);
+}
+.result-link {
+  display: block;
+  text-decoration: none;
+  padding: 12px 8px 12px 44px;
+  border-bottom: 0.5px solid var(--border);
+  cursor: pointer;
 }
 
 @keyframes fadeIn {
@@ -557,28 +646,13 @@ strong {
 }
 
 .result-section {
+  display: block;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 4px;
-}
-
-.result-title a {
-  color: var(--text);
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 500;
-}
-.result-title a:hover {
-  color: var(--accent);
-}
-
-.result-desc {
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: 3px;
+  margin-bottom: 2px;
 }
 
 mark {
@@ -680,7 +754,9 @@ mark {
   font-size: 18px;
   padding: 0;
   opacity: 0.8;
-  transition: opacity 0.15s, transform 0.15s;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
   line-height: 1;
   margin-left: 4px;
 }
@@ -764,7 +840,19 @@ mark {
 
 @media (max-width: 700px) {
   #sidebar {
-    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+  #sidebar.open {
+    transform: translateX(0);
+  }
+  #menu-toggle {
+    display: block;
   }
   #content {
     padding: 24px 20px;

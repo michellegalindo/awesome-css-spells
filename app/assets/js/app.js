@@ -79,6 +79,20 @@ function processMarkdown(md) {
     h.id = id;
   });
 
+  document.querySelectorAll("#rendered h2").forEach((h) => {
+    const btn = document.createElement("button");
+    btn.className = "anchor-copy";
+    btn.textContent = "#";
+    btn.setAttribute("aria-label", "Copy link to section");
+    btn.addEventListener("click", () => {
+      navigator.clipboard.writeText(`${location.origin}${location.pathname}#${h.id}`).then(() => {
+        btn.classList.add("copied");
+        setTimeout(() => btn.classList.remove("copied"), 1500);
+      });
+    });
+    h.appendChild(btn);
+  });
+
   buildTOC();
 
   allItems = extractItems(md);
@@ -156,8 +170,11 @@ function extractItems(md) {
 
     const m = line.match(/^[-*]\s+\[([^\]]+)\]\(([^)]+)\)(.*)/);
     if (m) {
-      const desc = m[3].replace(/^\s*[-–—]\s*/, "").trim();
-      items.push({ title: m[1], url: m[2], desc, section: currentSection });
+      const raw = m[3].replace(/^\s*[-–—]\s*/, "").trim();
+      const tagMatch = raw.match(/^(.*?)\s*\*\(([^)]+)\)\*\s*$/);
+      const desc = tagMatch ? tagMatch[1].trim() : raw;
+      const tag = tagMatch ? tagMatch[2] : null;
+      items.push({ title: m[1], url: m[2], desc, tag, section: currentSection });
     }
   }
   return items;
@@ -225,19 +242,19 @@ searchInput.addEventListener("input", () => {
   }
 
   resultsEl.innerHTML = hits
-    .map(
-      ({ item, matches }) => `
+    .map(({ item, matches }) => {
+      const tagHtml = item.tag ? `<span class="reference-tag">${escapeHtml(item.tag)}</span>` : "";
+      return `
     <div class="result-item">
-      <div class="result-section">${escapeHtml(item.section)}</div>
-      <div class="result-title">
-        <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-          ${highlight(item.title, matches, "title")}
-        </a>
-      </div>
-      ${item.desc ? `<div class="result-desc">${highlight(item.desc, matches, "desc")}</div>` : ""}
+      <a class="result-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
+        <span class="result-section">${escapeHtml(item.section)}</span>
+        <span class="li-title">${highlight(item.title, matches, "title")}</span><br>
+        ${item.desc ? `<span class="li-desc">${highlight(item.desc, matches, "desc")}</span>` : ""}
+        ${tagHtml}
+      </a>
     </div>
-  `
-    )
+  `;
+    })
     .join("");
 });
 
@@ -251,7 +268,10 @@ function clearSearch() {
 }
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") clearSearch();
+  if (e.key === "Escape") {
+    clearSearch();
+    closeMenu();
+  }
 });
 
 async function loadContributors() {
@@ -348,30 +368,40 @@ function initConfetti() {
     setTimeout(() => burst(remaining - 1), 550);
   }
 
-  const STORAGE_KEY = "confetti_seen";
-  const ONE_DAY_MS = 86_400_000;
-
-  function hasSeenRecently() {
-    const ts = localStorage.getItem(STORAGE_KEY);
-    return ts && Date.now() - Number(ts) < ONE_DAY_MS;
-  }
-
-  el.addEventListener("mouseenter", () => {
-    if (firing || hasSeenRecently()) return;
-    firing = true;
-    localStorage.setItem(STORAGE_KEY, String(Date.now()));
-    burst(5);
-  });
-
   document.getElementById("confetti-trigger").addEventListener("click", () => {
     if (firing) return;
     firing = true;
-    localStorage.setItem(STORAGE_KEY, String(Date.now()));
     burst(5);
   });
 }
 
 initConfetti();
+
+const menuToggleEl = document.getElementById("menu-toggle");
+const sidebarEl = document.getElementById("sidebar");
+const backdropEl = document.getElementById("sidebar-backdrop");
+
+function openMenu() {
+  sidebarEl.classList.add("open");
+  backdropEl.classList.add("visible");
+  menuToggleEl.setAttribute("aria-expanded", "true");
+}
+
+function closeMenu() {
+  sidebarEl.classList.remove("open");
+  backdropEl.classList.remove("visible");
+  menuToggleEl.setAttribute("aria-expanded", "false");
+}
+
+menuToggleEl.addEventListener("click", () => {
+  sidebarEl.classList.contains("open") ? closeMenu() : openMenu();
+});
+
+backdropEl.addEventListener("click", closeMenu);
+
+document.getElementById("toc").addEventListener("click", (e) => {
+  if (e.target.closest(".toc-item")) closeMenu();
+});
 
 const contentEl = document.getElementById("content");
 const topbarWrapEl = document.getElementById("topbar-wrap");
