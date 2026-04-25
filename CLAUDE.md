@@ -92,10 +92,10 @@ Before editing `README.md` or `README.pt-BR.md`:
 
 ## Development Standards
 
-- **Package manager:** use `yarn` (lockfile exists)
+- **Package manager:** use `npm` (package-lock.json exists)
 - **Branches:** never work directly on `main`; create a branch before starting (`feat/`, `fix/`, `docs/`, etc.)
 - **Commits:** semantic, in English, imperative mood, max 72 chars (`feat:`, `fix:`, `docs:`, `chore:`, etc.)
 - **Merge:** Squash & Merge preferred
 - **No code comments** — code should be self-explanatory
 - **No tool signatures or credits** in code, comments, or UI
-- Run `yarn lint --fix` after changes if linting is configured
+- Run `npm run format` after changes to keep formatting consistent

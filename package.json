@@ -4,7 +4,9 @@
   "description": "A curated list of awesome CSS resources",
   "scripts": {
     "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts",
-    "start": "npx serve ."
+    "start": "npx serve .",
+    "format": "prettier --write \"**/*.{js,ts,html,css}\"",
+    "format:check": "prettier --check \"**/*.{js,ts,html,css}\""
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "prettier": "^3.8.3",
     "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   }

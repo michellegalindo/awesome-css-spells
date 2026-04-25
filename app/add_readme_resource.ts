@@ -1,92 +1,96 @@
-import { parseArgs } from 'node:util';
-import { readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { parseArgs } from "node:util";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
-const SUPPORTED_LANGUAGES = ['en', 'pt-BR'] as const;
+const SUPPORTED_LANGUAGES = ["en", "pt-BR"] as const;
 type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
 const README_BY_LANG: Record<SupportedLanguage, string> = {
-  en: 'README.md',
-  'pt-BR': 'README.pt-BR.md',
+  en: "README.md",
+  "pt-BR": "README.pt-BR.md",
 };
 
 const EN_TO_PT_TYPE: Record<string, string> = {
-  tool: 'ferramenta',
-  library: 'biblioteca',
-  framework: 'framework',
-  course: 'curso',
-  video: 'vídeo',
-  article: 'artigo',
-  guide: 'guia',
-  reference: 'referência',
-  generator: 'gerador',
-  methodology: 'metodologia',
-  podcast: 'podcast',
-  playground: 'playground',
-  preprocessor: 'pré-processador',
+  tool: "ferramenta",
+  library: "biblioteca",
+  framework: "framework",
+  course: "curso",
+  video: "vídeo",
+  article: "artigo",
+  guide: "guia",
+  reference: "referência",
+  generator: "gerador",
+  methodology: "metodologia",
+  podcast: "podcast",
+  playground: "playground",
+  preprocessor: "pré-processador",
 };
 
 const EN_TO_PT_CATEGORY: Record<string, string> = {
-  'Layout & Positioning': 'Layout e Posicionamento',
-  'Animation & Visual Effects': 'Animação e Efeitos Visuais',
-  'UI & Components': 'UI e Componentes',
-  'Forms & UX Patterns': 'Formulários e Padrões de UX',
-  'Responsive Design': 'Design Responsivo',
-  'CSS Architecture': 'Arquitetura CSS',
-  'Naming & Methodologies': 'Nomenclatura e Metodologias',
-  'Design Systems': 'Design Systems',
-  'Large-scale CSS': 'CSS em Larga Escala',
-  'Container Queries': 'Container Queries',
-  'Cascade Layers': 'Cascade Layers',
-  'Nesting': 'Nesting (Aninhamento)',
-  'New Specs / Experimental': 'Novas Especificações / Experimental',
-  'CSS Frameworks': 'Frameworks CSS',
-  'CSS-in-JS': 'CSS-in-JS',
-  'Generators': 'Geradores',
-  'Debugging': 'Depuração (Debug)',
-  'Utilities': 'Utilitários',
-  'Performance & Optimization': 'Performance e Otimização',
-  'Accessibility (a11y)': 'Acessibilidade (a11y)',
-  'Learning & References': 'Aprendizado e Referências',
-  'Inspiration': 'Inspiração',
+  "Layout & Positioning": "Layout e Posicionamento",
+  "Animation & Visual Effects": "Animação e Efeitos Visuais",
+  "UI & Components": "UI e Componentes",
+  "Forms & UX Patterns": "Formulários e Padrões de UX",
+  "Responsive Design": "Design Responsivo",
+  "CSS Architecture": "Arquitetura CSS",
+  "Naming & Methodologies": "Nomenclatura e Metodologias",
+  "Design Systems": "Design Systems",
+  "Large-scale CSS": "CSS em Larga Escala",
+  "Container Queries": "Container Queries",
+  "Cascade Layers": "Cascade Layers",
+  Nesting: "Nesting (Aninhamento)",
+  "New Specs / Experimental": "Novas Especificações / Experimental",
+  "CSS Frameworks": "Frameworks CSS",
+  "CSS-in-JS": "CSS-in-JS",
+  Generators: "Geradores",
+  Debugging: "Depuração (Debug)",
+  Utilities: "Utilitários",
+  "Performance & Optimization": "Performance e Otimização",
+  "Accessibility (a11y)": "Acessibilidade (a11y)",
+  "Learning & References": "Aprendizado e Referências",
+  Inspiration: "Inspiração",
 };
 
 function inferEnCategory(text: string): string {
   const lower = text.toLowerCase();
-  if (lower.includes('grid') || lower.includes('flexbox') || lower.includes('layout')) {
-    return 'Layout & Positioning';
+  if (lower.includes("grid") || lower.includes("flexbox") || lower.includes("layout")) {
+    return "Layout & Positioning";
   }
-  if (lower.includes('animation') || lower.includes('transition') || lower.includes('scroll-driven')) {
-    return 'Animation & Visual Effects';
+  if (
+    lower.includes("animation") ||
+    lower.includes("transition") ||
+    lower.includes("scroll-driven")
+  ) {
+    return "Animation & Visual Effects";
   }
-  if (lower.includes('form') || lower.includes('input') || lower.includes('checkbox')) {
-    return 'Forms & UX Patterns';
+  if (lower.includes("form") || lower.includes("input") || lower.includes("checkbox")) {
+    return "Forms & UX Patterns";
   }
-  if (lower.includes('responsive') || lower.includes('media query')) {
-    return 'Responsive Design';
+  if (lower.includes("responsive") || lower.includes("media query")) {
+    return "Responsive Design";
   }
-  if (lower.includes('container quer')) {
-    return 'Container Queries';
+  if (lower.includes("container quer")) {
+    return "Container Queries";
   }
-  if (lower.includes('layer')) {
-    return 'Cascade Layers';
+  if (lower.includes("layer")) {
+    return "Cascade Layers";
   }
-  if (lower.includes('nesting')) {
-    return 'Nesting';
+  if (lower.includes("nesting")) {
+    return "Nesting";
   }
-  if (lower.includes('tailwind') || lower.includes('framework')) {
-    return 'CSS Frameworks';
+  if (lower.includes("tailwind") || lower.includes("framework")) {
+    return "CSS Frameworks";
   }
-  if (lower.includes('generator')) {
-    return 'Generators';
+  if (lower.includes("generator")) {
+    return "Generators";
   }
-  if (lower.includes('performance') || lower.includes('optimiz')) {
-    return 'Performance & Optimization';
+  if (lower.includes("performance") || lower.includes("optimiz")) {
+    return "Performance & Optimization";
   }
-  if (lower.includes('a11y') || lower.includes('accessib')) {
-    return 'Accessibility (a11y)';
+  if (lower.includes("a11y") || lower.includes("accessib")) {
+    return "Accessibility (a11y)";
   }
-  return 'Learning & References';
+  return "Learning & References";
 }
 
 const DESCRIPTION_MAX_LENGTH = 110;
@@ -101,9 +105,13 @@ function isDescriptionPoor(description: string, title?: string): boolean {
 
 function validateDescriptionLength(description: string): void {
   if (description.length <= DESCRIPTION_MAX_LENGTH) return;
-  console.error(`Error: Description exceeds ${DESCRIPTION_MAX_LENGTH} characters (${description.length} chars).`);
+  console.error(
+    `Error: Description exceeds ${DESCRIPTION_MAX_LENGTH} characters (${description.length} chars).`
+  );
   console.error(`  Current : "${description}"`);
-  console.error(`  Action  : Rewrite it to answer "What problem does this resource solve?" within ${DESCRIPTION_MAX_LENGTH} characters, then re-run with --description "rewritten version".`);
+  console.error(
+    `  Action  : Rewrite it to answer "What problem does this resource solve?" within ${DESCRIPTION_MAX_LENGTH} characters, then re-run with --description "rewritten version".`
+  );
   process.exit(1);
 }
 
@@ -112,21 +120,21 @@ function extractMetaDescription(html: string): string | undefined {
     html.match(/<meta[^>]*name="description"[^>]*content="([^"]+)"[^>]*>/i) ||
     html.match(/<meta[^>]*content="([^"]+)"[^>]*name="description"[^>]*>/i) ||
     html.match(/<meta[^>]*property="og:description"[^>]*content="([^"]+)"[^>]*>/i);
-  return match ? match[1].trim().replace(/\n/g, ' ') : undefined;
+  return match ? match[1].trim().replace(/\n/g, " ") : undefined;
 }
 
 function detectLangFromResponse(html: string, headers: Headers): SupportedLanguage | null {
-  const contentLang = headers.get('content-language');
+  const contentLang = headers.get("content-language");
   if (contentLang) {
-    if (contentLang.toLowerCase().startsWith('pt')) return 'pt-BR';
-    if (contentLang.toLowerCase().startsWith('en')) return 'en';
+    if (contentLang.toLowerCase().startsWith("pt")) return "pt-BR";
+    if (contentLang.toLowerCase().startsWith("en")) return "en";
   }
 
   const htmlLangMatch = html.match(/<html[^>]*\slang="([^"]+)"/i);
   if (htmlLangMatch) {
     const lang = htmlLangMatch[1].toLowerCase();
-    if (lang.startsWith('pt')) return 'pt-BR';
-    if (lang.startsWith('en')) return 'en';
+    if (lang.startsWith("pt")) return "pt-BR";
+    if (lang.startsWith("en")) return "en";
   }
 
   return null;
@@ -135,37 +143,38 @@ function detectLangFromResponse(html: string, headers: Headers): SupportedLangua
 async function main() {
   const { values } = parseArgs({
     options: {
-      link: { type: 'string' },
-      description: { type: 'string' },
-      title: { type: 'string' },
-      type: { type: 'string', default: 'guide' },
-      category: { type: 'string' },
-      lang: { type: 'string' },
-      'description-from-internet': { type: 'string', default: 'true' },
+      link: { type: "string" },
+      description: { type: "string" },
+      title: { type: "string" },
+      type: { type: "string", default: "guide" },
+      category: { type: "string" },
+      lang: { type: "string" },
+      "description-from-internet": { type: "string", default: "true" },
     },
     strict: false,
   });
 
   const link = values.link as string | undefined;
   if (!link) {
-    console.error('Error: --link is required.');
+    console.error("Error: --link is required.");
     process.exit(1);
   }
 
   const rawLang = values.lang as string | undefined;
   if (rawLang && !SUPPORTED_LANGUAGES.includes(rawLang as SupportedLanguage)) {
     console.error(
-      `Error: Language "${rawLang}" is not supported. Only "en" and "pt-BR" are accepted.`,
+      `Error: Language "${rawLang}" is not supported. Only "en" and "pt-BR" are accepted.`
     );
     process.exit(1);
   }
 
   let title = values.title as string | undefined;
   let description = values.description as string | undefined;
-  const fetchFromInternet = values['description-from-internet'] === 'true';
+  const fetchFromInternet = values["description-from-internet"] === "true";
   let lang = rawLang as SupportedLanguage | undefined;
 
-  const needsFetch = fetchFromInternet && (!lang || !description || isDescriptionPoor(description, title));
+  const needsFetch =
+    fetchFromInternet && (!lang || !description || isDescriptionPoor(description, title));
 
   if (needsFetch) {
     try {
@@ -178,7 +187,7 @@ async function main() {
         description = fetchedDescription;
       } else if (isDescriptionPoor(description, title) && fetchedDescription) {
         console.warn(
-          `Warning: Provided description is too short or generic. Enriching with metadata from the URL.`,
+          `Warning: Provided description is too short or generic. Enriching with metadata from the URL.`
         );
         console.warn(`  Original : "${description}"`);
         console.warn(`  Enriched : "${fetchedDescription}"`);
@@ -189,7 +198,7 @@ async function main() {
         const detected = detectLangFromResponse(html, response.headers);
         if (!detected) {
           console.error(
-            `Error: Could not detect language from "${link}". Only English and Portuguese (pt-BR) are accepted. Use --lang en or --lang pt-BR.`,
+            `Error: Could not detect language from "${link}". Only English and Portuguese (pt-BR) are accepted. Use --lang en or --lang pt-BR.`
           );
           process.exit(1);
         }
@@ -202,23 +211,23 @@ async function main() {
   }
 
   if (!lang) {
-    console.error(
-      `Error: Language could not be determined. Use --lang en or --lang pt-BR.`,
-    );
+    console.error(`Error: Language could not be determined. Use --lang en or --lang pt-BR.`);
     process.exit(1);
   }
 
   if (!title) {
-    console.error('Error: --title is required. Copying the page <title> is no longer supported; provide a curated title manually.');
+    console.error(
+      "Error: --title is required. Copying the page <title> is no longer supported; provide a curated title manually."
+    );
     process.exit(1);
   }
 
   const readmeFile = README_BY_LANG[lang];
 
-  description = description || 'No description provided.';
+  description = description || "No description provided.";
   validateDescriptionLength(description);
-  const rawType = (values.type as string | undefined) || 'guide';
-  const type = lang === 'pt-BR' ? (EN_TO_PT_TYPE[rawType] ?? rawType) : rawType;
+  const rawType = (values.type as string | undefined) || "guide";
+  const type = lang === "pt-BR" ? (EN_TO_PT_TYPE[rawType] ?? rawType) : rawType;
 
   let enCategory = values.category as string | undefined;
   if (!enCategory) {
@@ -226,14 +235,14 @@ async function main() {
     console.log(`Inferred category: ${enCategory}`);
   }
 
-  const category = lang === 'pt-BR' ? (EN_TO_PT_CATEGORY[enCategory] ?? enCategory) : enCategory;
+  const category = lang === "pt-BR" ? (EN_TO_PT_CATEGORY[enCategory] ?? enCategory) : enCategory;
 
   const readmePath = join(process.cwd(), readmeFile);
-  let readmeContent = readFileSync(readmePath, 'utf-8');
+  let readmeContent = readFileSync(readmePath, "utf-8");
 
   const categoryRegex = new RegExp(
-    `^(#+)\\s+${category.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`,
-    'im',
+    `^(#+)\\s+${category.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`,
+    "im"
   );
   const match = readmeContent.match(categoryRegex);
 
@@ -269,11 +278,9 @@ async function main() {
   const newEntry = `\n- [${title}](${link}) - ${description} *(${type})*`;
 
   readmeContent =
-    readmeContent.substring(0, insertIndex) +
-    newEntry +
-    readmeContent.substring(insertIndex);
+    readmeContent.substring(0, insertIndex) + newEntry + readmeContent.substring(insertIndex);
 
-  writeFileSync(readmePath, readmeContent, 'utf-8');
+  writeFileSync(readmePath, readmeContent, "utf-8");
   console.log(`Successfully added "${title}" to category "${category}" in ${readmeFile}.`);
 }
 
