@@ -7,99 +7,92 @@
     <title>Awesome CSS • The Ultimate CSS Resource Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@500&display=swap">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="app/assets/css/style.css">
-    <style>
-      :root { --font-display: 'Oswald', Georgia, serif; }
-    </style>
   </head>
 
   <body>
-
-  <!-- Sidebar -->
-  <nav id="sidebar">
-    <div id="sidebar-header">
-      <a class="logo-link" href="https://www.awesome-css.com/" alt="Home">
-        <img id="glasses" src="app/assets/images/awesome-glasses.png" alt="Awesome Glasses Symbol">
-        <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo">
-      </a>
-      <!-- <h1 id="list-title">Awesome CSS</h1> -->
-    </div>
-    <div id="toc"></div>
-    <div id="stats">
-      <span id="stat-links">0</span> references · <span id="stat-sections">0</span> categories
-    </div>
-  </nav>
-
-  <!-- Main -->
-  <div id="main">
-    <div id="topbar-wrap">
-      <div id="topbar">
-        <div id="search-wrap">
-          <input id="search" type="text" placeholder="Search…" autocomplete="off" disabled>
-          <div id="search-count"></div>
+    <div id="container">
+      <nav id="sidebar">
+        <div id="sidebar-header">
+          <a class="logo-link" href="https://www.awesome-css.com/" alt="Home">
+            <img id="glasses" src="app/assets/images/awesome-glasses.png" alt="Awesome Glasses Symbol">
+            <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo">
+          </a>
+          <!-- <h1 id="list-title">Awesome CSS</h1> -->
         </div>
-        <div id="topbar-links">
-          <p class="languages">🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
+        <div id="toc"></div>
+        <div id="stats">
+          <span id="stat-links">0</span> references · <span id="stat-sections">0</span> categories
         </div>
-      </div>
-    </div>
+      </nav>
 
-    <div id="content">
-      <div id="loading">loading README.md</div>
-      <div id="error"><span class="big">⚠</span>Could not load <code>README.md</code>.<br>Make sure the file is in the same folder as this HTML.</div>
-      
-      <!-- Hero -->
-      <div id="hero">
-        <div class="hero-left">
-          <p class="tagline">REFERENCE LIBRARY FOR DEVELOPERS</p>
-
-          <h2>The Ultimate <span class="animated-text">CSS Resource</span> Collection.</h2>
-
-          <blockquote>
-            <p>A curated list of awesome CSS frameworks, articles, tools and more.
-              Focused on solving real interfaces problems.
-              Find what you need faster and build better UI.
-            </p>
-          </blockquote>
-
-          <p class="languages">🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
-        </div>
-
-        <div class="hero-right">
-          <p class="contributors-label">Last Contributors</p>
-          <div id="contributors"></div>
-          <div class="badges">
-            <a href="https://github.com/sindresorhus/awesome">
-              <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome">
-            </a>
-            <a href="https://github.com/michellegalindo/awesome-css/commits/main">
-              <img src="https://img.shields.io/github/last-commit/michellegalindo/awesome-css" alt="Last Commit">
-            </a>
-            <a href="https://github.com/michellegalindo/awesome-css">
-              <img src="https://img.shields.io/badge/github-contribute-blue?logo=github" alt="GitHub Contribute Badge">
-            </a>
+      <div id="main">
+        <section id="topbar-wrap">
+          <div id="topbar">
+            <div id="search-wrap">
+              <input id="search" type="text" placeholder="Search…" autocomplete="off" disabled>
+              <div id="search-count"></div>
+            </div>
+            <div id="topbar-links">
+              <p class="languages">🌎 English | <a href="/pt-br">🇧🇷 Português</a></p>
+            </div>
           </div>
+        </section>
+
+        <div id="content">
+          <div id="loading">loading README.md</div>
+          <div id="error"><span class="big">⚠</span>Could not load <code>README.md</code>.<br>Make sure the file is in the same folder as this HTML.</div>
+          
+          <section id="hero">
+            <div class="hero-left">
+              <p class="tagline">REFERENCE LIBRARY FOR DEVELOPERS</p>
+
+              <h2>The Ultimate <span class="animated-text">CSS Resource</span> Collection.</h2>
+
+              <blockquote>
+                <p>A curated list of awesome CSS frameworks, articles, tools and more.
+                  Focused on solving real interfaces problems.
+                  Find what you need faster and build better UI.
+                </p>
+              </blockquote>
+
+              <p id="languages-mobile" class="languages">🌎 English · <a href="/pt-br">🇧🇷 Português</a></p>
+            </div>
+
+            <div class="hero-right">
+              <p class="contributors-label">Last Contributors</p>
+              <div id="contributors"></div>
+              <div class="badges">
+                <a href="https://github.com/sindresorhus/awesome">
+                  <img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" alt="Awesome">
+                </a>
+                <a href="https://github.com/michellegalindo/awesome-css/commits/main">
+                  <img src="https://img.shields.io/github/last-commit/michellegalindo/awesome-css" alt="Last Commit">
+                </a>
+                <a href="https://github.com/michellegalindo/awesome-css">
+                  <img src="https://img.shields.io/badge/github-contribute-blue?logo=github" alt="GitHub Contribute Badge">
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Rendered markdown (hidden until loaded) -->
+          <section id="rendered" class="hidden"></section>
+
+          <!-- Search results (hidden until searching) -->
+          <section id="results"></section>
+
+          <footer id="footer">
+            <p>© 2026 <a href="https://github.com/michellegalindo">michellegalindo</a> — MIT License</p>
+          </footer>
         </div>
       </div>
-
-      <!-- Rendered markdown (hidden until loaded) -->
-      <div id="rendered" class="hidden"></div>
-
-      <!-- Search results (hidden until searching) -->
-      <div id="results"></div>
-
-      <!-- Footer -->
-      <div id="footer">
-        <p>© 2026 <a href="https://github.com/michellegalindo">michellegalindo</a> — MIT License</p>
-      </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
-  <script src="app/assets/js/test-mock.js"></script>
-  <script src="app/assets/js/app.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
+    <script src="app/assets/js/app.js"></script>
   </body>
 </html>

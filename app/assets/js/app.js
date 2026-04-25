@@ -2,14 +2,10 @@ let allItems = [];
 let fuse = null;
 
 async function init() {
-  try {
-    const res = await fetch('README.md');
-    if (!res.ok) throw new Error('not found');
-    const md = await res.text();
-    processMarkdown(md);
-  } catch {
-    processMarkdown(MOCK_MD);
-  }
+  const res = await fetch('README.md');
+  if (!res.ok) return;
+  const md = await res.text();
+  processMarkdown(md);
 }
 
 init();
@@ -24,7 +20,20 @@ function sliceContent(md) {
 function processMarkdown(md) {
   document.getElementById('loading').style.display = 'none';
   document.getElementById('rendered').classList.remove('hidden');
-  document.getElementById('rendered').innerHTML = marked.parse(sliceContent(md));
+  const raw = marked.parse(sliceContent(md));
+  const processed = raw
+    .replace(/<\/a> - /g, '</a><br>')
+    .replace(/<em>\(([^)]+)\)<\/em>/g, '<span class="reference-tag">$1</span>');
+  document.getElementById('rendered').innerHTML = processed;
+
+  document.querySelectorAll('#rendered li').forEach(li => {
+    const tag = li.querySelector('.reference-tag');
+    if (!tag) return;
+    const body = document.createElement('div');
+    body.className = 'li-body';
+    while (li.firstChild !== tag) body.appendChild(li.firstChild);
+    li.insertBefore(body, tag);
+  });
 
   const allHeadings = [...document.querySelectorAll('#rendered h1, #rendered h2')];
   allHeadings.forEach(h => {

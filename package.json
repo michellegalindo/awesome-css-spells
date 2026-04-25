@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "A curated list of awesome CSS resources",
   "scripts": {
-    "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts"
+    "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts",
+    "start": "npx serve ."
   },
   "repository": {
     "type": "git",
