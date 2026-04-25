@@ -1,18 +1,22 @@
 :root {
-  --bg: #0f0f0f;
-  --surface: #161616;
-  --border: #252525;
-  --accent: #b59ef4;
-  --accent2: #d5aacd;
-  --accent3: #a6bf5b;
-  --accent4: #73bfef;
-  --text: #fff;
-  --muted: #999;
-  --muted2: #454545;
-  --muted3: #bbb;
+  color-scheme: dark;
+  --bg: light-dark(#f4f4f4, #0f0f0f);
+  --surface: light-dark(#ffffff, #161616);
+  --border: light-dark(#e2e2e2, #252525);
+  --accent: light-dark(#6b48d4, #b59ef4);
+  --accent2: light-dark(#8f4f82, #d5aacd);
+  --accent3: light-dark(#5a7c1a, #a6bf5b);
+  --accent4: light-dark(#2a7bb5, #73bfef);
+  --text: light-dark(#1a1a1a, #fff);
+  --muted: light-dark(#666, #999);
+  --muted2: light-dark(#767676, #454545);
+  --muted3: light-dark(#444, #bbb);
   --toc-w: 270px;
   --font-mono: "JetBrains Mono", Consolas, monospace;
   --font-sans: "Oswald", Roboto, sans-serif;
+}
+:root.light {
+  color-scheme: light;
 }
 .sr-only {
   position: absolute;
