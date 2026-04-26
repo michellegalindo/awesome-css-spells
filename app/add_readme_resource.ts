@@ -1,6 +1,7 @@
 import { parseArgs } from "node:util";
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const SUPPORTED_LANGUAGES = ["en", "pt-BR"] as const;
 type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
@@ -51,7 +52,7 @@ const EN_TO_PT_CATEGORY: Record<string, string> = {
   Inspiration: "Inspiração",
 };
 
-function inferEnCategory(text: string): string {
+export function inferEnCategory(text: string): string {
   const lower = text.toLowerCase();
   if (lower.includes("grid") || lower.includes("flexbox") || lower.includes("layout")) {
     return "Layout & Positioning";
@@ -95,7 +96,7 @@ function inferEnCategory(text: string): string {
 
 const DESCRIPTION_MAX_LENGTH = 110;
 
-function isDescriptionPoor(description: string, title?: string): boolean {
+export function isDescriptionPoor(description: string, title?: string): boolean {
   const trimmed = description.trim();
   if (trimmed.length < 30) return true;
   if (trimmed.split(/\s+/).length <= 3) return true;
@@ -115,7 +116,7 @@ function validateDescriptionLength(description: string): void {
   process.exit(1);
 }
 
-function extractMetaDescription(html: string): string | undefined {
+export function extractMetaDescription(html: string): string | undefined {
   const match =
     html.match(/<meta[^>]*name="description"[^>]*content="([^"]+)"[^>]*>/i) ||
     html.match(/<meta[^>]*content="([^"]+)"[^>]*name="description"[^>]*>/i) ||
@@ -123,7 +124,7 @@ function extractMetaDescription(html: string): string | undefined {
   return match ? match[1].trim().replace(/\n/g, " ") : undefined;
 }
 
-function detectLangFromResponse(html: string, headers: Headers): SupportedLanguage | null {
+export function detectLangFromResponse(html: string, headers: Headers): SupportedLanguage | null {
   const contentLang = headers.get("content-language");
   if (contentLang) {
     if (contentLang.toLowerCase().startsWith("pt")) return "pt-BR";
@@ -284,4 +285,6 @@ async function main() {
   console.log(`Successfully added "${title}" to category "${category}" in ${readmeFile}.`);
 }
 
-main().catch(console.error);
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch(console.error);
+}

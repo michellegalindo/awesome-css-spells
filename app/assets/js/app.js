@@ -1,3 +1,5 @@
+import { sliceContent, escapeHtml, highlight, extractItems } from "./parse.js";
+
 let allItems = [];
 let fuse = null;
 
@@ -10,13 +12,6 @@ async function init() {
 }
 
 init();
-
-function sliceContent(md) {
-  const lines = md.split("\n");
-  const skip = new Set(["Awesome CSS", "Summary", "Sumário"]);
-  const idx = lines.findIndex((l) => /^#\s/.test(l) && !skip.has(l.replace(/^#\s+/, "").trim()));
-  return idx === -1 ? md : lines.slice(idx).join("\n");
-}
 
 function processMarkdown(md) {
   document.getElementById("loading").style.display = "none";
@@ -41,7 +36,7 @@ function processMarkdown(md) {
     outerA.rel = innerA.rel;
 
     const title = document.createElement("span");
-    title.className = "li-title";
+    title.className = "entry__title";
     while (innerA.firstChild) title.appendChild(innerA.firstChild);
     outerA.appendChild(title);
     innerA.remove();
@@ -51,7 +46,7 @@ function processMarkdown(md) {
     }
 
     const desc = document.createElement("span");
-    desc.className = "li-desc";
+    desc.className = "entry__desc";
     while (li.firstChild !== tag) desc.appendChild(li.firstChild);
     if (desc.hasChildNodes()) outerA.appendChild(desc);
 
@@ -117,7 +112,7 @@ function buildTOC() {
 
   sections.forEach((h) => {
     const a = document.createElement("a");
-    a.className = h.tagName === "H3" ? "toc-item toc-sub" : "toc-item";
+    a.className = h.tagName === "H3" ? "toc__item toc__item--sub" : "toc__item";
     a.href = "#" + h.id;
     a.textContent = h.textContent;
     a.addEventListener("click", (e) => {
@@ -137,7 +132,7 @@ function buildTOC() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          document.querySelectorAll(".toc-item").forEach((a) => a.classList.remove("active"));
+          document.querySelectorAll(".toc__item").forEach((a) => a.classList.remove("active"));
           const active = toc.querySelector(`a[href="#${entry.target.id}"]`);
           if (active) {
             active.classList.add("active");
@@ -152,35 +147,6 @@ function buildTOC() {
   sections.forEach((h) => observer.observe(h));
 }
 
-function extractItems(md) {
-  const items = [];
-  let currentSection = "";
-  const lines = sliceContent(md).split("\n");
-  for (const line of lines) {
-    const h1 = line.match(/^#\s+(.+)/);
-    if (h1) {
-      currentSection = h1[1].trim();
-      continue;
-    }
-
-    const h2 = line.match(/^##\s+(.+)/);
-    if (h2) {
-      currentSection = h2[1].trim();
-      continue;
-    }
-
-    const m = line.match(/^[-*]\s+\[([^\]]+)\]\(([^)]+)\)(.*)/);
-    if (m) {
-      const raw = m[3].replace(/^\s*[-–—]\s*/, "").trim();
-      const tagMatch = raw.match(/^(.*?)\s*\*\(([^)]+)\)\*\s*$/);
-      const desc = tagMatch ? tagMatch[1].trim() : raw;
-      const tag = tagMatch ? tagMatch[2] : null;
-      items.push({ title: m[1], url: m[2], desc, tag, section: currentSection });
-    }
-  }
-  return items;
-}
-
 function buildFuse() {
   fuse = new Fuse(allItems, {
     keys: [
@@ -192,29 +158,6 @@ function buildFuse() {
     threshold: 0.35,
     minMatchCharLength: 2,
   });
-}
-
-function highlight(text, matches, key) {
-  if (!matches || !text) return escapeHtml(text || "");
-  const m = matches.find((m) => m.key === key);
-  if (!m) return escapeHtml(text);
-  let result = "";
-  let lastIdx = 0;
-  for (const [start, end] of m.indices) {
-    result += escapeHtml(text.slice(lastIdx, start));
-    result += "<mark>" + escapeHtml(text.slice(start, end + 1)) + "</mark>";
-    lastIdx = end + 1;
-  }
-  result += escapeHtml(text.slice(lastIdx));
-  return result;
-}
-
-function escapeHtml(s) {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
 }
 
 const searchInput = document.getElementById("search");
@@ -246,11 +189,11 @@ searchInput.addEventListener("input", () => {
     .map(({ item, matches }) => {
       const tagHtml = item.tag ? `<span class="reference-tag">${escapeHtml(item.tag)}</span>` : "";
       return `
-    <div class="result-item">
-      <a class="result-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-        <span class="result-section">${escapeHtml(item.section)}</span>
-        <span class="li-title">${highlight(item.title, matches, "title")}</span><br>
-        ${item.desc ? `<span class="li-desc">${highlight(item.desc, matches, "desc")}</span>` : ""}
+    <div class="result__item">
+      <a class="result__link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
+        <span class="result__section">${escapeHtml(item.section)}</span>
+        <span class="entry__title">${highlight(item.title, matches, "title")}</span><br>
+        ${item.desc ? `<span class="entry__desc">${highlight(item.desc, matches, "desc")}</span>` : ""}
         ${tagHtml}
       </a>
     </div>
@@ -286,7 +229,7 @@ async function loadContributors() {
     el.innerHTML = contributors
       .map(
         (c) => `
-      <a class="contributor-avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
+      <a class="contributors__avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
         <img src="${escapeHtml(c.avatar_url)}&s=96" alt="${escapeHtml(c.login)}" width="48" height="48">
       </a>
     `
@@ -300,18 +243,36 @@ async function loadContributors() {
 loadContributors();
 
 function initConfetti() {
-  const el = document.querySelector(".hero-right");
+  const el = document.querySelector(".hero__right");
   if (!el) return;
 
-  const colorsDark = ["#fc7972", "#fd76a8", "#f87be6", "#cc8ff7", "#74b9ff", "#55efc4", "#ffeaa7", "#fd79a8"];
-  const colorsLight = ["#e03030", "#d4268a", "#b026c4", "#7c3fd4", "#1a6fd4", "#00956b", "#c47a00", "#c4256e"];
+  const colorsDark = [
+    "#fc7972",
+    "#fd76a8",
+    "#f87be6",
+    "#cc8ff7",
+    "#74b9ff",
+    "#55efc4",
+    "#ffeaa7",
+    "#fd79a8",
+  ];
+  const colorsLight = [
+    "#e03030",
+    "#d4268a",
+    "#b026c4",
+    "#7c3fd4",
+    "#1a6fd4",
+    "#00956b",
+    "#c47a00",
+    "#c4256e",
+  ];
   let firing = false;
 
   function getOrCreateCanvas() {
-    let canvas = el.querySelector(".confetti-canvas");
+    let canvas = el.querySelector(".confetti__canvas");
     if (!canvas) {
       canvas = document.createElement("div");
-      canvas.className = "confetti-canvas";
+      canvas.className = "confetti__canvas";
       el.appendChild(canvas);
     }
     return canvas;
@@ -325,12 +286,14 @@ function initConfetti() {
 
     for (let i = 0; i < count; i++) {
       const particle = document.createElement("div");
-      particle.className = "confetti-particle";
+      particle.className = "confetti__particle";
 
       const isCircle = Math.random() > 0.78;
       const w = 5 + Math.random() * 8;
       const h = isCircle ? w : 2 + Math.random() * 3;
-      const palette = document.documentElement.classList.contains("light") ? colorsLight : colorsDark;
+      const palette = document.documentElement.classList.contains("light")
+        ? colorsLight
+        : colorsDark;
       const color = palette[Math.floor(Math.random() * palette.length)];
       const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.25;
       const speed = 70 + Math.random() * 110;
@@ -399,7 +362,7 @@ menuToggleEl.addEventListener("click", () => {
 backdropEl.addEventListener("click", closeMenu);
 
 document.getElementById("toc").addEventListener("click", (e) => {
-  if (e.target.closest(".toc-item")) closeMenu();
+  if (e.target.closest(".toc__item")) closeMenu();
 });
 
 const contentEl = document.getElementById("content");

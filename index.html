@@ -22,50 +22,69 @@
     <link rel="stylesheet" href="app/assets/css/style.css" />
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.6.2/fuse.min.js"></script>
-    <script defer src="app/assets/js/app.js"></script>
+    <script type="module" src="app/assets/js/app.js"></script>
   </head>
 
   <body>
-    <div id="container">
-      <nav id="sidebar">
-        <div id="sidebar-header">
+    <div id="container" class="container">
+      <nav id="sidebar" class="sidebar">
+        <div id="sidebar-header" class="sidebar__header">
           <a class="logo-link" href="/" alt="Home">
             <img
               id="glasses"
+              class="sidebar__glasses"
               src="app/assets/images/awesome-glasses.png"
               alt="Awesome Glasses Symbol"
             />
-            <img id="logo" src="app/assets/images/awesome-css-logo-md.png" alt="Awesome CSS Logo" />
+            <img
+              id="logo"
+              class="sidebar__logo"
+              src="app/assets/images/awesome-css-logo-md.png"
+              alt="Awesome CSS Logo"
+            />
           </a>
           <h1 class="sr-only">Awesome CSS — The Ultimate CSS Resource Collection</h1>
         </div>
-        <div id="stats">
+        <div id="stats" class="sidebar__stats">
           <span id="stat-links">0</span> references · <span id="stat-sections">0</span> categories
         </div>
-        <div id="toc"></div>
+        <div id="toc" class="toc"></div>
       </nav>
 
-      <div id="sidebar-backdrop"></div>
+      <div id="sidebar-backdrop" class="sidebar__backdrop"></div>
 
-      <div id="main">
+      <div id="main" class="main">
         <section id="topbar-wrap">
-          <div id="topbar">
+          <div id="topbar" class="topbar">
             <button
               id="menu-toggle"
+              class="icon-button icon-button--menu"
               aria-label="Open menu"
               aria-expanded="false"
               aria-controls="sidebar"
             >
               ☰
             </button>
-            <div id="search-wrap">
-              <input id="search" type="text" placeholder="Search…" autocomplete="off" disabled />
-              <div id="search-count"></div>
+            <div id="search-wrap" class="search">
+              <input
+                id="search"
+                class="search__input"
+                type="text"
+                placeholder="Search…"
+                autocomplete="off"
+                disabled
+              />
+              <div id="search-count" class="search__count"></div>
             </div>
-            <div id="topbar-links">
+            <div id="topbar-links" class="topbar__links">
               <p class="languages">🌎 English | <a href="/pt-br">🇧🇷 Português</a></p>
             </div>
-            <button id="theme-toggle" aria-label="Switch to light mode" aria-pressed="false">
+            <button
+              id="theme-toggle"
+              class="icon-button icon-button--theme"
+              aria-label="Switch to light mode"
+              aria-pressed="false"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
@@ -87,10 +106,10 @@
           </div>
         </section>
 
-        <div id="content">
-          <section id="hero">
-            <div class="hero-left">
-              <p class="tagline">REFERENCE LIBRARY FOR DEVELOPERS</p>
+        <div id="content" class="content">
+          <section id="hero" class="hero">
+            <div class="hero__left">
+              <p class="hero__tagline">REFERENCE LIBRARY FOR DEVELOPERS</p>
 
               <h2>The Ultimate <span class="animated-text">CSS Resource</span> Collection.</h2>
 
@@ -101,15 +120,15 @@
                 </p>
               </blockquote>
 
-              <p id="languages-mobile" class="languages">
+              <p id="languages-mobile" class="languages languages--mobile">
                 🌎 English · <a href="/pt-br">🇧🇷 Português</a>
               </p>
             </div>
 
-            <div class="hero-right">
-              <p class="contributors-label">Last Contributors</p>
-              <div id="contributors"></div>
-              <div class="badges">
+            <div class="hero__right">
+              <p class="contributors__label">Last Contributors</p>
+              <div id="contributors" class="contributors"></div>
+              <div class="hero__badges">
                 <a href="https://github.com/sindresorhus/awesome">
                   <img
                     src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"
@@ -128,24 +147,24 @@
                     alt="GitHub Contribute Badge"
                   />
                 </a>
-                <button id="confetti-trigger" title="Celebrar!">🎉</button>
+                <button id="confetti-trigger" class="confetti-trigger" title="Celebrar!">🎉</button>
               </div>
             </div>
           </section>
 
-          <div id="loading">loading README.md</div>
-          <div id="error">
+          <div id="loading" class="loading">loading README.md</div>
+          <div id="error" class="error">
             <span class="big">⚠</span>Could not load <code>README.md</code>.<br />Make sure the file
             is in the same folder as this HTML.
           </div>
 
           <!-- Rendered markdown (hidden until loaded) -->
-          <section id="rendered" class="hidden"></section>
+          <section id="rendered" class="rendered hidden"></section>
 
           <!-- Search results (hidden until searching) -->
-          <section id="results"></section>
+          <section id="results" class="results"></section>
 
-          <footer id="footer">
+          <footer id="footer" class="footer">
             <p>
               © 2026 <a href="https://github.com/michellegalindo">@michellegalindo</a> — MIT License
             </p>
