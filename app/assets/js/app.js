@@ -41,7 +41,7 @@ function processMarkdown(md) {
     outerA.rel = innerA.rel;
 
     const title = document.createElement("span");
-    title.className = "li-title";
+    title.className = "entry__title";
     while (innerA.firstChild) title.appendChild(innerA.firstChild);
     outerA.appendChild(title);
     innerA.remove();
@@ -51,7 +51,7 @@ function processMarkdown(md) {
     }
 
     const desc = document.createElement("span");
-    desc.className = "li-desc";
+    desc.className = "entry__desc";
     while (li.firstChild !== tag) desc.appendChild(li.firstChild);
     if (desc.hasChildNodes()) outerA.appendChild(desc);
 
@@ -117,7 +117,7 @@ function buildTOC() {
 
   sections.forEach((h) => {
     const a = document.createElement("a");
-    a.className = h.tagName === "H3" ? "toc-item toc-sub" : "toc-item";
+    a.className = h.tagName === "H3" ? "toc__item toc__item--sub" : "toc__item";
     a.href = "#" + h.id;
     a.textContent = h.textContent;
     a.addEventListener("click", (e) => {
@@ -137,7 +137,7 @@ function buildTOC() {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          document.querySelectorAll(".toc-item").forEach((a) => a.classList.remove("active"));
+          document.querySelectorAll(".toc__item").forEach((a) => a.classList.remove("active"));
           const active = toc.querySelector(`a[href="#${entry.target.id}"]`);
           if (active) {
             active.classList.add("active");
@@ -246,11 +246,11 @@ searchInput.addEventListener("input", () => {
     .map(({ item, matches }) => {
       const tagHtml = item.tag ? `<span class="reference-tag">${escapeHtml(item.tag)}</span>` : "";
       return `
-    <div class="result-item">
-      <a class="result-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-        <span class="result-section">${escapeHtml(item.section)}</span>
-        <span class="li-title">${highlight(item.title, matches, "title")}</span><br>
-        ${item.desc ? `<span class="li-desc">${highlight(item.desc, matches, "desc")}</span>` : ""}
+    <div class="result__item">
+      <a class="result__link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
+        <span class="result__section">${escapeHtml(item.section)}</span>
+        <span class="entry__title">${highlight(item.title, matches, "title")}</span><br>
+        ${item.desc ? `<span class="entry__desc">${highlight(item.desc, matches, "desc")}</span>` : ""}
         ${tagHtml}
       </a>
     </div>
@@ -286,7 +286,7 @@ async function loadContributors() {
     el.innerHTML = contributors
       .map(
         (c) => `
-      <a class="contributor-avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
+      <a class="contributors__avatar" href="${escapeHtml(c.html_url)}" target="_blank" rel="noopener" title="${escapeHtml(c.login)}">
         <img src="${escapeHtml(c.avatar_url)}&s=96" alt="${escapeHtml(c.login)}" width="48" height="48">
       </a>
     `
@@ -300,18 +300,36 @@ async function loadContributors() {
 loadContributors();
 
 function initConfetti() {
-  const el = document.querySelector(".hero-right");
+  const el = document.querySelector(".hero__right");
   if (!el) return;
 
-  const colorsDark = ["#fc7972", "#fd76a8", "#f87be6", "#cc8ff7", "#74b9ff", "#55efc4", "#ffeaa7", "#fd79a8"];
-  const colorsLight = ["#e03030", "#d4268a", "#b026c4", "#7c3fd4", "#1a6fd4", "#00956b", "#c47a00", "#c4256e"];
+  const colorsDark = [
+    "#fc7972",
+    "#fd76a8",
+    "#f87be6",
+    "#cc8ff7",
+    "#74b9ff",
+    "#55efc4",
+    "#ffeaa7",
+    "#fd79a8",
+  ];
+  const colorsLight = [
+    "#e03030",
+    "#d4268a",
+    "#b026c4",
+    "#7c3fd4",
+    "#1a6fd4",
+    "#00956b",
+    "#c47a00",
+    "#c4256e",
+  ];
   let firing = false;
 
   function getOrCreateCanvas() {
-    let canvas = el.querySelector(".confetti-canvas");
+    let canvas = el.querySelector(".confetti__canvas");
     if (!canvas) {
       canvas = document.createElement("div");
-      canvas.className = "confetti-canvas";
+      canvas.className = "confetti__canvas";
       el.appendChild(canvas);
     }
     return canvas;
@@ -325,12 +343,14 @@ function initConfetti() {
 
     for (let i = 0; i < count; i++) {
       const particle = document.createElement("div");
-      particle.className = "confetti-particle";
+      particle.className = "confetti__particle";
 
       const isCircle = Math.random() > 0.78;
       const w = 5 + Math.random() * 8;
       const h = isCircle ? w : 2 + Math.random() * 3;
-      const palette = document.documentElement.classList.contains("light") ? colorsLight : colorsDark;
+      const palette = document.documentElement.classList.contains("light")
+        ? colorsLight
+        : colorsDark;
       const color = palette[Math.floor(Math.random() * palette.length)];
       const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.25;
       const speed = 70 + Math.random() * 110;
@@ -399,7 +419,7 @@ menuToggleEl.addEventListener("click", () => {
 backdropEl.addEventListener("click", closeMenu);
 
 document.getElementById("toc").addEventListener("click", (e) => {
-  if (e.target.closest(".toc-item")) closeMenu();
+  if (e.target.closest(".toc__item")) closeMenu();
 });
 
 const contentEl = document.getElementById("content");
