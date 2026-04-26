@@ -42,7 +42,7 @@
   --sidebar-w: 270px;
 
   /* Breakpoints (referência — usados em @media literais) */
-  /* tablet: 900px, mobile: 700px */
+  /* mobile: 829px (desktop a partir de 830px) */
 }
 :root.light {
   color-scheme: light;
@@ -403,7 +403,7 @@ mark {
 }
 .hero h2 {
   display: block;
-  width: 380px;
+  max-width: 380px;
   text-transform: uppercase;
   color: var(--text);
   line-height: 1.1;
@@ -802,6 +802,8 @@ mark {
   padding-top: 200px;
   color: var(--muted2);
   font-size: 12px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -815,15 +817,11 @@ mark {
 
 /* ── 8. Responsivo ─────────────────────────────────────────── */
 
-/* Tablet (≤900px): hero passa a uma coluna */
-@media (max-width: 900px) {
+/* Mobile (≤829px): hero em uma coluna, sidebar overlay, topbar compacta */
+@media (max-width: 829px) {
   .hero {
     grid-template-columns: 1fr;
   }
-}
-
-/* Mobile (≤700px): sidebar overlay, topbar compacta */
-@media (max-width: 700px) {
   .sidebar {
     position: fixed;
     left: 0;
