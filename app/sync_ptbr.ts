@@ -94,7 +94,7 @@ const SLOTS: Record<string, Slot> = {
   },
 };
 
-function extractSlots(html: string): Record<string, string> {
+export function extractSlots(html: string): Record<string, string> {
   const result: Record<string, string> = {};
   for (const [name, slot] of Object.entries(SLOTS)) {
     const match = html.match(slot.extract);
@@ -103,7 +103,7 @@ function extractSlots(html: string): Record<string, string> {
   return result;
 }
 
-function applySlots(template: string, slots: Record<string, string>): string {
+export function applySlots(template: string, slots: Record<string, string>): string {
   let html = template;
   for (const [name, slot] of Object.entries(SLOTS)) {
     if (name in slots) html = slot.apply(html, slots[name]);
@@ -113,13 +113,13 @@ function applySlots(template: string, slots: Record<string, string>): string {
 
 const RELATIVE_PATH_RE = /((?:href|src)=")(?!https?:\/\/|\/|#|\.\.)([^"]+)/g;
 
-function adjustPaths(html: string): string {
+export function adjustPaths(html: string): string {
   return html.replace(RELATIVE_PATH_RE, (_, attr, path) => `${attr}../${path}`);
 }
 
 type Diff = { line: number; current: string; expected: string };
 
-function lineDiff(expected: string, current: string): Diff[] {
+export function lineDiff(expected: string, current: string): Diff[] {
   const exp = expected.split("\n");
   const cur = current.split("\n");
   const diffs: Diff[] = [];
@@ -185,4 +185,6 @@ async function run() {
   console.log(`\n✓ Written`);
 }
 
-run();
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  run();
+}
