@@ -39,10 +39,10 @@
   --transition-slow: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* Layout */
-  --sidebar-w: 270px;
+  --sidebar-w: 278px;
 
   /* Breakpoints (referência — usados em @media literais) */
-  /* tablet: 900px, mobile: 700px */
+  /* mobile: 829px (desktop a partir de 830px) */
 }
 :root.light {
   color-scheme: light;
@@ -214,7 +214,7 @@ mark {
 .sidebar__stats {
   padding: var(--space-3) 20px;
   border-bottom: 1px solid var(--border);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
 }
 .sidebar__stats span {
@@ -265,7 +265,7 @@ mark {
   font-weight: 500;
 }
 .toc__item--sub {
-  font-size: 12px;
+  font-size: 13px;
   padding-left: 40px;
   text-transform: none;
 }
@@ -403,7 +403,7 @@ mark {
 }
 .hero h2 {
   display: block;
-  width: 380px;
+  max-width: 380px;
   text-transform: uppercase;
   color: var(--text);
   line-height: 1.1;
@@ -802,6 +802,8 @@ mark {
   padding-top: 200px;
   color: var(--muted2);
   font-size: 12px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -815,15 +817,11 @@ mark {
 
 /* ── 8. Responsivo ─────────────────────────────────────────── */
 
-/* Tablet (≤900px): hero passa a uma coluna */
-@media (max-width: 900px) {
+/* Mobile (≤829px): hero em uma coluna, sidebar overlay, topbar compacta */
+@media (max-width: 829px) {
   .hero {
     grid-template-columns: 1fr;
   }
-}
-
-/* Mobile (≤700px): sidebar overlay, topbar compacta */
-@media (max-width: 700px) {
   .sidebar {
     position: fixed;
     left: 0;
