@@ -38,9 +38,9 @@ test("extractSlots + applySlots round-trip preserves structure", () => {
 });
 
 test("adjustPaths prefixes relative paths with ../", () => {
-  const html = `<link href="app/assets/css/style.css"><img src="favicon.png">`;
+  const html = `<link href="assets/css/style.css"><img src="favicon.png">`;
   const out = adjustPaths(html);
-  assert.match(out, /href="\.\.\/app\/assets\/css\/style\.css"/);
+  assert.match(out, /href="\.\.\/assets\/css\/style\.css"/);
   assert.match(out, /src="\.\.\/favicon\.png"/);
 });
 

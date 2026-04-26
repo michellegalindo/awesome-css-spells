@@ -13,18 +13,18 @@ Keep `pt-br/index.html` structurally in sync with `index.html` (English source o
 
 **Check for structural diffs (no writes):**
 ```bash
-npx tsx app/sync_ptbr.ts --dry-run
+npx tsx scripts/sync-ptbr/sync_ptbr.ts --dry-run
 ```
 
 **Apply sync:**
 ```bash
-npx tsx app/sync_ptbr.ts
+npx tsx scripts/sync-ptbr/sync_ptbr.ts
 npm run format
 ```
 
 **CI / pre-merge check (exits 1 if out of sync):**
 ```bash
-npx tsx app/sync_ptbr.ts --check
+npx tsx scripts/sync-ptbr/sync_ptbr.ts --check
 ```
 
 ## What the script does

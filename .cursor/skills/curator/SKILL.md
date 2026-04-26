@@ -30,7 +30,7 @@ Resources in English are inserted into `README.md`; resources in Portuguese are 
 ## How to run
 
 ```bash
-npx tsx app/add_readme_resource.ts \
+npx tsx scripts/curator/add_readme_resource.ts \
   --link "https://..." \
   --title "Resource Name" \
   [--description "Short practical description"] \
