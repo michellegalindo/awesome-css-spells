@@ -1,25 +1,3 @@
-/* =============================================================
- *  awesome-css — stylesheet
- *  Sumário:
- *   1. Tokens (variáveis :root)
- *   2. Reset & utilitários
- *   3. Tipografia base
- *   4. Layout (container, main)
- *   5. Componentes
- *      5.1 Sidebar / TOC
- *      5.2 Topbar (search, icon-button)
- *      5.3 Hero
- *      5.4 Conteúdo (rendered, entry, results)
- *      5.5 Contributors
- *      5.6 Footer
- *      5.7 Loading, error
- *      5.8 Confetti
- *      5.9 Languages
- *   6. Estados (.hidden, .open, .visible, .active, .copied)
- *   7. Animações (@keyframes)
- *   8. Responsivo (@media)
- * ============================================================= */
-
 /* ── 1. Tokens ─────────────────────────────────────────────── */
 :root {
   color-scheme: dark;
