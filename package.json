@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "description": "A curated list of awesome CSS resources",
   "scripts": {
-    "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts",
+    "curate": "tsx scripts/curator/add_readme_resource.ts",
     "start": "npx serve .",
     "format": "prettier --write \"**/*.{js,ts,html,css}\"",
     "format:check": "prettier --check \"**/*.{js,ts,html,css}\"",
-    "test": "tsx --test app/**/*.test.ts app/**/*.test.js"
+    "test": "tsx --test scripts/**/*.test.ts assets/**/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -15,6 +15,13 @@
   },
   "author": "Michelle Galindo",
   "license": "MIT",
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "prettier": "^3.8.3",

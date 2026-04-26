@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import { execSync } from "child_process";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const ROOT = resolve(__dirname, "..");
+const ROOT = resolve(__dirname, "..", "..");
 const EN_PATH = resolve(ROOT, "index.html");
 const PTBR_PATH = resolve(ROOT, "pt-br", "index.html");
 

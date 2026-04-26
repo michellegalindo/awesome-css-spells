@@ -7,19 +7,19 @@ This file provides instructions for Claude Code when working in the **awesome-cs
 Awesome CSS is a curated list of CSS resources organized by problem solved, not by resource type. It maintains two parallel lists:
 
 - `README.md` — English content only
-- `README.pt-BR.md` — Brazilian Portuguese content only
+- `pt-br/README.md` — Brazilian Portuguese content only
 
 ## Core Documentation
 
-**Read `docs/conventions.md` before making any curation changes.** It is the single source of truth for taxonomy, formatting rules, allowed type tags, and curation constraints.
+**Read `.github/CONVENTIONS.md` before making any curation changes.** It is the single source of truth for taxonomy, formatting rules, allowed type tags, and curation constraints.
 
 ## Language Standards
 
 | File | Language |
 |------|----------|
 | `README.md` | English only |
-| `README.pt-BR.md` | Brazilian Portuguese only |
-| `docs/*.md` | English |
+| `pt-br/README.md` | Brazilian Portuguese only |
+| `.github/*.md` | English |
 | `CONTRIBUTING.md` | English |
 | Commit messages | English |
 | Code | English |
@@ -29,7 +29,7 @@ Awesome CSS is a curated list of CSS resources organized by problem solved, not 
 ### Language Routing
 
 1. `--lang en` → insert into `README.md`
-2. `--lang pt-BR` → insert into `README.pt-BR.md`
+2. `--lang pt-BR` → insert into `pt-br/README.md`
 3. No `--lang` → detect from URL `lang` HTML attribute or `Content-Language` header
 4. Language is neither English nor Brazilian Portuguese → **reject insertion**
 
@@ -51,14 +51,14 @@ Descriptions must answer "What problem does this resource solve?" and be between
 
 - **Never remove existing links**
 - Assign each resource to its single most useful category
-- All type tags must match the allowed list in `docs/conventions.md`
+- All type tags must match the allowed list in `.github/CONVENTIONS.md`
 
 ## Curator Script
 
 To insert a new resource into the correct README category, run:
 
 ```bash
-npx tsx app/add_readme_resource.ts \
+npm run curate -- \
   --link "https://..." \
   --title "Resource Name" \
   [--description "Short practical description"] \
@@ -74,20 +74,20 @@ npx tsx app/add_readme_resource.ts \
 | `--link` | yes | — | URL of the resource |
 | `--title` | yes | — | Curated title (do not copy-paste from page `<title>`) |
 | `--description` | no | fetched from URL | Short practical description |
-| `--type` | no | `guide` | Type tag; see allowed values in `docs/conventions.md` |
+| `--type` | no | `guide` | Type tag; see allowed values in `.github/CONVENTIONS.md` |
 | `--category` | no | auto-inferred | English category name from the taxonomy |
 | `--lang` | no | auto-detected | `en` or `pt-BR` |
 
 ## Validation Checklist
 
-Before editing `README.md` or `README.pt-BR.md`:
+Before editing `README.md` or `pt-br/README.md`:
 
 - [ ] Content language matches the target file
 - [ ] Description is 30–110 characters, practical, not just a restatement of the title
 - [ ] Link follows the mandatory format with description and type tag
-- [ ] Type tag is from the allowed list in `docs/conventions.md`
+- [ ] Type tag is from the allowed list in `.github/CONVENTIONS.md`
 - [ ] Resource is genuinely useful, CSS-related, no spam or ads
-- [ ] Category matches the taxonomy in `docs/conventions.md`
+- [ ] Category matches the taxonomy in `.github/CONVENTIONS.md`
 - [ ] No existing link has been removed
 
 ## Development Standards

@@ -14,7 +14,7 @@ If you've found an amazing resource that solves a specific CSS problem:
 - **Mandatory Format**: If adding manually, strictly follow the format:
   `- [Resource Name](https://url) - Short practical description *(tag)*`
 - **Categorization**: Place the resource in the section that best describes the **problem it solves**, not just the technology type.
-- **Consult the Conventions**: Read our detailed guide in [docs/conventions.md](docs/conventions.md).
+- **Consult the Conventions**: Read our detailed guide in [.github/CONVENTIONS.md](.github/CONVENTIONS.md).
 
 ### 2. Proposing New Categories
 
