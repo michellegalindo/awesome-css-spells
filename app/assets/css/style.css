@@ -239,7 +239,7 @@ mark {
   flex: 1;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
-  padding-bottom: 90px;
+  padding-bottom: 180px;
 }
 .toc__item {
   display: block;
@@ -788,7 +788,7 @@ mark {
 #back-to-top.visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(-200%);
+  transform: translateY(-150%);
 }
 
 #back-to-top:hover {
