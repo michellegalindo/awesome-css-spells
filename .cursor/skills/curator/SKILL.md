@@ -7,7 +7,7 @@ description: Automatically append a README link resource into the correct Awesom
 
 ## Purpose
 
-Insert a new resource into the correct README (`README.md` for English, `README.pt-BR.md` for Portuguese) in the most likely category, following the project curation format.
+Insert a new resource into the correct README (`README.md` for English, `pt-br/README.md` for Portuguese) in the most likely category, following the project curation format.
 
 ## Inputs
 
@@ -25,22 +25,27 @@ If the description exceeds **110 characters** (whether provided or fetched from 
 If `--lang` is not provided, the script reads the HTML `lang` attribute and `Content-Language` header to determine the language.
 If the detected language is neither English (`en`) nor Brazilian Portuguese (`pt-BR`), the insertion is rejected.
 
-Resources in English are inserted into `README.md`; resources in Portuguese are inserted into `README.pt-BR.md`.
+Resources in English are inserted into `README.md`; resources in Portuguese are inserted into `pt-br/README.md`.
 
 ## How to run
 
 ```bash
-npx tsx app/add_readme_resource.ts --link "https://..." [--description "Short practical description"] [--title "Resource Name"] [--type guide] [--category "Layout & Positioning"] [--lang en]
+npx tsx app/add_readme_resource.ts \
+  --link "https://..." \
+  --title "Resource Name" \
+  [--description "Short practical description"] \
+  [--type guide] \
+  [--category "Layout & Positioning"] \
+  [--lang en]
+```
+
+Or via npm:
+
+```bash
+npm run curate -- --link "https://..." --title "Resource Name" [--lang en]
 ```
 
 ## Policy references
 
-- Curation policy: `.cursor/rules/curation.mdc`
-- Validation checklist: `.cursor/rules/curation-validation.mdc`
-- Claude Code instructions: `CLAUDE.md`
-
-## Validation behavior
-
-- Keep input requirements and allowed `--type` values aligned with `.cursor/rules/curation.mdc`.
-- Category inference and fallback behavior are implemented in `app/add_readme_resource.ts`.
-- Keep this file focused on execution; do not duplicate taxonomy or tag rules here.
+- Curation policy and taxonomy: `docs/conventions.md`
+- Full project instructions: `CLAUDE.md`

@@ -8,7 +8,7 @@ type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 
 const README_BY_LANG: Record<SupportedLanguage, string> = {
   en: "README.md",
-  "pt-BR": "README.pt-BR.md",
+  "pt-BR": "pt-br/README.md",
 };
 
 const EN_TO_PT_TYPE: Record<string, string> = {

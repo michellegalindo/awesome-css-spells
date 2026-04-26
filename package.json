@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "A curated list of awesome CSS resources",
   "scripts": {
-    "curate": "tsx .cursor/skills/curator/scripts/add_readme_resource.ts",
+    "curate": "tsx app/add_readme_resource.ts",
     "start": "npx serve .",
     "format": "prettier --write \"**/*.{js,ts,html,css}\"",
     "format:check": "prettier --check \"**/*.{js,ts,html,css}\"",

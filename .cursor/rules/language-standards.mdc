@@ -10,7 +10,7 @@ All documentation files in this repository, especially those in the root directo
 
 ## Rules
 - **README.md**: Must be in English.
-- **README.pt-BR.md**: Must be in Brazilian Portuguese. This is the only file where Portuguese content is allowed.
+- **pt-br/README.md**: Must be in Brazilian Portuguese. This is the only file where Portuguese content is allowed.
 - **CONTRIBUTING.md**: Must be in English.
 - **docs/*.md**: All files in the `docs/` directory must be in English.
 - **Commit Messages**: Should be in English.

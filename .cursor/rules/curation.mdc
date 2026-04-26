@@ -23,17 +23,17 @@ The `docs/conventions.md` file is the single source of truth for:
 This repository has two curated lists:
 
 - `README.md` — English content only
-- `README.pt-BR.md` — Brazilian Portuguese content only
+- `pt-br/README.md` — Brazilian Portuguese content only
 
 **Routing rules:**
 1. If the user specifies `--lang en`, insert into `README.md`.
-2. If the user specifies `--lang pt-BR`, insert into `README.pt-BR.md`.
+2. If the user specifies `--lang pt-BR`, insert into `pt-br/README.md`.
 3. If no `--lang` is provided, detect the language of the target URL (HTML `lang` attribute or `Content-Language` header) and route accordingly.
 4. If the detected or specified language is neither English nor Brazilian Portuguese, **reject the insertion** and do not add the link to any file.
 
-Descriptions and titles must match the README language: English for `README.md`, Portuguese for `README.pt-BR.md`.
+Descriptions and titles must match the README language: English for `README.md`, Portuguese for `pt-br/README.md`.
 
 ## Delegation
 
 - Validation details are defined in `.cursor/rules/curation-validation.mdc`.
-- Skill execution details are defined in `.cursor/skills/curator/SKILL.md`.
+- Skill execution details are defined in `.cursor/skills/curator/SKILL.md` (identical to `.claude/skills/curator/SKILL.md`).

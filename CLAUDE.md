@@ -7,7 +7,7 @@ This file provides instructions for Claude Code when working in the **awesome-cs
 Awesome CSS is a curated list of CSS resources organized by problem solved, not by resource type. It maintains two parallel lists:
 
 - `README.md` — English content only
-- `README.pt-BR.md` — Brazilian Portuguese content only
+- `pt-br/README.md` — Brazilian Portuguese content only
 
 ## Core Documentation
 
@@ -18,7 +18,7 @@ Awesome CSS is a curated list of CSS resources organized by problem solved, not 
 | File | Language |
 |------|----------|
 | `README.md` | English only |
-| `README.pt-BR.md` | Brazilian Portuguese only |
+| `pt-br/README.md` | Brazilian Portuguese only |
 | `docs/*.md` | English |
 | `CONTRIBUTING.md` | English |
 | Commit messages | English |
@@ -29,7 +29,7 @@ Awesome CSS is a curated list of CSS resources organized by problem solved, not 
 ### Language Routing
 
 1. `--lang en` → insert into `README.md`
-2. `--lang pt-BR` → insert into `README.pt-BR.md`
+2. `--lang pt-BR` → insert into `pt-br/README.md`
 3. No `--lang` → detect from URL `lang` HTML attribute or `Content-Language` header
 4. Language is neither English nor Brazilian Portuguese → **reject insertion**
 
@@ -58,7 +58,7 @@ Descriptions must answer "What problem does this resource solve?" and be between
 To insert a new resource into the correct README category, run:
 
 ```bash
-npx tsx app/add_readme_resource.ts \
+npm run curate -- \
   --link "https://..." \
   --title "Resource Name" \
   [--description "Short practical description"] \
@@ -80,7 +80,7 @@ npx tsx app/add_readme_resource.ts \
 
 ## Validation Checklist
 
-Before editing `README.md` or `README.pt-BR.md`:
+Before editing `README.md` or `pt-br/README.md`:
 
 - [ ] Content language matches the target file
 - [ ] Description is 30–110 characters, practical, not just a restatement of the title
