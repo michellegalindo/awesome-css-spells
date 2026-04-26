@@ -57,16 +57,15 @@ const SLOTS: Record<string, Slot> = {
   },
   logoLinkHref: {
     extract: /class="logo-link"\s+href="([^"]+)"/,
-    apply: (html, val) =>
-      html.replace(/(class="logo-link"\s+href=")[^"]+(")/, `$1${val}$2`),
+    apply: (html, val) => html.replace(/(class="logo-link"\s+href=")[^"]+(")/, `$1${val}$2`),
   },
   searchPlaceholder: {
     extract: /id="search"[^>]*placeholder="([^"]+)"/,
-    apply: (html, val) =>
-      html.replace(/(id="search"[^>]*placeholder=")[^"]+(")/,  `$1${val}$2`),
+    apply: (html, val) => html.replace(/(id="search"[^>]*placeholder=")[^"]+(")/, `$1${val}$2`),
   },
   contributeBadgeSrc: {
-    extract: /src="(https:\/\/img\.shields\.io\/badge\/github-[^"]+)"[^>]*alt="GitHub Contribute Badge"/,
+    extract:
+      /src="(https:\/\/img\.shields\.io\/badge\/github-[^"]+)"[^>]*alt="GitHub Contribute Badge"/,
     apply: (html, val) =>
       html.replace(
         /(src=")(https:\/\/img\.shields\.io\/badge\/github-[^"]+)("[^>]*alt="GitHub Contribute Badge")/,
@@ -139,7 +138,9 @@ function formatHtml(html: string): string {
     execSync(`npx prettier --write "${TMP_PATH}"`, { stdio: "pipe" });
     return readFileSync(TMP_PATH, "utf-8");
   } finally {
-    try { unlinkSync(TMP_PATH); } catch {}
+    try {
+      unlinkSync(TMP_PATH);
+    } catch {}
   }
 }
 

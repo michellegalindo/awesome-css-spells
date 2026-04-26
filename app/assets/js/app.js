@@ -303,16 +303,8 @@ function initConfetti() {
   const el = document.querySelector(".hero-right");
   if (!el) return;
 
-  const colors = [
-    "#fc7972",
-    "#fd76a8",
-    "#f87be6",
-    "#cc8ff7",
-    "#74b9ff",
-    "#55efc4",
-    "#ffeaa7",
-    "#fd79a8",
-  ];
+  const colorsDark = ["#fc7972", "#fd76a8", "#f87be6", "#cc8ff7", "#74b9ff", "#55efc4", "#ffeaa7", "#fd79a8"];
+  const colorsLight = ["#e03030", "#d4268a", "#b026c4", "#7c3fd4", "#1a6fd4", "#00956b", "#c47a00", "#c4256e"];
   let firing = false;
 
   function getOrCreateCanvas() {
@@ -338,7 +330,8 @@ function initConfetti() {
       const isCircle = Math.random() > 0.78;
       const w = 5 + Math.random() * 8;
       const h = isCircle ? w : 2 + Math.random() * 3;
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      const palette = document.documentElement.classList.contains("light") ? colorsLight : colorsDark;
+      const color = palette[Math.floor(Math.random() * palette.length)];
       const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.25;
       const speed = 70 + Math.random() * 110;
       const dx = Math.cos(angle) * speed;
@@ -421,4 +414,34 @@ contentEl.addEventListener("scroll", () => {
     topbarWrapEl.classList.remove("topbar--compact");
   }
   lastScrollY = y;
+});
+
+const themeToggleEl = document.getElementById("theme-toggle");
+const htmlEl = document.documentElement;
+
+const sunSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>`;
+const moonSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+
+function applyTheme(theme) {
+  if (theme === "light") {
+    htmlEl.classList.add("light");
+    themeToggleEl.innerHTML = moonSvg;
+    themeToggleEl.setAttribute("aria-label", "Switch to dark mode");
+    themeToggleEl.setAttribute("aria-pressed", "true");
+  } else {
+    htmlEl.classList.remove("light");
+    themeToggleEl.innerHTML = sunSvg;
+    themeToggleEl.setAttribute("aria-label", "Switch to light mode");
+    themeToggleEl.setAttribute("aria-pressed", "false");
+  }
+}
+
+const savedTheme = localStorage.getItem("theme");
+const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+applyTheme(savedTheme ?? (systemPrefersDark ? "dark" : "light"));
+
+themeToggleEl.addEventListener("click", () => {
+  const next = htmlEl.classList.contains("light") ? "dark" : "light";
+  localStorage.setItem("theme", next);
+  applyTheme(next);
 });
