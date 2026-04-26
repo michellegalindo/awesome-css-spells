@@ -47,5 +47,5 @@ npm run curate -- --link "https://..." --title "Resource Name" [--lang en]
 
 ## Policy references
 
-- Curation policy and taxonomy: `docs/conventions.md`
+- Curation policy and taxonomy: `.github/CONVENTIONS.md`
 - Full project instructions: `CLAUDE.md`

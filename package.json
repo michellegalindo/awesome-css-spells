@@ -15,6 +15,13 @@
   },
   "author": "Michelle Galindo",
   "license": "MIT",
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 100
+  },
   "devDependencies": {
     "@types/node": "^25.6.0",
     "prettier": "^3.8.3",
