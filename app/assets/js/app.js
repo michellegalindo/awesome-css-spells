@@ -367,15 +367,37 @@ document.getElementById("toc").addEventListener("click", (e) => {
 
 const contentEl = document.getElementById("content");
 const topbarWrapEl = document.getElementById("topbar-wrap");
+const backToTopEl = document.getElementById("back-to-top");
+const BACK_TO_TOP_THRESHOLD = 400;
 let lastScrollY = 0;
+
+backToTopEl.addEventListener("click", () => {
+  contentEl.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+backToTopEl.addEventListener("transitionend", () => {
+  if (!backToTopEl.classList.contains("visible")) {
+    backToTopEl.hidden = true;
+  }
+});
 
 contentEl.addEventListener("scroll", () => {
   const y = contentEl.scrollTop;
+  const scrollingUp = y < lastScrollY;
+
   if (y > lastScrollY && y > 60) {
     topbarWrapEl.classList.add("topbar--compact");
-  } else if (y < lastScrollY) {
+  } else if (scrollingUp) {
     topbarWrapEl.classList.remove("topbar--compact");
   }
+
+  if (scrollingUp && y > BACK_TO_TOP_THRESHOLD) {
+    backToTopEl.hidden = false;
+    requestAnimationFrame(() => backToTopEl.classList.add("visible"));
+  } else if (!scrollingUp || y <= BACK_TO_TOP_THRESHOLD) {
+    backToTopEl.classList.remove("visible");
+  }
+
   lastScrollY = y;
 });
 

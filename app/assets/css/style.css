@@ -239,7 +239,7 @@ mark {
   flex: 1;
   scrollbar-width: thin;
   scrollbar-color: var(--border) transparent;
-  padding-bottom: 60px;
+  padding-bottom: 90px;
 }
 .toc__item {
   display: block;
@@ -759,6 +759,49 @@ mark {
     opacity: 0;
   }
 }
+
+#back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 28px;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-200%);
+}
+
+#back-to-top:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+
+#footer {
+  text-align: center;
+  padding-top: 200px;
+  color: var(--muted2);
+  font-size: 12px;
 @keyframes fadeIn {
   from {
     opacity: 0;
