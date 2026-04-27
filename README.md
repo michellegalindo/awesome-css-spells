@@ -11,7 +11,7 @@
 🌎 English · [🇧🇷 Português](/pt-br/README.md)
 
 CSS resources list curated for real-world UI problems. <br/>
-Find what you need faster and build better interfaces.
+Explore, learn, and contribute.
 
 <br/>
 

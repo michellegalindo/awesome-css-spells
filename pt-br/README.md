@@ -1,19 +1,17 @@
 # Awesome CSS
 
-<img align="right" width="204" alt="css-logo" src="https://github.com/user-attachments/assets/7c203134-debb-4343-9556-6620e884cbda" />
+<a href="https://awesome-css.com/pt-br" target="_blank">
+<img align="right" width="130" alt="css-logo" src="https://github.com/user-attachments/assets/bf7b22be-92d1-4ce3-94d2-a8e5b7de42bd" />
+</a>
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
 [![Repo size](https://img.shields.io/github/repo-size/michellegalindo/awesome-css)](#)
 
-<br/>
-
 [🌎 English](https://github.com/michellegalindo/awesome-css#readme) · 🇧🇷 Português
 
 Lista de recursos CSS para quem constrói interfaces de verdade. <br/>
-Versão especial dedicada a materiais publicados em português.
-
-#### 📌 State of CSS 2025: [https://2025.stateofcss.com/pt-BR](https://2025.stateofcss.com/pt-BR)
+Versão dedicada a materiais publicados em português.
 
 <br/>
 
