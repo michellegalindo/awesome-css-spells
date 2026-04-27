@@ -52,7 +52,6 @@ const EN_TO_PT_CATEGORY: Record<string, string> = {
   Inspiration: "Inspiração",
 };
 
-
 const DESCRIPTION_MAX_LENGTH = 110;
 
 export function isDescriptionPoor(description: string, title?: string): boolean {
@@ -106,7 +105,7 @@ async function main() {
       link: { type: "string" },
       description: { type: "string" },
       title: { type: "string" },
-      "tag": { type: "string" },
+      tag: { type: "string" },
       category: { type: "string" },
       lang: { type: "string" },
       "description-from-internet": { type: "string", default: "true" },
@@ -195,7 +194,9 @@ async function main() {
 
   const enCategory = values.category as string | undefined;
   if (!enCategory) {
-    console.error("Error: --category is required. Use the English category name from .github/PLAYBOOK.md.");
+    console.error(
+      "Error: --category is required. Use the category name from README.md."
+    );
     process.exit(1);
   }
 

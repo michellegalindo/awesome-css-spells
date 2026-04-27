@@ -54,12 +54,6 @@ function processMarkdown(md) {
     li.appendChild(outerA);
   });
 
-  [...renderedEl.querySelectorAll("h1, h2")].forEach((h) => {
-    const newH = document.createElement(h.tagName === "H1" ? "h2" : "h3");
-    newH.innerHTML = h.innerHTML;
-    h.replaceWith(newH);
-  });
-
   renderedEl.querySelectorAll("h2, h3").forEach((h) => {
     const id = h.textContent
       .trim()

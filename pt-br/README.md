@@ -17,13 +17,25 @@ Versão especial dedicada a materiais publicados em português.
 
 <br/>
 
-# Sumário
+## Sumário
 
 <details open>
 <summary>Ver Sumário</summary>
 
+- [Frameworks](#frameworks)
+  - [Frameworks CSS](#frameworks-css)
+  - [CSS-in-JS](#css-in-js)
+- [Ferramentas](#ferramentas)
+  - [Geradores](#geradores)
+  - [Utilitários](#utilitários)
+  - [Depuração (Debug)](#depuração-debug)
 - [Layout e Posicionamento](#layout-e-posicionamento)
 - [Animação e Efeitos Visuais](#animação-e-efeitos-visuais)
+- [CSS Moderno](#css-moderno)
+  - [Container Queries](#container-queries)
+  - [Cascade Layers](#cascade-layers)
+  - [Nesting (Aninhamento)](#nesting-aninhamento)
+  - [Novas Especificações / Experimental](#novas-especificações--experimental)
 - [UI e Componentes](#ui-e-componentes)
 - [Formulários e Padrões de UX](#formulários-e-padrões-de-ux)
 - [Design Responsivo](#design-responsivo)
@@ -32,18 +44,6 @@ Versão especial dedicada a materiais publicados em português.
   - [Nomenclatura e Metodologias](#nomenclatura-e-metodologias)
   - [Design Systems](#design-systems)
   - [CSS em Larga Escala](#css-em-larga-escala)
-- [CSS Moderno](#css-moderno)
-  - [Container Queries](#container-queries)
-  - [Cascade Layers](#cascade-layers)
-  - [Nesting (Aninhamento)](#nesting-aninhamento)
-  - [Novas Especificações / Experimental](#novas-especificações--experimental)
-- [Frameworks](#frameworks)
-  - [Frameworks CSS](#frameworks-css)
-  - [CSS-in-JS](#css-in-js)
-- [Ferramentas](#ferramentas)
-  - [Geradores](#geradores)
-  - [Depuração (Debug)](#depuração-debug)
-  - [Utilitários](#utilitários)
 - [Performance e Otimização](#performance-e-otimização)
 - [Acessibilidade (a11y)](#acessibilidade-a11y)
 - [Aprendizado e Referências](#aprendizado-e-referências)
@@ -53,122 +53,122 @@ Versão especial dedicada a materiais publicados em português.
 
 <br/>
 
-# Layout e Posicionamento
+## Frameworks
+
+### Frameworks CSS
+
+Contribua para esta categoria 💚
+
+### CSS-in-JS
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Animação e Efeitos Visuais
+## Ferramentas
+
+### Geradores
+
+Contribua para esta categoria 💚
+
+### Utilitários
+
+Contribua para esta categoria 💚
+
+### Depuração (Debug)
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# UI e Componentes
+## Layout e Posicionamento
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Formulários e Padrões de UX
+## Animação e Efeitos Visuais
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Design Responsivo
+## CSS Moderno
+
+### Container Queries
+
+Contribua para esta categoria 💚
+
+### Cascade Layers
+
+Contribua para esta categoria 💚
+
+### Nesting (Aninhamento)
+
+Contribua para esta categoria 💚
+
+### Novas Especificações / Experimental
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Arquitetura
-
-## Arquitetura CSS
-
-Contribua para esta categoria 💚
-
-## Nomenclatura e Metodologias
-
-Contribua para esta categoria 💚
-
-## Design Systems
-
-Contribua para esta categoria 💚
-
-## CSS em Larga Escala
+## UI e Componentes
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# CSS Moderno
-
-## Container Queries
-
-Contribua para esta categoria 💚
-
-## Cascade Layers
-
-Contribua para esta categoria 💚
-
-## Nesting (Aninhamento)
-
-Contribua para esta categoria 💚
-
-## Novas Especificações / Experimental
+## Formulários e Padrões de UX
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Frameworks
-
-## Frameworks CSS
-
-Contribua para esta categoria 💚
-
-## CSS-in-JS
+## Design Responsivo
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Ferramentas
+## Arquitetura
 
-## Geradores
-
-Contribua para esta categoria 💚
-
-## Depuração (Debug)
+### Arquitetura CSS
 
 Contribua para esta categoria 💚
 
-## Utilitários
+### Nomenclatura e Metodologias
 
 Contribua para esta categoria 💚
 
-<br/>
-
-# Performance e Otimização
+### Design Systems
 
 Contribua para esta categoria 💚
 
-<br/>
-
-# Acessibilidade (a11y)
+### CSS em Larga Escala
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Aprendizado e Referências
+## Performance e Otimização
 
 Contribua para esta categoria 💚
 
 <br/>
 
-# Inspiração
+## Acessibilidade (a11y)
+
+Contribua para esta categoria 💚
+
+<br/>
+
+## Aprendizado e Referências
+
+Contribua para esta categoria 💚
+
+<br/>
+
+## Inspiração
 
 Contribua para esta categoria 💚

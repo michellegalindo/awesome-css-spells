@@ -2,9 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { sliceContent, escapeHtml, highlight, extractItems } from "./parse.js";
 
-test("sliceContent skips Awesome CSS, Summary and Sumário", () => {
-  const md = "# Awesome CSS\n# Summary\n# Sumário\n# Layout\n- item";
-  assert.equal(sliceContent(md), "# Layout\n- item");
+test("sliceContent skips Summary and Sumário", () => {
+  const md = "# Awesome CSS\n## Summary\n## Sumário\n## Layout\n- item";
+  assert.equal(sliceContent(md), "## Layout\n- item");
 });
 
 test("sliceContent returns input when no heading matches", () => {
@@ -39,7 +39,7 @@ test("highlight returns empty escape when text is empty", () => {
 });
 
 test("extractItems parses a single section with one entry", () => {
-  const md = `# Layout & Positioning
+  const md = `## Layout & Positioning
 - [Grid Garden](https://example.com) - Learn CSS Grid by playing *(playground)*
 `;
   const items = extractItems(md);
@@ -55,17 +55,17 @@ test("extractItems parses a single section with one entry", () => {
 });
 
 test("extractItems handles entries without a tag", () => {
-  const md = `# Misc
+  const md = `## Misc
 - [Foo](https://foo.com) - Plain description`;
   const [item] = extractItems(md);
   assert.equal(item.tag, null);
   assert.equal(item.desc, "Plain description");
 });
 
-test("extractItems tracks section changes across h1 and h2", () => {
-  const md = `# A
+test("extractItems tracks section changes across h2 and h3", () => {
+  const md = `## A
 - [One](https://1.com) - desc one *(guide)*
-## B
+### B
 - [Two](https://2.com) - desc two *(tool)*`;
   const items = extractItems(md);
   assert.equal(items[0].section, "A");
@@ -73,7 +73,7 @@ test("extractItems tracks section changes across h1 and h2", () => {
 });
 
 test("extractItems ignores non-matching lines", () => {
-  const md = `# A
+  const md = `## A
 random text
 - [Ok](https://ok.com) - good description here *(guide)*
 not a list item`;

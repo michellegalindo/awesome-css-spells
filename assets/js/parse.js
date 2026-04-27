@@ -1,7 +1,7 @@
 export function sliceContent(md) {
   const lines = md.split("\n");
-  const skip = new Set(["Awesome CSS", "Summary", "Sumário"]);
-  const idx = lines.findIndex((l) => /^#\s/.test(l) && !skip.has(l.replace(/^#\s+/, "").trim()));
+  const skip = new Set(["Summary", "Sumário"]);
+  const idx = lines.findIndex((l) => /^##\s/.test(l) && !skip.has(l.replace(/^##\s+/, "").trim()));
   return idx === -1 ? md : lines.slice(idx).join("\n");
 }
 
@@ -33,15 +33,15 @@ export function extractItems(md) {
   let currentSection = "";
   const lines = sliceContent(md).split("\n");
   for (const line of lines) {
-    const h1 = line.match(/^#\s+(.+)/);
-    if (h1) {
-      currentSection = h1[1].trim();
-      continue;
-    }
-
     const h2 = line.match(/^##\s+(.+)/);
     if (h2) {
       currentSection = h2[1].trim();
+      continue;
+    }
+
+    const h3 = line.match(/^###\s+(.+)/);
+    if (h3) {
+      currentSection = h3[1].trim();
       continue;
     }
 
