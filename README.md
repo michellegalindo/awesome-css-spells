@@ -10,8 +10,8 @@
 
 🌎 English · [🇧🇷 Português](/pt-br/README.md)
 
-CSS resources focused on solving real UI problems. <br/>
-Explore links by intent and ship better interfaces faster.
+CSS resources list curated for real-world UI problems. <br/>
+Find what you need faster and build better interfaces.
 
 #### 📌 State of CSS 2025: [https://2025.stateofcss.com](https://2025.stateofcss.com)
 

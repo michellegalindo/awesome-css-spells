@@ -6,13 +6,9 @@ last_mapped: 2026-04-26
 
 ## CRITICAL
 
-### Broken `npm run curate` script
-**File:** `package.json:7`
-**Severity:** Critical — the documented primary curator command silently fails.
-
-`npm run curate` points to `.cursor/skills/curator/scripts/add_readme_resource.ts` which does not exist. The actual working curator script is `app/add_readme_resource.ts`. Running `npm run curate -- ...` exits with "Cannot find module". All `CLAUDE.md` and `CONTRIBUTING.md` instructions that use `npx tsx app/add_readme_resource.ts ...` work correctly; only `npm run curate` is broken.
-
-**Fix:** Update `package.json:7` to `"curate": "tsx app/add_readme_resource.ts"`.
+### `npm run add-resource` script path (resolved)
+**File:** `package.json:6`
+**Severity:** Resolved — `add-resource` now points to `tsx scripts/add-resource/add_readme_resource.ts`.
 
 ### PT-BR curator path mismatch
 **File:** `app/add_readme_resource.ts:9-12`

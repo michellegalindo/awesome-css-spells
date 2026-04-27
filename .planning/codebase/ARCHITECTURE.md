@@ -32,7 +32,7 @@ No build step, no bundler. Browser code is plain ES modules; CLI code runs via `
 
 `app/add_readme_resource.ts:144` (`main`)
 
-1. `parseArgs` reads `--link`, `--title`, `--description`, `--type`, `--category`, `--lang`, `--description-from-internet`.
+1. `parseArgs` reads `--link`, `--title`, `--description`, `--tag`, `--category`, `--lang`, `--description-from-internet`.
 2. Validate `--link` required; `--lang` ∈ `{en, pt-BR}` or absent.
 3. If fetch enabled and lang/description missing/poor: `fetch(link)` → `extractMetaDescription` (`:119-125`) → `detectLangFromResponse` (`:127-142`).
 4. `validateDescriptionLength` enforces 110-char ceiling (`:107-117`).

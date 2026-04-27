@@ -11,7 +11,7 @@ Awesome CSS is a curated list of CSS resources organized by problem solved, not 
 
 ## Core Documentation
 
-**Read `.github/CONVENTIONS.md` before making any curation changes.** It is the single source of truth for taxonomy, formatting rules, allowed type tags, and curation constraints.
+**Read `.github/PLAYBOOK.md` before making any curation changes.** It is the single source of truth for taxonomy, formatting rules, allowed type tags, and curation constraints.
 
 ## Language Standards
 
@@ -51,21 +51,24 @@ Descriptions must answer "What problem does this resource solve?" and be between
 
 - **Never remove existing links**
 - Assign each resource to its single most useful category
-- All type tags must match the allowed list in `.github/CONVENTIONS.md`
+- All type tags must match the allowed list in `.github/PLAYBOOK.md`
 
-## Curator Script
+## Auto-Tagger Script
 
 To insert a new resource into the correct README category, run:
 
 ```bash
-npm run curate -- \
-  --link "https://..." \
-  --title "Resource Name" \
-  [--description "Short practical description"] \
-  [--type guide] \
-  [--category "Layout & Positioning"] \
-  [--lang en]
+npm run add-resource \
+  -- \
+  --link "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" \
+  --title "A Complete Guide to Flexbox" \
+  --tag guide \
+  --category "Layout & Positioning" \
+  --description "Visual reference covering all flexbox properties with examples" \
+  --lang en
 ```
+
+The `--` separates npm arguments from script arguments. `--description` and `--lang` are optional.
 
 ### Parameters
 
@@ -73,9 +76,9 @@ npm run curate -- \
 |-----------|----------|---------|-------------|
 | `--link` | yes | — | URL of the resource |
 | `--title` | yes | — | Curated title (do not copy-paste from page `<title>`) |
+| `--tag` | yes | — | Type tag; see allowed values in `.github/PLAYBOOK.md` |
+| `--category` | yes | — | English category name from the taxonomy in `.github/PLAYBOOK.md` |
 | `--description` | no | fetched from URL | Short practical description |
-| `--type` | no | `guide` | Type tag; see allowed values in `.github/CONVENTIONS.md` |
-| `--category` | no | auto-inferred | English category name from the taxonomy |
 | `--lang` | no | auto-detected | `en` or `pt-BR` |
 
 ## Validation Checklist
@@ -85,9 +88,9 @@ Before editing `README.md` or `pt-br/README.md`:
 - [ ] Content language matches the target file
 - [ ] Description is 30–110 characters, practical, not just a restatement of the title
 - [ ] Link follows the mandatory format with description and type tag
-- [ ] Type tag is from the allowed list in `.github/CONVENTIONS.md`
+- [ ] Type tag is from the allowed list in `.github/PLAYBOOK.md`
 - [ ] Resource is genuinely useful, CSS-related, no spam or ads
-- [ ] Category matches the taxonomy in `.github/CONVENTIONS.md`
+- [ ] Category matches the taxonomy in `.github/PLAYBOOK.md`
 - [ ] No existing link has been removed
 
 ## Development Standards

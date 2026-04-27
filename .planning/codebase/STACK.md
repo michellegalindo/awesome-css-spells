@@ -37,14 +37,14 @@
 - `node:assert/strict` — Assertion API used inside the tests.
 
 **Build/Dev:**
-- `tsx` ^4.21.0 — Runs TypeScript files (and the test suite) without a compile step. Invoked by `npm run curate` and `npm test` in `package.json:6,10`.
+- `tsx` ^4.21.0 — Runs TypeScript files (and the test suite) without a compile step. Invoked by `npm run add-resource` and `npm test` in `package.json:6,10`.
 - `prettier` ^3.8.3 — Formatting for `**/*.{js,ts,html,css}`. Config in `.prettierrc`, ignore list in `.prettierignore`.
 - `npx serve .` — Local static-file server invoked by `npm start` (`package.json:7`); `serve` is not declared as a dependency and is fetched on demand.
 
 ## Key Dependencies
 
 **Critical (declared in `package.json`):**
-- `tsx` ^4.21.0 (devDependency) — Required to execute the curator script and run tests; everything in `npm run curate` and `npm test` flows through it.
+- `tsx` ^4.21.0 (devDependency) — Required to execute the curator script and run tests; everything in `npm run add-resource` and `npm test` flows through it.
 - `typescript` ^6.0.3 (devDependency) — Provides the TS compiler/types consumed by `tsx` and editor tooling.
 - `@types/node` ^25.6.0 (devDependency) — Type definitions for the Node.js APIs used in `app/*.ts` (`node:util`, `node:fs`, `node:path`, `node:url`, `node:test`, `node:assert/strict`, `child_process`).
 - `prettier` ^3.8.3 (devDependency) — Code formatter; also invoked via `npx prettier --write` from `app/sync_ptbr.ts:138` to format generated HTML.
@@ -65,7 +65,7 @@
 
 **Build:**
 - `package.json` scripts (`package.json:5-11`):
-  - `curate` → `tsx .cursor/skills/curator/scripts/add_readme_resource.ts` (note: this path does not exist; the live script is `app/add_readme_resource.ts`, also documented in `CLAUDE.md` and `.claude/skills/curator/SKILL.md`)
+  - `add-resource` → `tsx scripts/add-resource/add_readme_resource.ts`
   - `start` → `npx serve .`
   - `format` → `prettier --write "**/*.{js,ts,html,css}"`
   - `format:check` → `prettier --check "**/*.{js,ts,html,css}"`

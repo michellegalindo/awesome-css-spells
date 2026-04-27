@@ -16,7 +16,7 @@ awesome-css/
 ├── CNAME                             # GitHub Pages custom domain (awesome-css.com)
 ├── favicon.png
 ├── index.html                        # English SPA shell
-├── package.json                      # npm scripts: curate, start, format, test
+├── package.json                      # npm scripts: add-resource, start, format, test
 ├── package-lock.json
 ├── .prettierrc                       # semi, double-quote, 2-space, trailingComma es5, width 100
 ├── .prettierignore                   # ignores node_modules, lockfiles, *.md
@@ -44,18 +44,10 @@ awesome-css/
 ├── .github/
 │   ├── dependabot.yml               # Weekly npm updates
 │   └── pull_request_template.md     # Summary + Test plan checklist
-├── .cursor/
-│   ├── rules/
-│   │   ├── curation.mdc
-│   │   ├── curation-validation.mdc
-│   │   └── language-standards.mdc
-│   └── skills/
-│       └── curator/
-│           └── SKILL.md
 ├── .claude/
 │   ├── settings.json
 │   └── skills/
-│       ├── curator/SKILL.md
+│       ├── auto-tagger/SKILL.md
 │       └── sync-ptbr/SKILL.md
 └── .planning/
     └── codebase/                     # GSD codebase mapping documents
@@ -101,7 +93,7 @@ awesome-css/
 
 | Change needed | Where |
 |---|---|
-| New curated link | `npm run curate -- --link "..." --title "..."` — do **not** edit README by hand |
+| New curated link | `npm run add-resource -- --link "..." --title "..."` — do **not** edit README by hand |
 | New taxonomy category | `docs/conventions.md` → `inferEnCategory` (`app/add_readme_resource.ts:55-95`) → `EN_TO_PT_CATEGORY` (`:30-53`) → both READMEs |
 | New type tag | `docs/conventions.md` → `EN_TO_PT_TYPE` (`app/add_readme_resource.ts:14-28`) |
 | New CLI helper | New `app/snake_case.ts`, export pure functions, co-locate `app/<name>.test.ts` |

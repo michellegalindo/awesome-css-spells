@@ -10,8 +10,8 @@
 
 [🌎 English](https://github.com/michellegalindo/awesome-css#readme) · 🇧🇷 Português
 
-Recursos de CSS focados em resolver problemas reais de UI. <br/>
-Lista exclusivamente dedicada a materiais publicados em português.
+Lista de recursos CSS para quem constrói interfaces de verdade. <br/>
+Versão especial dedicada a materiais publicados em português.
 
 #### 📌 State of CSS 2025: [https://2025.stateofcss.com/pt-BR](https://2025.stateofcss.com/pt-BR)
 

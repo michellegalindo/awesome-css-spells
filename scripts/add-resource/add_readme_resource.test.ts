@@ -1,30 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import {
-  inferEnCategory,
   isDescriptionPoor,
   extractMetaDescription,
   detectLangFromResponse,
 } from "./add_readme_resource.ts";
-
-test("inferEnCategory maps layout keywords", () => {
-  assert.equal(inferEnCategory("CSS Grid tutorial"), "Layout & Positioning");
-  assert.equal(inferEnCategory("Flexbox cheatsheet"), "Layout & Positioning");
-});
-
-test("inferEnCategory maps animation keywords", () => {
-  assert.equal(inferEnCategory("scroll-driven animations"), "Animation & Visual Effects");
-  assert.equal(inferEnCategory("transition guide"), "Animation & Visual Effects");
-});
-
-test("inferEnCategory falls back to Learning & References", () => {
-  assert.equal(inferEnCategory("random unrelated text"), "Learning & References");
-});
-
-test("inferEnCategory handles container queries before layers", () => {
-  assert.equal(inferEnCategory("container query reference"), "Container Queries");
-  assert.equal(inferEnCategory("@layer cascade"), "Cascade Layers");
-});
 
 test("isDescriptionPoor flags short descriptions", () => {
   assert.equal(isDescriptionPoor("too short"), true);

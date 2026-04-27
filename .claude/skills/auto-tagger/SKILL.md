@@ -1,21 +1,21 @@
 ---
-name: curator
-description: Automatically append a README link resource into the correct Awesome CSS category. Use when the user provides a URL and description and wants the link inserted in the right section.
+name: auto-tagger
+description: Automatically classify a link into the correct Awesome CSS category and apply the right type tag, then insert it into the README. Use when the user provides a URL and wants it categorized and tagged automatically.
 ---
 
-# Curate README Link
+# Auto-Tagger
 
 ## Purpose
 
-Insert a new resource into the correct README (`README.md` for English, `pt-br/README.md` for Portuguese) in the most likely category, following the project curation format.
+Classify a new resource into the correct category, apply the appropriate type tag, and insert the formatted link into the correct README (`README.md` for English, `pt-br/README.md` for Portuguese).
 
 ## Inputs
 
 - Required: `--link`
 - Required: `--title` (use a curated title, not copy-paste from the page `<title>`)
+- Required: `--tag` (see allowed values in `.github/PLAYBOOK.md`)
+- Required: `--category` (English category name from the taxonomy — mapped automatically for pt-BR)
 - Optional: `--description`
-- Optional: `--type` (default `guide`)
-- Optional: `--category` (override classification; use the English category name — it is mapped automatically for pt-BR)
 - Optional: `--lang` (`en` or `pt-BR`; if omitted, the script detects the language from the target URL)
 - Optional: `--description-from-internet` (default `true`)
 
@@ -30,22 +30,22 @@ Resources in English are inserted into `README.md`; resources in Portuguese are 
 ## How to run
 
 ```bash
-npx tsx scripts/curator/add_readme_resource.ts \
+npx tsx scripts/add-resource/add_readme_resource.ts \
   --link "https://..." \
   --title "Resource Name" \
+  --tag guide \
+  --category "Layout & Positioning" \
   [--description "Short practical description"] \
-  [--type guide] \
-  [--category "Layout & Positioning"] \
   [--lang en]
 ```
 
 Or via npm:
 
 ```bash
-npm run curate -- --link "https://..." --title "Resource Name" [--lang en]
+npm run add-resource -- --link "https://..." --title "Resource Name" --tag guide --category "Layout & Positioning" [--lang en]
 ```
 
 ## Policy references
 
-- Curation policy and taxonomy: `.github/CONVENTIONS.md`
+- Curation policy and taxonomy: `.github/PLAYBOOK.md`
 - Full project instructions: `CLAUDE.md`

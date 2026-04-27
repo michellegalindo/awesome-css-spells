@@ -52,47 +52,6 @@ const EN_TO_PT_CATEGORY: Record<string, string> = {
   Inspiration: "Inspiração",
 };
 
-export function inferEnCategory(text: string): string {
-  const lower = text.toLowerCase();
-  if (lower.includes("grid") || lower.includes("flexbox") || lower.includes("layout")) {
-    return "Layout & Positioning";
-  }
-  if (
-    lower.includes("animation") ||
-    lower.includes("transition") ||
-    lower.includes("scroll-driven")
-  ) {
-    return "Animation & Visual Effects";
-  }
-  if (lower.includes("form") || lower.includes("input") || lower.includes("checkbox")) {
-    return "Forms & UX Patterns";
-  }
-  if (lower.includes("responsive") || lower.includes("media query")) {
-    return "Responsive Design";
-  }
-  if (lower.includes("container quer")) {
-    return "Container Queries";
-  }
-  if (lower.includes("layer")) {
-    return "Cascade Layers";
-  }
-  if (lower.includes("nesting")) {
-    return "Nesting";
-  }
-  if (lower.includes("tailwind") || lower.includes("framework")) {
-    return "CSS Frameworks";
-  }
-  if (lower.includes("generator")) {
-    return "Generators";
-  }
-  if (lower.includes("performance") || lower.includes("optimiz")) {
-    return "Performance & Optimization";
-  }
-  if (lower.includes("a11y") || lower.includes("accessib")) {
-    return "Accessibility (a11y)";
-  }
-  return "Learning & References";
-}
 
 const DESCRIPTION_MAX_LENGTH = 110;
 
@@ -147,7 +106,7 @@ async function main() {
       link: { type: "string" },
       description: { type: "string" },
       title: { type: "string" },
-      type: { type: "string", default: "guide" },
+      "tag": { type: "string" },
       category: { type: "string" },
       lang: { type: "string" },
       "description-from-internet": { type: "string", default: "true" },
@@ -227,13 +186,17 @@ async function main() {
 
   description = description || "No description provided.";
   validateDescriptionLength(description);
-  const rawType = (values.type as string | undefined) || "guide";
+  const rawType = values["tag"] as string | undefined;
+  if (!rawType) {
+    console.error("Error: --tag is required. See .github/PLAYBOOK.md for allowed values.");
+    process.exit(1);
+  }
   const type = lang === "pt-BR" ? (EN_TO_PT_TYPE[rawType] ?? rawType) : rawType;
 
-  let enCategory = values.category as string | undefined;
+  const enCategory = values.category as string | undefined;
   if (!enCategory) {
-    enCategory = inferEnCategory(`${title} ${description}`);
-    console.log(`Inferred category: ${enCategory}`);
+    console.error("Error: --category is required. Use the English category name from .github/PLAYBOOK.md.");
+    process.exit(1);
   }
 
   const category = lang === "pt-BR" ? (EN_TO_PT_CATEGORY[enCategory] ?? enCategory) : enCategory;

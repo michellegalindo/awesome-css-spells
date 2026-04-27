@@ -1,47 +1,60 @@
-# Contributing to Awesome CSS 🎨
+# How to Contribute
 
-Thank you for your interest in contributing to **Awesome CSS**! This project aims to be a high-quality curation focused on solving real UI problems.
+Thanks for your interest in contributing to **Awesome CSS**!
 
-To maintain the organization and utility of the repository, we follow some important guidelines.
+To keep the repository organized and useful, please follow these guidelines.
 
-## 🛠 How to Contribute
+## 1. Adding New Links
 
-### 1. Adding New Links
+Found a great CSS resource? You can add it in one of the following ways:
 
-If you've found an amazing resource that solves a specific CSS problem:
+### 1.1 Using Claude: /auto-tagger skill
 
-- **Prefer using the Cursor Skill**: If you are using the Cursor IDE, use the curation skill to automate the link insertion in the correct place.
-- **Mandatory Format**: If adding manually, strictly follow the format:
-  `- [Resource Name](https://url) - Short practical description *(tag)*`
-- **Categorization**: Place the resource in the section that best describes the **problem it solves**, not just the technology type.
-- **Consult the Conventions**: Read our detailed guide in [.github/CONVENTIONS.md](.github/CONVENTIONS.md).
+To make things easier, an **Auto-Tagger** skill is available. It automatically classifies a link and inserts a properly formatted entry into the correct `README.md`.
 
-### 2. Proposing New Categories
+```bash
+/auto-tagger https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+```
 
-- **Open an Issue first**: To keep the project's taxonomy clean, do not create new categories or subsections directly via PR. Open an [issue](https://github.com/michellegalindo/awesome-css/issues) to discuss the need and name for the new category.
+> Curation decisions are made by humans. The auto-tagger only handles the mechanical work—classification, tagging, and placement. Please review the output before submitting.
 
-### 3. Documentation or Structure Improvements
+### 1.2 Using the npm script
 
-- Pull Requests for broken link fixes, description improvements, or formatting adjustments are always welcome!
+This script adds a resource based on the information you provide:
 
----
+```bash
+npm run add-resource -- \
+  --link "https://css-tricks.com/snippets/css/a-guide-to-flexbox/" \
+  --title "A Complete Guide to Flexbox" \
+  --description "Visual reference covering all flexbox properties with examples" \
+  --category "Layout & Positioning" \
+  --tag guide \
+  --lang en
+```
 
-## 📜 Code of Conduct
+| Parameter | Required | Default | Description |
+|-----------|----------|---------|-------------|
+| `--link` `--title` `--tag` `--category` | yes | — | See [PLAYBOOK.md](.github/PLAYBOOK.md) |
+| `--description` `--lang` | no | fetched from URL | Short description and language |
 
-### Our Pledge
+**Automatic behavior:**
 
-We as contributors and maintainers are committed to making participation in this project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+- Descriptions over 110 characters will cause an error. Rewrite them concisely and try again.
+- If `--lang` is not provided, the script detects it via the HTML lang attribute and Content-Language header. Unsupported languages are rejected.
 
-### Our Standards
-Examples of behavior that helps build a positive environment:
-* Using welcoming and inclusive language
-* Being respectful of different viewpoints and experiences
-* Accepting constructive criticism with grace
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+### 1.3 Manual insert
 
-### Our Responsibilities
-Project maintainers are responsible for clarifying acceptable behavior and are expected to take fair corrective action when needed.
+You can also add entries manually:
 
-### Attribution
-This Code of Conduct is adapted from the [Contributor Covenant](http://contributor-covenant.org), version 1.4.
+- Use `README.md` for English resources
+- Use `pt-br/README.md` for Portuguese resources
+
+Follow the existing structure. See [PLAYBOOK.md](.github/PLAYBOOK.md) for details.
+
+## 3. Documentation or Structure Improvements
+
+Pull requests for fixing broken links, improving descriptions, or refining formatting are always welcome!
+
+## 2. Proposing New Categories or Features
+
+Open an [Issue](https://github.com/michellegalindo/awesome-css/issues) to discuss ideas.

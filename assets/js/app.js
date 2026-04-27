@@ -15,15 +15,15 @@ init();
 
 function processMarkdown(md) {
   document.getElementById("loading").style.display = "none";
-  document.getElementById("rendered").classList.remove("hidden");
+  renderedEl.classList.remove("hidden");
   const raw = marked.parse(sliceContent(md));
   const processed = raw
     .replace(/<a href="(?!#)([^"]*)"/g, '<a href="$1" target="_blank" rel="noopener"')
     .replace(/<\/a> - /g, "</a><br>")
     .replace(/<em>\(([^)]+)\)<\/em>/g, '<span class="reference-tag">$1</span>');
-  document.getElementById("rendered").innerHTML = processed;
+  renderedEl.innerHTML = processed;
 
-  document.querySelectorAll("#rendered li").forEach((li) => {
+  renderedEl.querySelectorAll("li").forEach((li) => {
     const tag = li.querySelector(".reference-tag");
     if (!tag) return;
 
@@ -54,20 +54,13 @@ function processMarkdown(md) {
     li.appendChild(outerA);
   });
 
-  const allHeadings = [...document.querySelectorAll("#rendered h1, #rendered h2")];
-  allHeadings.forEach((h) => {
-    if (h.tagName === "H1") {
-      const h2 = document.createElement("h2");
-      h2.innerHTML = h.innerHTML;
-      h.replaceWith(h2);
-    } else {
-      const h3 = document.createElement("h3");
-      h3.innerHTML = h.innerHTML;
-      h.replaceWith(h3);
-    }
+  [...renderedEl.querySelectorAll("h1, h2")].forEach((h) => {
+    const newH = document.createElement(h.tagName === "H1" ? "h2" : "h3");
+    newH.innerHTML = h.innerHTML;
+    h.replaceWith(newH);
   });
 
-  document.querySelectorAll("#rendered h2, #rendered h3").forEach((h) => {
+  renderedEl.querySelectorAll("h2, h3").forEach((h) => {
     const id = h.textContent
       .trim()
       .toLowerCase()
@@ -82,10 +75,10 @@ function processMarkdown(md) {
 
   document.getElementById("stat-links").textContent = allItems.length;
   document.getElementById("stat-sections").textContent = [
-    ...document.querySelectorAll("#rendered h2"),
+    ...renderedEl.querySelectorAll("h2"),
   ].filter((h) => h.textContent.trim() !== "Summary").length;
 
-  document.querySelectorAll("#rendered h2").forEach((h) => {
+  renderedEl.querySelectorAll("h2").forEach((h) => {
     const btn = document.createElement("button");
     btn.className = "anchor-copy";
     btn.textContent = "#";
@@ -99,8 +92,8 @@ function processMarkdown(md) {
     h.appendChild(btn);
   });
 
-  document.getElementById("search").disabled = false;
-  document.getElementById("search").focus();
+  searchInput.disabled = false;
+  searchInput.focus();
 }
 
 function buildTOC() {

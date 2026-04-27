@@ -1,29 +1,31 @@
 # Code of Conduct
 
-## Our Pledge
+## Our Commitment
 
-We are committed to making this project a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity, level of experience, nationality, race, religion, or sexual identity and orientation.
+We are committed to making this project a respectful and inclusive space for everyone—regardless of background, identity, or experience level.
 
-## Our Standards
+## Expected Behavior
 
-Positive behavior includes:
+- Be respectful and constructive  
+- Welcome different perspectives  
+- Give and receive feedback with openness  
+- Focus on improving the project, not people  
 
-* Being welcoming and inclusive
-* Respecting different viewpoints
-* Accepting constructive criticism
-* Showing empathy towards others
+## Unacceptable Behavior
 
-Unacceptable behavior includes:
-
-* Sexualized language or unwelcome sexual attention
-* Trolling, derogatory comments, or personal attacks
-* Public or private harassment
-* Sharing others' private information without permission
+- Harassment, discrimination, or hate speech  
+- Personal attacks or toxic behavior  
+- Unwelcome sexual language or attention  
+- Sharing private information without consent  
 
 ## Enforcement
 
-Unacceptable behavior can be reported by contacting the project team. All reports will be reviewed and handled appropriately. Maintainers who do not enforce this Code of Conduct may face temporary or permanent consequences.
+If something crosses the line, maintainers may take action, including removing content or limiting participation.
 
-## Attribution
+## Reporting
 
-Adapted from the [Contributor Covenant](http://contributor-covenant.org), version 1.4.
+If you experience or witness unacceptable behavior, please open an issue or contact the maintainers.
+
+---
+
+Adapted from the Contributor Covenant.
