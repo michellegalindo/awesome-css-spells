@@ -1,6 +1,6 @@
 # Awesome CSS
 
-<img align="right" width="160" alt="css-logo" src="https://github.com/user-attachments/assets/bf7b22be-92d1-4ce3-94d2-a8e5b7de42bd" />
+<img align="right" width="130" alt="css-logo" src="https://github.com/user-attachments/assets/bf7b22be-92d1-4ce3-94d2-a8e5b7de42bd" />
 
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![Last Commit](https://img.shields.io/github/last-commit/michellegalindo/awesome-css)](https://github.com/michellegalindo/awesome-css/commits/main)
@@ -14,6 +14,10 @@ CSS resources list curated for real-world UI problems. <br/>
 Find what you need faster and build better interfaces.
 
 #### 📌 State of CSS 2025: [https://2025.stateofcss.com](https://2025.stateofcss.com)
+
+<div align="center">
+<img width="900" src="https://github.com/user-attachments/assets/f7b7cbbb-1be0-4b30-900e-c2b45210b176" />
+</div>
 
 <br/>
 
