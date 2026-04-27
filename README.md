@@ -23,14 +23,6 @@ Find what you need faster and build better interfaces.
 
 <br/>
 
-#### 📌 State of CSS 2025: [https://2025.stateofcss.com](https://2025.stateofcss.com)
-
-<div align="center">
-<img width="900" src="https://github.com/user-attachments/assets/f7b7cbbb-1be0-4b30-900e-c2b45210b176" />
-</div>
-
-<br/>
-
 ## Summary
 
 <details open>
