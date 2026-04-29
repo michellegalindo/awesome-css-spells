@@ -32,24 +32,20 @@ Explore, learn, and contribute.
   - [CSS Frameworks](#css-frameworks)
   - [CSS-in-JS](#css-in-js)
 - [Tooling](#tooling)
-  - [Generators](#generators)
+  - [Style Generators](#style-generators)
   - [Utilities](#utilities)
   - [Debugging](#debugging)
 - [Layout & Positioning](#layout--positioning)
 - [Animation & Effects](#animation--visual-effects)
-- [Modern CSS](#modern-css)
-  - [Container Queries](#container-queries)
-  - [Cascade Layers](#cascade-layers)
-  - [Nesting](#nesting)
-  - [New Specs / Beta](#new-specs--experimental)
+- [What's New in CSS](#whats-new-in-css)
 - [UI & Components](#ui--components)
 - [Forms & UX Patterns](#forms--ux-patterns)
 - [Responsive Design](#responsive-design)
 - [Architecture](#architecture)
-  - [CSS Architecture](#css-architecture)
+  - [CSS Authoring & Build](#css-authoring--build)
   - [Naming & Methodologies](#naming--methodologies)
   - [Design Systems](#design-systems)
-  - [Large-scale CSS](#large-scale-css)
+  - [Scaling Strategies](#scaling-strategies)
 - [Performance & Optimization](#performance--optimization)
 - [Accessibility (a11y)](#accessibility-a11y)
 - [Learning & References](#learning--references)
@@ -62,10 +58,10 @@ Explore, learn, and contribute.
 ## Frameworks
 
 ### CSS Frameworks
-- [Tailwind](https://tailwindcss.com) - Build UIs faster with utility classes without leaving your HTML *(framework)*
-- [Bulma](https://bulma.io) - Style modern interfaces with Flexbox-based components and zero JavaScript dependencies *(framework)*
-- [Milligram](https://milligram.io) - Ship clean layouts with minimal CSS defaults that never override your work *(framework)*
-- [Pure.css](https://pure-css.github.io) - Add responsive UI modules to any project with a tiny CSS payload *(framework)*
+- [Tailwind](https://tailwindcss.com) - Build UIs faster with utility classes without leaving your HTML *(library)*
+- [Bulma](https://bulma.io) - Style modern interfaces with Flexbox-based components and zero JavaScript dependencies *(library)*
+- [Milligram](https://milligram.io) - Ship clean layouts with minimal CSS defaults that never override your work *(library)*
+- [Pure.css](https://pure-css.github.io) - Add responsive UI modules to any project with a tiny CSS payload *(library)*
 
 ### CSS-in-JS
 - [Vanilla Extract](https://vanilla-extract.style) - Write type-safe, zero-runtime CSS in TypeScript with build-time scoped output *(library)*
@@ -74,17 +70,19 @@ Explore, learn, and contribute.
 
 ## Tooling
 
-### Generators
-- [Gradient Generator](https://cssgradient.io) - Create and copy custom CSS gradients with a live visual editor *(generator)*
-- [Gradients Collection for UI](https://uigradients.com) - Browse and copy curated gradient combinations ready for UI backgrounds *(generator)*
-- [GradientArt: Advanced Gradient Editor](https://gra.dient.art) - Build complex multi-stop CSS gradients with precise layer and blending controls *(generator)*
-- [Box Shadow Generator](https://box-shadow.dev) - Build and export box shadows visually with real-time layer previews *(generator)*
-- [Neumorphism Generator](https://neumorphism.io) - Generate soft-UI shadows for neumorphic CSS effects with live preview *(generator)*
-- [Glassmorphism Generator](https://ui.glass/generator) - Generate blur, transparency, and border CSS for glass-effect UI elements *(generator)*
-- [CSS Generators: Your CSS code with less effort](https://css-generators.com) - A wide range of CSS Generators (as frames and shapes) to build the future of the web. *(generator)*
+### Style Generators
+- [Gradient Generator](https://cssgradient.io) - Create and copy custom CSS gradients with a live visual editor *(tool)*
+- [Gradients Collection for UI](https://uigradients.com) - Browse and copy curated gradient combinations ready for UI backgrounds *(tool)*
+- [GradientArt: Advanced Gradient Editor](https://gra.dient.art) - Build complex multi-stop CSS gradients with precise layer and blending controls *(tool)*
+- [Box Shadow Generator](https://box-shadow.dev) - Build and export box shadows visually with real-time layer previews *(tool)*
+- [Neumorphism Generator](https://neumorphism.io) - Generate soft-UI shadows for neumorphic CSS effects with live preview *(tool)*
+- [Glassmorphism Generator](https://ui.glass/generator) - Generate blur, transparency, and border CSS for glass-effect UI elements *(tool)*
+- [CSS Generators: Your CSS code with less effort](https://css-generators.com) - A wide range of CSS Generators (as frames and shapes) to build the future of the web. *(tool)*
+- [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(tool)*
 
 ### Utilities
-- [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(tool)*
+
+Empty. Add your contribution 💜
 
 ### Debugging
 - [Can I Use - Browser Support](https://caniuse.com) - Check CSS and HTML feature support across every browser before shipping *(tool)*
@@ -109,20 +107,8 @@ Explore, learn, and contribute.
 
 <br/>
 
-## Modern CSS
+## What's New in CSS
 
-### Container Queries
-- [CSS Container Queries Guide | design.dev](https://design.dev/guides/css-container-queries/) - Complete reference for building modular components that adapt to their container size with syntax, units, and patterns *(guide)*
-- [CSS container queries | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) - Official introduction to container size queries with naming contexts, container units, and progressive enhancement fallbacks *(reference)*
-
-### Cascade Layers
-- [Hello, CSS Cascade Layers by Ahmad Shadeed](https://ishadeed.com/article/cascade-layers/) - Learn how @layer controls cascade priority with use cases for theming, specificity control, and utility CSS *(article)*
-- [Cascade Layers Complete Guide | CSS-Tricks](https://css-tricks.com/css-cascade-layers) - Master cascade layers with full syntax reference, layer ordering, !important behavior, and real-world use cases *(guide)*
-
-### Nesting
-- [Nesting | web.dev Learn CSS](https://web.dev/learn/css/nesting) - Learn native CSS nesting from Google's structured curriculum covering selectors, combinators, and nested at-rules *(guide)*
-
-### New Specs / Experimental
 - [CSS Wrapped 2025 by Chrome Developers](https://chrome.dev/css-wrapped-2025/) - Recap the 22 CSS and UI improvements shipped in 2025 with live interactive examples *(reference)*
 - [CSS in 2025–2026: It's Getting Too Powerful](https://dev.to/pixelperfect_pro/css-in-2025-2026-its-getting-too-powerful-and-im-scared-2ej8) - Survey emerging features like if(), native masonry, anchor positioning, scroll-driven animations, and CSS mixins *(article)*
 
@@ -143,23 +129,28 @@ Empty. Add your contribution 💜
 
 - [Complete Guide to Responsive Website Design in 2026](https://webcraftdev.com/en/blog/complete-guide-responsive-website-2026) - Apply auto-fit grids, fluid typography, container queries, and Core Web Vitals to real-world projects *(article)*
 - [Responsive web design basics | Web.dev](https://web.dev/articles/responsive-web-design-basics?hl=en) - Create sites that respond to the needs and capabilities of the device. *(guide)*
+- [CSS Container Queries Guide | design.dev](https://design.dev/guides/css-container-queries/) - Complete reference for building modular components that adapt to their container size with syntax, units, and patterns *(guide)*
+- [CSS container queries | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) - Official introduction to container size queries with naming contexts, container units, and progressive enhancement fallbacks *(reference)*
 
 <br/>
 
 ## Architecture
 
-### CSS Architecture
-- [Sass](https://sass-lang.com) - Structure large stylesheets with variables, mixins, nesting, and file partials *(preprocessor)*
+### CSS Authoring & Build
+- [Sass](https://sass-lang.com) - Structure large stylesheets with variables, mixins, nesting, and file partials *(tool)*
 - [PostCSS](https://postcss.org) - Transform and extend CSS using a composable plugin pipeline at build time *(tool)*
+- [Hello, CSS Cascade Layers by Ahmad Shadeed](https://ishadeed.com/article/cascade-layers/) - Learn how @layer controls cascade priority with use cases for theming, specificity control, and utility CSS *(article)*
+- [Cascade Layers Complete Guide | CSS-Tricks](https://css-tricks.com/css-cascade-layers) - Master cascade layers with full syntax reference, layer ordering, !important behavior, and real-world use cases *(guide)*
+- [Nesting | web.dev Learn CSS](https://web.dev/learn/css/nesting) - Learn native CSS nesting from Google's structured curriculum covering selectors, combinators, and nested at-rules *(guide)*
 
 ### Naming & Methodologies
-- [Understanding CSS Naming Conventions: BEM, OOCSS, SMACSS and SUIT CSS](https://www.frontendmentor.io/articles/understanding-css-naming-conventions-bem-oocss-smacss-and-suit-css-V6ZZUYs1xz) - Compare to choose the right naming strategy *(methodology)*
-- [CUBE CSS | CUBE CSS](https://cube.fyi/) - A CSS methodology oriented towards simplicity and consistency with a heavy dosage of pragmatism. *(methodology)*
+- [Understanding CSS Naming Conventions: BEM, OOCSS, SMACSS and SUIT CSS](https://www.frontendmentor.io/articles/understanding-css-naming-conventions-bem-oocss-smacss-and-suit-css-V6ZZUYs1xz) - Compare to choose the right naming strategy *(article)*
+- [CUBE CSS | CUBE CSS](https://cube.fyi/) - A CSS methodology oriented towards simplicity and consistency with a heavy dosage of pragmatism. *(reference)*
 
 ### Design Systems
 - [Atomic Design by Brad Frost](https://atomicdesigncourse.com) - Design systems from atoms to templates using a composable component methodology *(course)*
 
-### Large-scale CSS
+### Scaling Strategies
 - [CSS Architecture for Large Projects](https://codably.dev/frontend/css-architecture-for-large-projects) - Apply ITCSS, BEM, and component scoping to keep stylesheets maintainable and specificity-free as projects grow *(article)*
 - [The Art of CSS Architecture: Scalable Stylesheets for Enterprise](https://laur.design/blog/css-architecture-scalable-stylesheets/) - Implement CUBE CSS, design tokens, namespaced components, and living style guides in large applications *(article)*
 
@@ -194,5 +185,5 @@ Empty. Add your contribution 💜
 
 ## Inspiration
 
-- [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(reference)*
-- [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(reference)*
+- [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(showcase)*
+- [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(showcase)*

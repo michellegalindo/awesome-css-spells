@@ -24,24 +24,20 @@ Versão dedicada a materiais publicados em português.
   - [Frameworks CSS](#frameworks-css)
   - [CSS-in-JS](#css-in-js)
 - [Ferramentas](#ferramentas)
-  - [Geradores](#geradores)
+  - [Geradores de Estilo](#geradores-de-estilo)
   - [Utilitários](#utilitários)
   - [Depuração (Debug)](#depuração-debug)
 - [Layout e Posicionamento](#layout-e-posicionamento)
 - [Animação e Efeitos Visuais](#animação-e-efeitos-visuais)
-- [CSS Moderno](#css-moderno)
-  - [Container Queries](#container-queries)
-  - [Cascade Layers](#cascade-layers)
-  - [Nesting (Aninhamento)](#nesting-aninhamento)
-  - [Novas Especificações / Experimental](#novas-especificações--experimental)
+- [Novidades em CSS](#novidades-em-css)
 - [UI e Componentes](#ui-e-componentes)
 - [Formulários e Padrões de UX](#formulários-e-padrões-de-ux)
 - [Design Responsivo](#design-responsivo)
 - [Arquitetura](#arquitetura)
-  - [Arquitetura CSS](#arquitetura-css)
+  - [Autoria e Build](#autoria-e-build)
   - [Nomenclatura e Metodologias](#nomenclatura-e-metodologias)
   - [Design Systems](#design-systems)
-  - [CSS em Larga Escala](#css-em-larga-escala)
+  - [Estratégias de Escala](#estratégias-de-escala)
 - [Performance e Otimização](#performance-e-otimização)
 - [Acessibilidade (a11y)](#acessibilidade-a11y)
 - [Aprendizado e Referências](#aprendizado-e-referências)
@@ -65,7 +61,7 @@ Contribua para esta categoria 💚
 
 ## Ferramentas
 
-### Geradores
+### Geradores de Estilo
 
 Contribua para esta categoria 💚
 
@@ -91,21 +87,7 @@ Contribua para esta categoria 💚
 
 <br/>
 
-## CSS Moderno
-
-### Container Queries
-
-Contribua para esta categoria 💚
-
-### Cascade Layers
-
-Contribua para esta categoria 💚
-
-### Nesting (Aninhamento)
-
-Contribua para esta categoria 💚
-
-### Novas Especificações / Experimental
+## Novidades em CSS
 
 Contribua para esta categoria 💚
 
@@ -131,7 +113,7 @@ Contribua para esta categoria 💚
 
 ## Arquitetura
 
-### Arquitetura CSS
+### Autoria e Build
 
 Contribua para esta categoria 💚
 
@@ -143,7 +125,7 @@ Contribua para esta categoria 💚
 
 Contribua para esta categoria 💚
 
-### CSS em Larga Escala
+### Estratégias de Escala
 
 Contribua para esta categoria 💚
 

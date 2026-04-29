@@ -194,9 +194,7 @@ async function main() {
 
   const enCategory = values.category as string | undefined;
   if (!enCategory) {
-    console.error(
-      "Error: --category is required. Use the category name from README.md."
-    );
+    console.error("Error: --category is required. Use the category name from README.md.");
     process.exit(1);
   }
 
