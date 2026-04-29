@@ -20,32 +20,48 @@ Versão dedicada a materiais publicados em português.
 <details open>
 <summary>Ver Sumário</summary>
 
+**Fundação**
+
 - [Frameworks](#frameworks)
   - [Frameworks CSS](#frameworks-css)
   - [CSS-in-JS](#css-in-js)
+
+**Construir UIs**
+
+- [Layout e Posicionamento](#layout-e-posicionamento)
+- [Design Responsivo](#design-responsivo)
+- [Animação e Efeitos Visuais](#animação-e-efeitos-visuais)
+- [UI e Componentes](#ui-e-componentes)
+- [Formulários e Padrões de UX](#formulários-e-padrões-de-ux)
+
+**Infraestrutura**
+
 - [Ferramentas](#ferramentas)
   - [Geradores de Estilo](#geradores-de-estilo)
   - [Utilitários](#utilitários)
   - [Depuração (Debug)](#depuração-debug)
-- [Layout e Posicionamento](#layout-e-posicionamento)
-- [Animação e Efeitos Visuais](#animação-e-efeitos-visuais)
-- [Novidades em CSS](#novidades-em-css)
-- [UI e Componentes](#ui-e-componentes)
-- [Formulários e Padrões de UX](#formulários-e-padrões-de-ux)
-- [Design Responsivo](#design-responsivo)
 - [Arquitetura](#arquitetura)
-  - [Autoria e Build](#autoria-e-build)
+  - [Build e Recursos da Linguagem](#build-e-recursos-da-linguagem)
   - [Nomenclatura e Metodologias](#nomenclatura-e-metodologias)
   - [Design Systems](#design-systems)
-  - [Estratégias de Escala](#estratégias-de-escala)
+  - [Estratégias de Escalabilidade](#estratégias-de-escalabilidade)
+
+**Qualidade**
+
 - [Performance e Otimização](#performance-e-otimização)
 - [Acessibilidade (a11y)](#acessibilidade-a11y)
+
+**Descoberta**
+
+- [Novidades em CSS](#novidades-em-css)
 - [Aprendizado e Referências](#aprendizado-e-referências)
 - [Inspiração](#inspiração)
 
 </details>
 
 <br/>
+
+<!-- Fundação -->
 
 ## Frameworks
 
@@ -59,21 +75,7 @@ Contribua para esta categoria 💚
 
 <br/>
 
-## Ferramentas
-
-### Geradores de Estilo
-
-Contribua para esta categoria 💚
-
-### Utilitários
-
-Contribua para esta categoria 💚
-
-### Depuração (Debug)
-
-Contribua para esta categoria 💚
-
-<br/>
+<!-- Construir UIs -->
 
 ## Layout e Posicionamento
 
@@ -81,13 +83,13 @@ Contribua para esta categoria 💚
 
 <br/>
 
-## Animação e Efeitos Visuais
+## Design Responsivo
 
 Contribua para esta categoria 💚
 
 <br/>
 
-## Novidades em CSS
+## Animação e Efeitos Visuais
 
 Contribua para esta categoria 💚
 
@@ -105,7 +107,19 @@ Contribua para esta categoria 💚
 
 <br/>
 
-## Design Responsivo
+<!-- Infraestrutura -->
+
+## Ferramentas
+
+### Geradores de Estilo
+
+Contribua para esta categoria 💚
+
+### Utilitários
+
+Contribua para esta categoria 💚
+
+### Depuração (Debug)
 
 Contribua para esta categoria 💚
 
@@ -113,7 +127,7 @@ Contribua para esta categoria 💚
 
 ## Arquitetura
 
-### Autoria e Build
+### Build e Recursos da Linguagem
 
 Contribua para esta categoria 💚
 
@@ -125,11 +139,13 @@ Contribua para esta categoria 💚
 
 Contribua para esta categoria 💚
 
-### Estratégias de Escala
+### Estratégias de Escalabilidade
 
 Contribua para esta categoria 💚
 
 <br/>
+
+<!-- Qualidade -->
 
 ## Performance e Otimização
 
@@ -138,6 +154,14 @@ Contribua para esta categoria 💚
 <br/>
 
 ## Acessibilidade (a11y)
+
+Contribua para esta categoria 💚
+
+<br/>
+
+<!-- Descoberta -->
+
+## Novidades em CSS
 
 Contribua para esta categoria 💚
 

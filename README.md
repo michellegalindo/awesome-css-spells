@@ -28,32 +28,48 @@ Explore, learn, and contribute.
 <details open>
 <summary>View Summary</summary>
 
+**Foundation**
+
 - [Frameworks](#frameworks)
   - [CSS Frameworks](#css-frameworks)
   - [CSS-in-JS](#css-in-js)
+
+**Build UIs**
+
+- [Layout & Positioning](#layout--positioning)
+- [Responsive Design](#responsive-design)
+- [Animation & Visual Effects](#animation--visual-effects)
+- [UI & Components](#ui--components)
+- [Forms & UX Patterns](#forms--ux-patterns)
+
+**Dev Infrastructure**
+
 - [Tooling](#tooling)
   - [Style Generators](#style-generators)
   - [Utilities](#utilities)
   - [Debugging](#debugging)
-- [Layout & Positioning](#layout--positioning)
-- [Animation & Effects](#animation--visual-effects)
-- [What's New in CSS](#whats-new-in-css)
-- [UI & Components](#ui--components)
-- [Forms & UX Patterns](#forms--ux-patterns)
-- [Responsive Design](#responsive-design)
 - [Architecture](#architecture)
-  - [CSS Authoring & Build](#css-authoring--build)
+  - [Build & Language Features](#build--language-features)
   - [Naming & Methodologies](#naming--methodologies)
   - [Design Systems](#design-systems)
   - [Scaling Strategies](#scaling-strategies)
+
+**Quality**
+
 - [Performance & Optimization](#performance--optimization)
 - [Accessibility (a11y)](#accessibility-a11y)
+
+**Discovery**
+
+- [What's New in CSS](#whats-new-in-css)
 - [Learning & References](#learning--references)
 - [Inspiration](#inspiration)
 
 </details>
 
 <br/>
+
+<!-- Foundation -->
 
 ## Frameworks
 
@@ -67,6 +83,47 @@ Explore, learn, and contribute.
 - [Vanilla Extract](https://vanilla-extract.style) - Write type-safe, zero-runtime CSS in TypeScript with build-time scoped output *(library)*
 
 <br/>
+
+<!-- Build UIs -->
+
+## Layout & Positioning
+- [CSS Grid Playground](https://mozilladevelopers.github.io/playground/css-grid) - Learn CSS Grid step by step with interactive browser-native demos and DevTools *(playground)*
+- [What The Flexbox?! with Wes Bos](https://flexbox.io) - Master Flexbox layout through free video lessons with real browser exercises *(course)*
+- [Learn CSS Grid with Wes Bos](https://cssgrid.io) - Master CSS Grid through free video lessons and hands-on layout projects *(course)*
+- [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com) - Develop a mental model for layout decisions with 70+ interactive written lessons *(course)*
+
+<br/>
+
+## Responsive Design
+
+- [Complete Guide to Responsive Website Design in 2026](https://webcraftdev.com/en/blog/complete-guide-responsive-website-2026) - Apply auto-fit grids, fluid typography, container queries, and Core Web Vitals to real-world projects *(article)*
+- [Responsive web design basics | Web.dev](https://web.dev/articles/responsive-web-design-basics?hl=en) - Create sites that respond to the needs and capabilities of the device. *(guide)*
+- [CSS Container Queries Guide | design.dev](https://design.dev/guides/css-container-queries/) - Complete reference for building modular components that adapt to their container size with syntax, units, and patterns *(guide)*
+- [CSS container queries | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) - Official introduction to container size queries with naming contexts, container units, and progressive enhancement fallbacks *(reference)*
+
+<br/>
+
+## Animation & Visual Effects
+- [Animista: On-Demand Animation Library](https://animista.net) - Pick, customize, and copy CSS animations without writing keyframes manually *(library)*
+- [Transition Cubic-Bezier Generator](https://cubic-bezier.com) - Craft and preview custom timing curves for smooth CSS transitions *(tool)*
+- [Scroll-driven Animations](https://scroll-driven-animations.style/) - Visualize and create declarative scroll-driven animations with interactive demos and tools *(tool)*
+- [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Master scroll-driven animations and performance patterns for modern web pages *(video)*
+- [Spinner & Loading Animation Generator | FastTool ](https://fasttool.app/tools/css-loader-generator) - Create copy-ready CSS loader animations and presets to style fast-loading indicators quickly. *(tool)*
+
+<br/>
+
+## UI & Components
+- [Charts.css - Data visualization framework](https://chartscss.org) - Render data charts with pure CSS classes applied to semantic HTML tables *(library)*
+
+<br/>
+
+## Forms & UX Patterns
+
+Empty. Add your contribution 💜
+
+<br/>
+
+<!-- Dev Infrastructure -->
 
 ## Tooling
 
@@ -90,53 +147,9 @@ Empty. Add your contribution 💜
 
 <br/>
 
-## Layout & Positioning
-- [CSS Grid Playground](https://mozilladevelopers.github.io/playground/css-grid) - Learn CSS Grid step by step with interactive browser-native demos and DevTools *(playground)*
-- [What The Flexbox?! with Wes Bos](https://flexbox.io) - Master Flexbox layout through free video lessons with real browser exercises *(course)*
-- [Learn CSS Grid with Wes Bos](https://cssgrid.io) - Master CSS Grid through free video lessons and hands-on layout projects *(course)*
-- [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com) - Develop a mental model for layout decisions with 70+ interactive written lessons *(course)*
-
-<br/>
-
-## Animation & Visual Effects
-- [Animista: On-Demand Animation Library](https://animista.net) - Pick, customize, and copy CSS animations without writing keyframes manually *(library)*
-- [Transition Cubic-Bezier Generator](https://cubic-bezier.com) - Craft and preview custom timing curves for smooth CSS transitions *(tool)*
-- [Scroll-driven Animations](https://scroll-driven-animations.style/) - Visualize and create declarative scroll-driven animations with interactive demos and tools *(tool)*
-- [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Master scroll-driven animations and performance patterns for modern web pages *(video)*
-- [Spinner & Loading Animation Generator | FastTool ](https://fasttool.app/tools/css-loader-generator) - Create copy-ready CSS loader animations and presets to style fast-loading indicators quickly. *(tool)*
-
-<br/>
-
-## What's New in CSS
-
-- [CSS Wrapped 2025 by Chrome Developers](https://chrome.dev/css-wrapped-2025/) - Recap the 22 CSS and UI improvements shipped in 2025 with live interactive examples *(reference)*
-- [CSS in 2025–2026: It's Getting Too Powerful](https://dev.to/pixelperfect_pro/css-in-2025-2026-its-getting-too-powerful-and-im-scared-2ej8) - Survey emerging features like if(), native masonry, anchor positioning, scroll-driven animations, and CSS mixins *(article)*
-
-<br/>
-
-## UI & Components
-- [Charts.css - Data visualization framework](https://chartscss.org) - Render data charts with pure CSS classes applied to semantic HTML tables *(library)*
-
-<br/>
-
-## Forms & UX Patterns
-
-Empty. Add your contribution 💜
-
-<br/>
-
-## Responsive Design
-
-- [Complete Guide to Responsive Website Design in 2026](https://webcraftdev.com/en/blog/complete-guide-responsive-website-2026) - Apply auto-fit grids, fluid typography, container queries, and Core Web Vitals to real-world projects *(article)*
-- [Responsive web design basics | Web.dev](https://web.dev/articles/responsive-web-design-basics?hl=en) - Create sites that respond to the needs and capabilities of the device. *(guide)*
-- [CSS Container Queries Guide | design.dev](https://design.dev/guides/css-container-queries/) - Complete reference for building modular components that adapt to their container size with syntax, units, and patterns *(guide)*
-- [CSS container queries | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries) - Official introduction to container size queries with naming contexts, container units, and progressive enhancement fallbacks *(reference)*
-
-<br/>
-
 ## Architecture
 
-### CSS Authoring & Build
+### Build & Language Features
 - [Sass](https://sass-lang.com) - Structure large stylesheets with variables, mixins, nesting, and file partials *(tool)*
 - [PostCSS](https://postcss.org) - Transform and extend CSS using a composable plugin pipeline at build time *(tool)*
 - [Hello, CSS Cascade Layers by Ahmad Shadeed](https://ishadeed.com/article/cascade-layers/) - Learn how @layer controls cascade priority with use cases for theming, specificity control, and utility CSS *(article)*
@@ -156,6 +169,8 @@ Empty. Add your contribution 💜
 
 <br/>
 
+<!-- Quality -->
+
 ## Performance & Optimization
 
 - [CSS Performance Optimization | MDN](https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS) - Reduce render-blocking with critical CSS, minification, efficient selectors, and GPU-friendly animations *(guide)*
@@ -167,6 +182,15 @@ Empty. Add your contribution 💜
 
 - [WebAIM: Accessible CSS](https://webaim.org/techniques/css/) - Apply CSS accessibly with :focus-visible, reading order alignment, and proper content/presentation separation *(guide)*
 - [Web Accessibility Complete Guide 2025: WCAG 2.2, ARIA, Keyboard Navigation](https://www.youngju.dev/blog/culture/2026-03-24-web-accessibility-a11y-wcag-developer-guide-2025.en) - Implement focus indicators, contrast ratios, keyboard navigation, and accessible forms following WCAG 2.2 *(guide)*
+
+<br/>
+
+<!-- Discovery -->
+
+## What's New in CSS
+
+- [CSS Wrapped 2025 by Chrome Developers](https://chrome.dev/css-wrapped-2025/) - Recap the 22 CSS and UI improvements shipped in 2025 with live interactive examples *(reference)*
+- [CSS in 2025–2026: It's Getting Too Powerful](https://dev.to/pixelperfect_pro/css-in-2025-2026-its-getting-too-powerful-and-im-scared-2ej8) - Survey emerging features like if(), native masonry, anchor positioning, scroll-driven animations, and CSS mixins *(article)*
 
 <br/>
 
