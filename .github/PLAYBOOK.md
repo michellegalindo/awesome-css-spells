@@ -1,13 +1,8 @@
 # Playbook
 
-## Purpose
-
-- Optimize for fast discovery and real-world use.
-
 ## Curation Rules
 
 - **Preserve links**: Never remove existing resources.
-- **Categorize by problem**: Place each link where it’s most useful.
 - **One category only**: Choose the most practical fit.
 - **Write good descriptions**: Clear, practical, and opinionated (max 110 characters).
 - **Always tag types**: Add a type tag at the end of every link.
@@ -18,13 +13,10 @@
 
 `- [Resource Name](https://url) - Short practical description *(type)*`
 
-- Example:
-
-`- [Flexbox Froggy](https://flexboxfroggy.com) - Learn Flexbox alignment through an interactive game *(playground)*`
 
 ## Choose the right category
 
-> Pick the single category that best matches the **problem the resource solves**, not the resource type. When more than one fits, prefer the most specific subcategory.
+> Pick the single category that best matches the **problem the resource solves**. When more than one fits, prefer the most specific subcategory.
 
 | EN | PT-BR | Description |
 |----|-------|-------------|

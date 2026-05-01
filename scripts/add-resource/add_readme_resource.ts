@@ -28,26 +28,26 @@ const EN_TO_PT_TYPE: Record<string, string> = {
 };
 
 const EN_TO_PT_CATEGORY: Record<string, string> = {
+  Frameworks: "Frameworks",
+  "CSS Frameworks": "Frameworks CSS",
+  "CSS-in-JS": "CSS-in-JS",
   "Layout & Positioning": "Layout e Posicionamento",
+  "Responsive Design": "Design Responsivo",
   "Animation & Visual Effects": "Animação e Efeitos Visuais",
   "UI & Components": "UI e Componentes",
   "Forms & UX Patterns": "Formulários e Padrões de UX",
-  "Responsive Design": "Design Responsivo",
-  "CSS Architecture": "Arquitetura CSS",
+  Tooling: "Ferramentas",
+  "Style Generators": "Geradores de Estilo",
+  Utilities: "Utilitários",
+  Debugging: "Depuração (Debug)",
+  Architecture: "Arquitetura",
+  "Build & Language Features": "Build e Recursos da Linguagem",
   "Naming & Methodologies": "Nomenclatura e Metodologias",
   "Design Systems": "Design Systems",
-  "Large-scale CSS": "CSS em Larga Escala",
-  "Container Queries": "Container Queries",
-  "Cascade Layers": "Cascade Layers",
-  Nesting: "Nesting (Aninhamento)",
-  "New Specs / Experimental": "Novas Especificações / Experimental",
-  "CSS Frameworks": "Frameworks CSS",
-  "CSS-in-JS": "CSS-in-JS",
-  Generators: "Geradores",
-  Debugging: "Depuração (Debug)",
-  Utilities: "Utilitários",
+  "Scaling Strategies": "Estratégias de Escalabilidade",
   "Performance & Optimization": "Performance e Otimização",
   "Accessibility (a11y)": "Acessibilidade (a11y)",
+  "What's New in CSS": "Novidades em CSS",
   "Learning & References": "Aprendizado e Referências",
   Inspiration: "Inspiração",
 };
@@ -97,6 +97,50 @@ export function detectLangFromResponse(html: string, headers: Headers): Supporte
   }
 
   return null;
+}
+
+export function insertEntry(
+  content: string,
+  category: string,
+  entry: { title: string; link: string; description: string; type: string }
+): string | null {
+  const categoryRegex = new RegExp(
+    `^(#+)\\s+${category.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`,
+    "im"
+  );
+  const match = content.match(categoryRegex);
+  if (!match) return null;
+
+  const sectionStartIndex = match.index! + match[0].length;
+
+  const nextSectionRegex = /^#+\s+.+$/gm;
+  nextSectionRegex.lastIndex = sectionStartIndex;
+  const nextMatch = nextSectionRegex.exec(content);
+  const sectionEndIndex = nextMatch ? nextMatch.index : content.length;
+
+  const sectionContent = content.substring(sectionStartIndex, sectionEndIndex);
+  const listItemRegex = /^- \[.*$/gm;
+  let lastListItemIndex = -1;
+  let m: RegExpExecArray | null;
+  while ((m = listItemRegex.exec(sectionContent)) !== null) {
+    lastListItemIndex = m.index + m[0].length;
+  }
+
+  const { title, link, description, type } = entry;
+  let insertIndex: number;
+  let newEntry: string;
+
+  if (lastListItemIndex !== -1) {
+    insertIndex = sectionStartIndex + lastListItemIndex;
+    newEntry = `\n- [${title}](${link}) - ${description} *(${type})*`;
+  } else {
+    // Empty section: skip leading whitespace, end with \n to avoid concatenating placeholder text
+    const trimOffset = sectionContent.search(/\S/);
+    insertIndex = sectionStartIndex + (trimOffset === -1 ? 1 : trimOffset);
+    newEntry = `- [${title}](${link}) - ${description} *(${type})*\n\n`;
+  }
+
+  return content.substring(0, insertIndex) + newEntry + content.substring(insertIndex);
 }
 
 async function main() {
@@ -201,49 +245,17 @@ async function main() {
   const category = lang === "pt-BR" ? (EN_TO_PT_CATEGORY[enCategory] ?? enCategory) : enCategory;
 
   const readmePath = join(process.cwd(), readmeFile);
-  let readmeContent = readFileSync(readmePath, "utf-8");
+  const readmeContent = readFileSync(readmePath, "utf-8");
 
-  const categoryRegex = new RegExp(
-    `^(#+)\\s+${category.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*$`,
-    "im"
-  );
-  const match = readmeContent.match(categoryRegex);
+  const updated = insertEntry(readmeContent, category, { title: title!, link, description, type });
 
-  if (!match) {
+  if (!updated) {
     console.error(`Error: Category "${category}" not found in ${readmeFile}.`);
     console.error(`Please provide a valid category from the taxonomy.`);
     process.exit(1);
   }
 
-  const sectionStartIndex = match.index! + match[0].length;
-
-  const nextSectionRegex = /^#+\s+.+$/gm;
-  nextSectionRegex.lastIndex = sectionStartIndex;
-  const nextMatch = nextSectionRegex.exec(readmeContent);
-
-  const sectionEndIndex = nextMatch ? nextMatch.index : readmeContent.length;
-  const sectionContent = readmeContent.substring(sectionStartIndex, sectionEndIndex);
-
-  const listItemRegex = /^- \[.*$/gm;
-  let lastListItemIndex = -1;
-  let listItemMatch;
-  while ((listItemMatch = listItemRegex.exec(sectionContent)) !== null) {
-    lastListItemIndex = listItemMatch.index + listItemMatch[0].length;
-  }
-
-  let insertIndex = sectionStartIndex;
-  if (lastListItemIndex !== -1) {
-    insertIndex += lastListItemIndex;
-  } else {
-    insertIndex += 1;
-  }
-
-  const newEntry = `\n- [${title}](${link}) - ${description} *(${type})*`;
-
-  readmeContent =
-    readmeContent.substring(0, insertIndex) + newEntry + readmeContent.substring(insertIndex);
-
-  writeFileSync(readmePath, readmeContent, "utf-8");
+  writeFileSync(readmePath, updated, "utf-8");
   console.log(`Successfully added "${title}" to category "${category}" in ${readmeFile}.`);
 }
 

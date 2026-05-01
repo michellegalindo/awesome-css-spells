@@ -91,6 +91,8 @@ Explore, learn, and contribute.
 - [What The Flexbox?! with Wes Bos](https://flexbox.io) - Master Flexbox layout through free video lessons with real browser exercises *(course)*
 - [Learn CSS Grid with Wes Bos](https://cssgrid.io) - Master CSS Grid through free video lessons and hands-on layout projects *(course)*
 - [The Layout Maestro by Ahmad Shadeed](https://thelayoutmaestro.com) - Develop a mental model for layout decisions with 70+ interactive written lessons *(course)*
+- [Flexbox Froggy](https://flexboxfroggy.com) - Learn flexbox properties by guiding frogs to lily pads in 24 interactive puzzles. *(playground)*
+- [CSS Grid Garden](https://cssgridgarden.com) - Interactive game with 28 levels to practice CSS grid layout hands-on. *(playground)*
 
 <br/>
 
@@ -109,6 +111,9 @@ Explore, learn, and contribute.
 - [Scroll-driven Animations](https://scroll-driven-animations.style/) - Visualize and create declarative scroll-driven animations with interactive demos and tools *(tool)*
 - [CSS Day 2025: Ultimate Scroller Guide by Adam Argyle](https://www.youtube.com/watch?v=vPb7d28RFNE) - Master scroll-driven animations and performance patterns for modern web pages *(video)*
 - [Spinner & Loading Animation Generator | FastTool ](https://fasttool.app/tools/css-loader-generator) - Create copy-ready CSS loader animations and presets to style fast-loading indicators quickly. *(tool)*
+- [Hover.css](https://ianlunn.github.io/Hover) - Collection of ready-to-use CSS3 hover effects for buttons, links, and images *(library)*
+- [Mocassin.css](https://eliezerpujols.github.io/mocassin.css) - Pre-built hover effects for image captions — fadeIn, slideIn, flip, and zoom, no JS needed *(library)*
+- [GSAP Scroll Plugins](https://gsap.com/scroll) - Scroll-based animation plugins for parallax, smooth scrolling, and scroll-triggered effects. *(library)*
 
 <br/>
 
@@ -136,6 +141,8 @@ Empty. Add your contribution 💜
 - [Glassmorphism Generator](https://ui.glass/generator) - Generate blur, transparency, and border CSS for glass-effect UI elements *(tool)*
 - [CSS Generators: Your CSS code with less effort](https://css-generators.com) - A wide range of CSS Generators (as frames and shapes) to build the future of the web. *(tool)*
 - [CSS Reset Generator | FastTool](https://fasttool.app/tools/css-reset-generator) - Generate customized reset stylesheets from popular presets like Normalize, Eric Meyer, and Tailwind Preflight *(tool)*
+- [ColorSpace](https://mycolor.space) - Generate harmonious color palettes and CSS gradients from a single input color. *(tool)*
+- [Fancy Border Radius Generator](https://9elements.github.io/fancy-border-radius) - Generate complex CSS border-radius shapes visually and copy the value instantly *(tool)*
 
 ### Utilities
 
@@ -191,6 +198,8 @@ Empty. Add your contribution 💜
 
 - [CSS Wrapped 2025 by Chrome Developers](https://chrome.dev/css-wrapped-2025/) - Recap the 22 CSS and UI improvements shipped in 2025 with live interactive examples *(reference)*
 - [CSS in 2025–2026: It's Getting Too Powerful](https://dev.to/pixelperfect_pro/css-in-2025-2026-its-getting-too-powerful-and-im-scared-2ej8) - Survey emerging features like if(), native masonry, anchor positioning, scroll-driven animations, and CSS mixins *(article)*
+- [One List To Rule Them All](https://nerdy.dev/cascading-secret-sauce) - Catalogs 100+ modern CSS features from the last 5 years, organized by category *(reference)*
+- [State of CSS 2025](https://2025.stateofcss.com/en-US) - Annual survey tracking CSS feature adoption, developer satisfaction, and tooling trends *(article)*
 
 <br/>
 
@@ -204,6 +213,7 @@ Empty. Add your contribution 💜
 - [CSS Podcast by Una Kravets and Adam Argyle](https://thecsspodcast.libsyn.com) - Deep-dive into CSS properties and features through conversational episodic breakdowns *(podcast)*
 - [Syntax by Wes Bos and Scott Tolinski](https://syntax.fm) - Stay current on frontend trends through a high-energy developer podcast *(podcast)*
 - [Frontend Masters - CSS Courses](https://frontendmasters.com/courses/?c=courses&tg=css&dg=1) - Find Frontend Masters CSS courses from fundamentals to advanced UI layouts and animations *(course)*
+- [Codepip](https://codepip.com) - Game-based learning platform for CSS layout, selectors, and other web skills. *(course)*
 
 <br/>
 
@@ -211,3 +221,4 @@ Empty. Add your contribution 💜
 
 - [Awwwards - Websites of the Day](https://www.awwwards.com) - Browse top-awarded websites worldwide for design trends, creative layouts, and interaction inspiration *(showcase)*
 - [CSS Design Awards](https://www.cssdesignawards.com/) - Discover daily award-winning websites judged on UI, UX, and innovation for cutting-edge CSS inspiration *(showcase)*
+- [Codrops Playground](https://tympanus.net/codrops/category/playground) - Gallery of advanced web experiments with live demos pushing animation and design boundaries *(showcase)*

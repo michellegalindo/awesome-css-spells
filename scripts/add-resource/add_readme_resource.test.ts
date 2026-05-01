@@ -4,6 +4,7 @@ import {
   isDescriptionPoor,
   extractMetaDescription,
   detectLangFromResponse,
+  insertEntry,
 } from "./add_readme_resource.ts";
 
 test("isDescriptionPoor flags short descriptions", () => {
@@ -66,4 +67,42 @@ test("detectLangFromResponse returns null for unknown languages", () => {
   const headers = new Headers();
   assert.equal(detectLangFromResponse('<html lang="fr">', headers), null);
   assert.equal(detectLangFromResponse("no lang here", headers), null);
+});
+
+test("insertEntry returns null for unknown category", () => {
+  const content = "## Tools\n- [A](https://a.com) - Some description text here *(tool)*\n";
+  assert.equal(
+    insertEntry(content, "Unknown", { title: "X", link: "https://x.com", description: "desc", type: "tool" }),
+    null
+  );
+});
+
+test("insertEntry appends after last item in non-empty section", () => {
+  const content = "## Tools\n- [A](https://a.com) - First item description here *(tool)*\n\n## Next\n";
+  const result = insertEntry(content, "Tools", {
+    title: "B",
+    link: "https://b.com",
+    description: "Second item description here",
+    type: "tool",
+  });
+  assert.ok(result !== null);
+  const posA = result!.indexOf("- [A]");
+  const posB = result!.indexOf("- [B]");
+  assert.ok(posA < posB, "new item should come after existing item");
+  assert.ok(result!.includes("*(tool)*\n- [B]"), "new item appended right after last item");
+});
+
+test("insertEntry inserts correctly in empty section with placeholder text", () => {
+  const content = "## Tools\nContribute here\n\n## Next\n";
+  const result = insertEntry(content, "Tools", {
+    title: "New",
+    link: "https://new.com",
+    description: "New item description here for testing",
+    type: "tool",
+  });
+  assert.ok(result !== null);
+  const itemLine = "- [New](https://new.com) - New item description here for testing *(tool)*";
+  assert.ok(result!.includes(itemLine), "item present");
+  const itemEnd = result!.indexOf(itemLine) + itemLine.length;
+  assert.equal(result![itemEnd], "\n", "item followed by newline, not concatenated to placeholder");
 });
