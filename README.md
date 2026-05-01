@@ -78,6 +78,11 @@ Explore, learn, and contribute.
 - [Bulma](https://bulma.io) - Style modern interfaces with Flexbox-based components and zero JavaScript dependencies *(library)*
 - [Milligram](https://milligram.io) - Ship clean layouts with minimal CSS defaults that never override your work *(library)*
 - [Pure.css](https://pure-css.github.io) - Add responsive UI modules to any project with a tiny CSS payload *(library)*
+- [Bootstrap](https://getbootstrap.com) - Pre-built components, responsive grid, and utilities to build consistent UIs fast. *(library)*
+- [UIkit](https://getuikit.com) - Modular framework with 80+ components for building responsive web interfaces fast. *(library)*
+- [Halfmoon](https://www.gethalfmoon.com) - Drop-in Bootstrap replacement with 3 themes, dark mode, and responsive components. *(library)*
+- [daisyUI](https://daisyui.com) - Tailwind plugin with semantic class names and 30+ themes via CSS variables. *(library)*
+- [Preline UI](https://preline.co) - 640+ Tailwind CSS components and templates ready to use in any framework. *(library)*
 
 ### CSS-in-JS
 - [Vanilla Extract](https://vanilla-extract.style) - Write type-safe, zero-runtime CSS in TypeScript with build-time scoped output *(library)*
@@ -114,17 +119,20 @@ Explore, learn, and contribute.
 - [Hover.css](https://ianlunn.github.io/Hover) - Collection of ready-to-use CSS3 hover effects for buttons, links, and images *(library)*
 - [Mocassin.css](https://eliezerpujols.github.io/mocassin.css) - Pre-built hover effects for image captions — fadeIn, slideIn, flip, and zoom, no JS needed *(library)*
 - [GSAP Scroll Plugins](https://gsap.com/scroll) - Scroll-based animation plugins for parallax, smooth scrolling, and scroll-triggered effects. *(library)*
+- [CSS-Only Magazine Page-Turning Effect](https://codepen.io/amit_sheen/pen/WNweryv) - Pure CSS magazine flip animation that cycles through multiple images without JavaScript *(playground)*
 
 <br/>
 
 ## UI & Components
 - [Charts.css - Data visualization framework](https://chartscss.org) - Render data charts with pure CSS classes applied to semantic HTML tables *(library)*
+- [Flowbite](https://flowbite.com) - Pre-built Tailwind CSS components to quickly assemble interactive UIs. *(library)*
 
 <br/>
 
 ## Forms & UX Patterns
 
-Empty. Add your contribution 💜
+- [Styling Forms with CSS](https://blog.logrocket.com/style-forms-css) - Style text fields, buttons, checkboxes, and inputs with accessible states. *(guide)*
+- [Pure CSS Accordion](https://codepen.io/raubaca/pen/PZzpVe) - Build a collapsible accordion with only checkboxes and CSS, no JavaScript needed. *(playground)*
 
 <br/>
 
