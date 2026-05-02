@@ -72,13 +72,19 @@ test("detectLangFromResponse returns null for unknown languages", () => {
 test("insertEntry returns null for unknown category", () => {
   const content = "## Tools\n- [A](https://a.com) - Some description text here *(tool)*\n";
   assert.equal(
-    insertEntry(content, "Unknown", { title: "X", link: "https://x.com", description: "desc", type: "tool" }),
+    insertEntry(content, "Unknown", {
+      title: "X",
+      link: "https://x.com",
+      description: "desc",
+      type: "tool",
+    }),
     null
   );
 });
 
 test("insertEntry appends after last item in non-empty section", () => {
-  const content = "## Tools\n- [A](https://a.com) - First item description here *(tool)*\n\n## Next\n";
+  const content =
+    "## Tools\n- [A](https://a.com) - First item description here *(tool)*\n\n## Next\n";
   const result = insertEntry(content, "Tools", {
     title: "B",
     link: "https://b.com",

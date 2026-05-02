@@ -3,10 +3,10 @@
   color-scheme: dark;
 
   /* Cores */
-  --bg: light-dark(#f0f0f0, #0f0f0f);
-  --surface: light-dark(#ebebeb, #161616);
-  --border: light-dark(#d4d4d4, #252525);
-  --text: light-dark(#2d2d2d, #fff);
+  --bg: light-dark(#f0f0f0, #0a0a0a);
+  --surface: light-dark(#e8e7e5, #111111);
+  --border: light-dark(#d4d4d4, #232323);
+  --text: light-dark(#2d2d2d, #f0f0f0);
   --muted: light-dark(#888, #999);
   --muted2: light-dark(#777, #454545);
   --muted3: light-dark(#666, #bbb);
@@ -85,6 +85,22 @@ body {
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
+}
+
+/* Grain texture — gives the flat dark background material presence */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.12;
+  mix-blend-mode: screen;
+}
+:root.light body::before {
+  opacity: 0.30;
+  mix-blend-mode: multiply;
 }
 
 h2 {
@@ -176,6 +192,20 @@ mark {
   height: 100vh;
   overflow: hidden;
 }
+
+/* Gradient fade at bottom of sidebar over the TOC */
+.sidebar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--surface) 30%, transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .sidebar__header {
   padding: var(--space-5) 20px;
   border-bottom: 1px solid var(--border);
@@ -241,18 +271,22 @@ mark {
   scrollbar-color: var(--border) transparent;
   padding-bottom: 180px;
 }
+
+/* Oswald for top-level TOC items → editorial magazine register */
 .toc__item {
   display: block;
   padding: 6px 20px;
   color: var(--muted);
   text-decoration: none;
-  font-size: 13px;
-  border-left: 5px solid transparent;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  border-left: 4px solid transparent;
   transition: all var(--transition-fast);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: uppercase;
+  letter-spacing: 0.07em;
 }
 .toc__item:hover {
   color: var(--text);
@@ -265,9 +299,11 @@ mark {
   font-weight: 500;
 }
 .toc__item--sub {
-  font-size: 13px;
-  padding-left: 40px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding-left: 36px;
   text-transform: none;
+  letter-spacing: 0;
 }
 
 /* 5.2 Topbar ------------------------------------------------- */
@@ -388,13 +424,64 @@ mark {
   gap: var(--space-7);
   align-items: start;
   margin-bottom: var(--space-7);
+  position: relative;
+}
+
+/* Large decorative watermark — anchors the hero with a visual identity mark */
+.hero::before {
+  content: "CSS";
+  position: absolute;
+  right: -8px;
+  top: -28px;
+  font-family: var(--font-sans);
+  font-size: 200px;
+  font-weight: 500;
+  color: var(--text);
+  opacity: 0.028;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: -4px;
+  z-index: 0;
+}
+:root.light .hero::before {
+  opacity: 0.06;
+}
+
+.hero__left {
+  position: relative;
+  z-index: 1;
 }
 .hero__right {
   padding: var(--space-4) var(--space-4) 20px 40px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   position: relative;
+  z-index: 1;
 }
+
+/* Staggered entrance for hero elements */
+.hero__left .hero__tagline {
+  animation: heroSlideUp 0.55s cubic-bezier(0.2, 0, 0.2, 1) both;
+  animation-delay: 0.05s;
+}
+.hero__left h2 {
+  animation: heroSlideUp 0.55s cubic-bezier(0.2, 0, 0.2, 1) both;
+  animation-delay: 0.15s;
+}
+.hero__left blockquote {
+  animation: heroSlideUp 0.55s cubic-bezier(0.2, 0, 0.2, 1) both;
+  animation-delay: 0.25s;
+}
+.hero__left #languages-mobile {
+  animation: heroSlideUp 0.55s cubic-bezier(0.2, 0, 0.2, 1) both;
+  animation-delay: 0.3s;
+}
+.hero__right {
+  animation: heroSlideUp 0.55s cubic-bezier(0.2, 0, 0.2, 1) both;
+  animation-delay: 0.2s;
+}
+
 .hero__tagline {
   font-family: var(--font-sans);
   font-size: 12px;
@@ -473,14 +560,16 @@ mark {
 
 .rendered h2 {
   color: var(--accent2);
-  margin: 40px 0 var(--space-4);
-  padding-top: 40px;
+  margin: 48px 0 var(--space-4);
+  padding-top: 48px;
   scroll-margin-top: 60px;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   gap: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 28px;
 }
 .rendered ul li {
   display: flex;
@@ -493,13 +582,23 @@ mark {
 .rendered ul li:hover {
   background-color: var(--surface);
 }
+
+/* CSS-drawn arrow indicator — more intentional than the generic emoji */
 .rendered ul li::before {
-  content: "🔗";
+  content: "→";
   position: absolute;
   left: var(--space-2);
-  top: calc(50% - 12px);
-  font-size: 16px;
+  top: calc(50% - 18px);
+  font-size: 20px;
   color: var(--muted2);
+  font-family: var(--font-mono);
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+.rendered ul li:hover::before {
+  color: var(--accent2);
+  transform: translateX(3px);
 }
 .rendered ul li > a {
   display: block;
@@ -545,6 +644,7 @@ mark {
   flex-shrink: 0;
   text-transform: none;
   letter-spacing: 0;
+  margin-top: 3px;
 }
 .rendered h2:hover .anchor-copy {
   opacity: 1;
@@ -580,16 +680,24 @@ mark {
   animation: fadeIn 0.2s ease;
 }
 .result__item::before {
-  content: "🔗";
+  content: "→";
   position: absolute;
   left: var(--space-2);
-  top: calc(50% - 12px);
-  font-size: 16px;
+  top: calc(50% - 10px);
+  font-size: 14px;
   color: var(--muted2);
+  font-family: var(--font-mono);
   pointer-events: none;
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 .result__item:hover {
   background-color: var(--surface);
+}
+.result__item:hover::before {
+  color: var(--accent3);
+  transform: translateX(3px);
 }
 .result__item:hover .result__link .entry__title {
   color: var(--text);
@@ -759,7 +867,28 @@ mark {
     opacity: 0;
   }
 }
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* ── 8. Back to top ────────────────────────────────────────── */
 #back-to-top {
   position: fixed;
   right: 20px;
@@ -788,7 +917,7 @@ mark {
 #back-to-top.visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(-150%);
+  transform: translateY(0);
 }
 
 #back-to-top:hover {
@@ -804,23 +933,17 @@ mark {
   font-size: 12px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ── 8. Responsivo ─────────────────────────────────────────── */
+/* ── 9. Responsivo ─────────────────────────────────────────── */
 
 /* Mobile (≤829px): hero em uma coluna, sidebar overlay, topbar compacta */
 @media (max-width: 829px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+  .hero::before {
+    font-size: 120px;
+    right: 0;
+    top: -10px;
   }
   .sidebar {
     position: fixed;
@@ -851,5 +974,16 @@ mark {
   }
   .languages--mobile {
     display: block;
+  }
+}
+
+/* Respeita preferência de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .hero__left .hero__tagline,
+  .hero__left h2,
+  .hero__left blockquote,
+  .hero__left #languages-mobile,
+  .hero__right {
+    animation: none;
   }
 }
